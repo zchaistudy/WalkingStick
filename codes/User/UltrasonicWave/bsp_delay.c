@@ -62,7 +62,7 @@ static uint16_t fac_ms=0;							//ms延时倍乘数,在ucos下,代表每个节拍的ms数
  */
  void delayInit()
 {
-	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);  //选择外部时钟，  HCLK/8
+//	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);  //选择外部时钟，  HCLK/8
 	fac_us=SystemCoreClock/8000000;				//为系统时钟的1/8  
 	fac_ms=(u16)fac_us*1000;					//代表每个ms需要的systick时钟数
 }

@@ -1,10 +1,20 @@
+/**
+  ******************************************************************************
+  * @file    bsp_angle.c
+  * @author  chzh
+  * @version V1.0
+  * @date    2018-05-15
+  * @brief   I2C通讯方位模块bsp
+  ******************************************************************************
+  */
+  
 #include "bsp_angle_define.h"
-unsigned char TX_DATA[5]; 		  //串口发送数组
+
+unsigned char TX_DATA[5]; 		  	//串口发送数组
 unsigned char BUF[8];             //接收数据缓存区
 short M_x,M_y,M_z,A_x,A_y,A_z;	  //磁场与加速度的原始值
-char  test=0; 					  //I2C使用
-//short M_x,M_y,M_z,A_x,A_y,A_z;	  //磁场与加速度的原始值
-float angle;					  //磁场计算的角度
+char  test=0; 					 					//I2C使用
+float angle;					  					//磁场计算的角度
 
 void DATA_printf(uchar *s,short temp_data)
 {
@@ -21,6 +31,7 @@ void DATA_printf(uchar *s,short temp_data)
     temp_data=temp_data%10;      //取余运算
     *++s =temp_data+0x30; 	
 }
+
 /*******************************************************************************
 * Function Name  : I2C_GPIO_Config
 * Description    : Configration Simulation IIC GPIO
@@ -303,7 +314,5 @@ int getAngle()
 		if(angle>330&&angle<350)  //东南
 //			printf("S11349TE");
 			num = 7;
-		printf("%d \n",num);
-		delay1_1ms(100);
 		return num;
 }

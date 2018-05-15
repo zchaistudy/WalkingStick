@@ -32,7 +32,7 @@
 
 #define RCC_APB2Periph_GPIOx  RCC_APB2Periph_GPIOC
 
-#define AVER_NUM        6            //超声波数量
+#define AVER_NUM        6+1            //超声波数量+一位方位模块
 
 extern int8_t  IT_TAG;
 

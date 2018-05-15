@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 #include <stdio.h>
-
+#define	MAX_SEND 10
 
 extern void USART1_Config(u32 bound);
 extern int  fputc(int ch, FILE *f);

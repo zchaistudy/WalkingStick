@@ -1,24 +1,17 @@
 /**
   ******************************************************************************
   * @file    bsp_exti.c
-  * @author  fire
+  * @author  chzh
   * @version V1.0
-  * @date    2013-xx-xx
+  * @date    2018-05-15
   * @brief   I/O线中断应用bsp
-  ******************************************************************************
-  * @attention
-  *
-  * 实验平台:野火 iSO STM32 开发板 
-  * 论坛    :http://www.chuxue123.com
-  * 淘宝    :http://firestm32.taobao.com
-  *
   ******************************************************************************
   */
   
 #include "bsp_exti.h"
 
  /**
-  * @brief  配置嵌套向量中断控制器NVIC
+  * @brief  外部中断0中断控制器NVIC
   * @param  无
   * @retval 无
   */
@@ -30,7 +23,7 @@ static void NVIC_Configuration(void)
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
   
   /* 配置中断源 */
-  NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;  //外部中断0
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;

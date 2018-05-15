@@ -402,12 +402,17 @@ void TIM3_IRQHandler(void)
 	}	
 }
 
+/**
+  * @brief  外部中断0，用于检测按键
+  * @param  None
+  * @retval None
+  */
+
 void EXTI0_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line0) != RESET) //确保是否产生了EXTI Line中断
-	{
-		// LED1 取反		
-		direction_flag=1;
+	{		
+		direction_flag=1;												//将按键标志位进行标记
 		EXTI_ClearITPendingBit(EXTI_Line0);     //清除中断标志位
 	}  
 }

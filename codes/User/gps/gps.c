@@ -66,33 +66,28 @@ nmeaINFO Get_GPS_Data(void)
     return info;//返回解码后的GPS
 }
 
-void GPS_GPRS(void)
+void GPS_GPRS(nmeaINFO GpsInfo,nmeaTIME beiJingTime,char sendData[])
 {
-	nmeaINFO GpsInfo;      //GPS结构体
-	nmeaTIME beiJingTime;  //北京时间
-	char sendData[30]; //需要发送的内容
-	
 	GpsInfo = Get_GPS_Data();//GPS测试
-		GMTconvert(&GpsInfo.utc,&beiJingTime,8,1);//对解码后的时间进行转换，转换成北京时间
-		sprintf(sendData,"lo:%f,la:%f\r\n",GpsInfo.lon,GpsInfo.lat);//需要发送的内容
-		DEBUG_GPS("时间：%d-%d-%d %d:%d:%d\r\n", beiJingTime.year+1900, beiJingTime.mon+1,beiJingTime.day,beiJingTime.hour,beiJingTime.min,beiJingTime.sec);
-		DEBUG_GPS("纬度：%f,经度%f\r\n\r\n",GpsInfo.lat,GpsInfo.lon);
+	GMTconvert(&GpsInfo.utc,&beiJingTime,8,1);//对解码后的时间进行转换，转换成北京时间
+	sprintf(sendData,"lo:%f,la:%f\r\n",GpsInfo.lon,GpsInfo.lat);//需要发送的内容
+	DEBUG_GPS("时间：%d-%d-%d %d:%d:%d\r\n", beiJingTime.year+1900, beiJingTime.mon+1,beiJingTime.day,beiJingTime.hour,beiJingTime.min,beiJingTime.sec);
+	DEBUG_GPS("纬度：%f,经度%f\r\n\r\n",GpsInfo.lat,GpsInfo.lon);
 
 		
-		/*测试TCP连接*/
-		if(sim900a_gprs_send(sendData) == 1)//发送数据
-		{
-				printf("发送成功！\r\n");
-				SIM900A_CLEAN_RX(); //清除串口缓冲区
-				Delay_ms(2000);
-				printf("地理位置为%s\r\n",SIM900A_RX());//输出结果		
-		}
-		else
-		{
-			printf("发送失败！\r\n\r\n");
-			gprs_init("120.78.193.178","10000");
-		}	
-	
+	/*测试TCP连接*/
+	if(sim900a_gprs_send(sendData) == 1)//发送数据
+	{
+			printf("发送成功！\r\n");
+			SIM900A_CLEAN_RX(); //清除串口缓冲区
+			Delay_ms(2000);
+			printf("地理位置为%s\r\n",SIM900A_RX());//输出结果		
+	}
+	else
+	{
+		printf("发送失败！\r\n\r\n");
+		gprs_init("120.78.193.178","10000");
+	}	
 }
 
 /*********************************************END OF FILE**********************/

@@ -552,12 +552,12 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=..\..\ou
-tput\startup_stm32f10x_hd.d -o..\..\output\startup_stm32f10x_hd.o -IG:\InSchool
-\工作室\项目\辅助盲人出行的智能可穿戴设备\代码\智能拐杖\拐杖代码20180317\Projec
-t\RVMDK（uv4）\RTE -IG:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include -
-IG:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0 --predefine="__MICROLIB SE
-TA 1" --list=..\..\listing\startup_stm32f10x_hd.lst ..\..\Libraries\CMSIS\start
-up\startup_stm32f10x_hd.s
+tput\startup_stm32f10x_hd.d -o..\..\output\startup_stm32f10x_hd.o -IG:\QGStudio
+\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\RTE
+ -IG:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include -IG:\software\keil5
+\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0 --predefine="__MICROLIB SETA 1" --list=..\..
+\listing\startup_stm32f10x_hd.lst ..\..\Libraries\CMSIS\startup\startup_stm32f1
+0x_hd.s
 
 
 

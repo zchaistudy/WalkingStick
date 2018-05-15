@@ -53,7 +53,7 @@ void trace(const char *str, int str_size);
 void error(const char *str, int str_size);
 void GMTconvert(nmeaTIME *SourceTime, nmeaTIME *ConvertTime, uint8_t GMT,uint8_t AREA) ;
 nmeaINFO Get_GPS_Data(void);
-void GPS_GPRS(void);
+void GPS_GPRS(nmeaINFO GpsInfo,nmeaTIME beiJingTime,char sendData[]);
 #define DEBUG_GPS_ON 1
 
 
