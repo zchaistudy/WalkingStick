@@ -9,28 +9,18 @@ Project File Date:  03/25/2018
 <h2>Output:</h2>
 Build target '智能拐杖'
 compiling main.c...
-..\..\User\main.c(45): warning:  #177-D: variable "sendByBlueTooth" was declared but never referenced
-        int sendByBlueTooth[MAX_SEND];            //发送避障数据以及方位数据
-..\..\User\main.c: 1 warning, 0 errors
-compiling stm32f10x_it.c...
-compiling bsp_usart1.c...
-compiling gps.c...
-..\..\User\gps\gps.c(93): warning:  #1-D: last line of file ends without a newline
-  /*********************************************END OF FILE**********************/
-..\..\User\gps\gps.c: 1 warning, 0 errors
-compiling gps_config.c...
-compiling UltrasonicWave.c...
-..\..\User\UltrasonicWave\UltrasonicWave.c(188): warning:  #177-D: variable "i" was declared but never referenced
-        int i= 0;       
-..\..\User\UltrasonicWave\UltrasonicWave.c(25): warning:  #177-D: variable "index" was declared but never referenced
-  static int8_t index = 0;
-..\..\User\UltrasonicWave\UltrasonicWave.c: 2 warnings, 0 errors
-compiling bsp_delay.c...
-compiling bsp_angle.c...
+compiling sim900a.c...
+..\..\User\gprs\sim900a.c(144): warning:  #550-D: variable "str" was set but never used
+        char str[21];
+..\..\User\gprs\sim900a.c(395): warning:  #550-D: variable "str" was set but never used
+        char str[16];
+..\..\User\gprs\sim900a.c(513): warning:  #177-D: variable "key" was declared but never referenced
+        char key[]={"SzvU0ErKlhLnxdGZWWBFrif1q7AQ3Rbh"};//密钥
+..\..\User\gprs\sim900a.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=29088 RO-data=836 RW-data=156 ZI-data=6316  
+Program Size: Code=25072 RO-data=676 RW-data=112 ZI-data=6288  
 FromELF: creating hex file...
-"..\..\Output\Template.axf" - 0 Error(s), 4 Warning(s).
+"..\..\Output\Template.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -49,6 +39,41 @@ Package Vendor: ARM
 
    * Component: ARM::CMSIS:CORE:3.30.0
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
+Load "..\\..\\Output\\Template.axf" 
+Set JLink Project File to "G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\JLinkSettings.ini"
+* JLink Info: Device "STM32F103RC" selected (256 KB flash, 48 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link V9 compiled Mar  2 2018 17:07:57
+Hardware: V9.30
+S/N : 59304865 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103RC
+VTarget = 3.320V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 1000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
 </pre>
 </body>
 </html>
