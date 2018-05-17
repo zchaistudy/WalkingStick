@@ -68,9 +68,16 @@ nmeaINFO Get_GPS_Data(void)
 
 void GPS_GPRS(nmeaINFO GpsInfo,nmeaTIME beiJingTime,char sendData[])
 {
+	int a,b;
+	
 	GpsInfo = Get_GPS_Data();//GPS测试
 	GMTconvert(&GpsInfo.utc,&beiJingTime,8,1);//对解码后的时间进行转换，转换成北京时间
+		a=(int)(GpsInfo.lon/100);
+		b=(int)(GpsInfo.lat/100);
+		GpsInfo.lon=(GpsInfo.lon-100*a)/60+a;
+		GpsInfo.lat=(GpsInfo.lat-100*b)/60+b;
 	sprintf(sendData,"lo:%f,la:%f\r\n",GpsInfo.lon,GpsInfo.lat);//需要发送的内容
+	
 	DEBUG_GPS("时间：%d-%d-%d %d:%d:%d\r\n", beiJingTime.year+1900, beiJingTime.mon+1,beiJingTime.day,beiJingTime.hour,beiJingTime.min,beiJingTime.sec);
 	DEBUG_GPS("纬度：%f,经度%f\r\n\r\n",GpsInfo.lat,GpsInfo.lon);
 
@@ -86,7 +93,7 @@ void GPS_GPRS(nmeaINFO GpsInfo,nmeaTIME beiJingTime,char sendData[])
 	else
 	{
 		printf("发送失败！\r\n\r\n");
-		gprs_init("120.78.193.178","10000");
+		gprs_init("47.106.74.67","10001");
 	}	
 }
 

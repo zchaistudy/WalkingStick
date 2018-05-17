@@ -440,7 +440,7 @@ sim900a_res_e gprs_reg_status(void)
 		}
 		else
 		{	
-			printf("Î´×¢²á ERR:%c\r\n",redata[22]);
+			printf("Î´×¢²á ERR:%c\r\n",redata[22]);     //ÊÖ»ú¿¨ÎÊÌâ
 			if(count >10)
 				return SIM900A_FALSE;
 		}
