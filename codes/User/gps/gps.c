@@ -52,13 +52,13 @@ nmeaINFO Get_GPS_Data(void)
    
 		if(new_parse )//有新的解码消息   
 		{    
-			GMTconvert(&info.utc,&beiJingTime,8,1);//对解码后的时间进行转换，转换成北京时间
-			DEBUG_GPS("DEBUG_GPS时间：%d-%d-%d %d:%d:%d\r\n", beiJingTime.year+1900, beiJingTime.mon+1,beiJingTime.day,beiJingTime.hour,beiJingTime.min,beiJingTime.sec);
-			DEBUG_GPS("DEBUG_GPS纬度：%f,经度%f\r\n",info.lat,info.lon);
-			DEBUG_GPS("DEBUG_GPS正在使用的卫星：%d,可见卫星：%d\r\n",info.satinfo.inuse,info.satinfo.inview);
-			DEBUG_GPS("DEBUG_GPS海拔高度：%f 米\r\n", info.elv);
-			DEBUG_GPS("DEBUG_GPS速度：%f km/h\r\n", info.speed);
-			DEBUG_GPS("DEBUG_GPS航向：%f 度\r\n\r\n", info.direction);
+//			GMTconvert(&info.utc,&beiJingTime,8,1);//对解码后的时间进行转换，转换成北京时间
+//			DEBUG_GPS("DEBUG_GPS时间：%d-%d-%d %d:%d:%d\r\n", beiJingTime.year+1900, beiJingTime.mon+1,beiJingTime.day,beiJingTime.hour,beiJingTime.min,beiJingTime.sec);
+//			DEBUG_GPS("DEBUG_GPS纬度：%f,经度%f\r\n",info.lat,info.lon);
+//			DEBUG_GPS("DEBUG_GPS正在使用的卫星：%d,可见卫星：%d\r\n",info.satinfo.inuse,info.satinfo.inview);
+//			DEBUG_GPS("DEBUG_GPS海拔高度：%f 米\r\n", info.elv);
+//			DEBUG_GPS("DEBUG_GPS速度：%f km/h\r\n", info.speed);
+//			DEBUG_GPS("DEBUG_GPS航向：%f 度\r\n\r\n", info.direction);
 			new_parse = 0;//清除标志位
 		}
     
@@ -69,7 +69,6 @@ nmeaINFO Get_GPS_Data(void)
 void GPS_GPRS(nmeaINFO GpsInfo,nmeaTIME beiJingTime,char sendData[])
 {
 	int a,b;
-	
 	GpsInfo = Get_GPS_Data();//GPS测试
 	GMTconvert(&GpsInfo.utc,&beiJingTime,8,1);//对解码后的时间进行转换，转换成北京时间
 		a=(int)(GpsInfo.lon/100);

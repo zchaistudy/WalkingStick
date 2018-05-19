@@ -475,7 +475,7 @@ sim900a_res_e gprs_init(char* ip,char* port)
 	printf("GPRS模块响应正常\r\n");
 	//以下设置只需设置一次  就不要再设置了  掉电仍然保持
 	
-	if (SIM900A_FALSE == gprs_reg_status())//注册失败
+	if (SIM900A_FALSE == gprs_reg_status())   //判断注册情况
 		sim900a_gprs_init();
 
 	if (sim900a_gprs_status() == 0)
