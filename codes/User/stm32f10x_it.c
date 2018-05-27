@@ -254,13 +254,13 @@ void GENERAL_TIM_INT_FUN(void)
 	}	
 }
 
-
 void TIM3_IRQHandler(void)
 {
 	// 当要被捕获的信号的周期大于定时器的最长定时时，定时器就会溢出，产生更新中断
 	if ( TIM_GetITStatus ( TIM3, TIM_IT_Update) != RESET )               
 	{	
 //		TIM_ICUserValueStructure.Capture_FinishFlag = 1;	
+		TIM_ICUserValueStructure2.Capture_CcrValue += GENERAL_TIM_PERIOD+1;
 		TIM_ClearITPendingBit ( TIM3, TIM_FLAG_Update ); 		
 	}
 //printf("tim3\r\n");

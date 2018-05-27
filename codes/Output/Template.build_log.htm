@@ -2,111 +2,81 @@
 <body>
 <pre>
 <h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Administrator,  , LIC=KRMQD-8XJII-445SX-HAYX9-JTC56-8W3QA
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  G:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
+Target DLL:      Segger\JL2CM3.dll V2.99.29.0
+Dialog DLL:      TCM.DLL V1.35.1.0
+ 
 <h2>Project:</h2>
-G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\iSO-STM32.uvprojx
-Project File Date:  03/25/2018
+G:\眼镜\work\WalkingStick\codes\Project\RVMDK（uv4）\iSO-STM32.uvprojx
+Project File Date:  05/19/2018
 
 <h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'G:\Keil_v5\ARM\ARMCC\Bin'
 Build target '智能拐杖'
-compiling gps.c...
-..\..\User\gps\gps.c(36): warning:  #177-D: variable "beiJingTime" was declared but never referenced
-      nmeaTIME beiJingTime;//北京时间 
-..\..\User\gps\gps.c(99): warning:  #1-D: last line of file ends without a newline
-  /*********************************************END OF FILE**********************/
-..\..\User\gps\gps.c: 2 warnings, 0 errors
+compiling stm32f10x_it.c...
+compiling main.c...
+..\..\User\main.c(39): warning:  #177-D: variable "angle"  was declared but never referenced
+  	int angle=0; 
+..\..\User\main.c(40): warning:  #177-D: variable "i"  was declared but never referenced
+  	int i=0;
+..\..\User\main.c(42): warning:  #177-D: variable "GpsInfo"  was declared but never referenced
+  	nmeaINFO GpsInfo;     						  //GPS结构体
+..\..\User\main.c(43): warning:  #177-D: variable "beiJingTime"  was declared but never referenced
+  	nmeaTIME beiJingTime;  							//北京时间
+..\..\User\main.c(44): warning:  #177-D: variable "sendData"  was declared but never referenced
+  	char sendData[30]; 									//gprs需要发送的内容
+..\..\User\main.c(45): warning:  #177-D: variable "sendByBlueTooth"  was declared but never referenced
+  	int sendByBlueTooth[MAX_SEND];		  //发送避障数据以及方位数据
+..\..\User\main.c: 6 warnings, 0 errors
+compiling UltrasonicWave.c...
+..\..\User\UltrasonicWave\UltrasonicWave.c(71): warning:  #550-D: variable "ftime"  was set but never used
+  	double ftime;
+..\..\User\UltrasonicWave\UltrasonicWave.c(220): warning:  #177-D: variable "i"  was declared but never referenced
+  	int i= 0;	
+..\..\User\UltrasonicWave\UltrasonicWave.c(25): warning:  #177-D: variable "index"  was declared but never referenced
+  static int8_t index = 0;
+..\..\User\UltrasonicWave\UltrasonicWave.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=29048 RO-data=836 RW-data=156 ZI-data=6316  
+Program Size: Code=16044 RO-data=336 RW-data=80 ZI-data=2216  
 FromELF: creating hex file...
-"..\..\Output\Template.axf" - 0 Error(s), 2 Warning(s).
+"..\..\Output\Template.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.4.1.0.pack
-                ARM::CMSIS:CORE:3.30.0
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 3.30.0
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.0.0.pack
+                Keil.STM32F1xx_DFP.2.0.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\RTE
-  G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include
-  G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0
+  .\RTE\_________
+  G:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  G:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:3.30.0
-      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
-Load "..\\..\\Output\\Template.axf" 
-Set JLink Project File to "G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\JLinkSettings.ini"
-* JLink Info: Device "STM32F103RC" selected (256 KB flash, 48 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link V9 compiled Mar  2 2018 17:07:57
-Hardware: V9.30
-S/N : 59304865 
-Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
- 
-* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
-* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103RC
-VTarget = 3.322V
-State of Pins: 
-TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+   * Component: ARM::CMSIS:CORE:5.1.1
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
-(BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103RC
-VTarget = 3.300V
-State of Pins: 
-TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-compiling gps.c...
-..\..\User\gps\gps.c(36): warning:  #177-D: variable "beiJingTime" was declared but never referenced
-      nmeaTIME beiJingTime;//北京时间 
-..\..\User\gps\gps.c(101): warning:  #1-D: last line of file ends without a newline
-  /*********************************************END OF FILE**********************/
-..\..\User\gps\gps.c: 2 warnings, 0 errors
-"..\..\User\gps\gps.c" - 0 Error(s), 2 Warning(s).
-akpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...

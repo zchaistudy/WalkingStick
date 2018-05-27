@@ -2,7 +2,7 @@
 ..\..\output\gps_config.o: ..\..\User\gps\gps_config.h
 ..\..\output\gps_config.o: ..\..\Libraries\CMSIS\stm32f10x.h
 ..\..\output\gps_config.o: ..\..\Libraries\CMSIS\core_cm3.h
-..\..\output\gps_config.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdint.h
+..\..\output\gps_config.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\gps_config.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\gps_config.o: ..\..\User\stm32f10x_conf.h
 ..\..\output\gps_config.o: ..\..\Libraries\FWlib\inc\stm32f10x_adc.h
@@ -31,7 +31,7 @@
 ..\..\output\gps_config.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/nmea.h
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/./config.h
-..\..\output\gps_config.o: G:\software\keil5\ARM\ARMCC\bin\..\include\assert.h
+..\..\output\gps_config.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/./units.h
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/./gmath.h
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/./info.h
@@ -43,5 +43,5 @@
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/./parser.h
 ..\..\output\gps_config.o: ..\..\User\nmea_decode\include\nmea/./context.h
 ..\..\output\gps_config.o: ..\..\User\usart\bsp_usart1.h
-..\..\output\gps_config.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
+..\..\output\gps_config.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\gps_config.o: ..\..\User\usart\bsp_usart2.h

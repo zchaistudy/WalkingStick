@@ -29,7 +29,7 @@ void USART1_Config(u32 bound)
     USART_InitTypeDef USART_InitStructure;
 
     /* config USART1 clock */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOC , ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA , ENABLE);
 
     /* USART1 GPIO config */
     /* Configure USART1 Tx (PA.09) as alternate function push-pull */

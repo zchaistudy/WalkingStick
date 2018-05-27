@@ -3,5 +3,5 @@
 ..\..\output\sentence.o: ..\..\User\nmea_decode\include\nmea/info.h
 ..\..\output\sentence.o: ..\..\User\nmea_decode\include\nmea/time.h
 ..\..\output\sentence.o: ..\..\User\nmea_decode\include\nmea/config.h
-..\..\output\sentence.o: G:\software\keil5\ARM\ARMCC\bin\..\include\assert.h
-..\..\output\sentence.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
+..\..\output\sentence.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+..\..\output\sentence.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

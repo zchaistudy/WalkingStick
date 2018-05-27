@@ -43,42 +43,31 @@ int main(void)
 	nmeaTIME beiJingTime;  							//北京时间
 	char sendData[30]; 									//gprs需要发送的内容
 	int sendByBlueTooth[MAX_SEND];		  //发送避障数据以及方位数据
-	delayInit();
-	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
+//	delayInit();
+//	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
 	NVIC_Configuration();								//配置外部中断0优先级
 	UltrasonicWave_Configuration();			//初始化引脚
 	USART1_Config(38400);               //串口1初始化,用于调试
-	I2C_GPIO_Config();									//I2C通讯的初始化
+//	I2C_GPIO_Config();									//I2C通讯的初始化
 
-  InitLSM303D();											//方位模块的初始化
-	SysTick_Init();                  	  //嘀嗒定时器初始化
+//  InitLSM303D();											//方位模块的初始化
+//	SysTick_Init();                  	  //嘀嗒定时器初始化
 	GENERAL_TIM_Init();									//初始化定时器
-	USART3_Config(9600);             	 	//串口3初始化，用于gprs
-	GPS_Config();                    	 	//串口2初始化，用于gps
-	gprs_init("47.106.74.67","10001");
+//	USART3_Config(9600);             	 	//串口3初始化，用于gprs
+//	GPS_Config();                    	 	//串口2初始化，用于gps
+//	gprs_init("47.106.74.67","10001");
+	printf("holle word");
 	 while(1)           
 	{
-		i++;
-		if(i>100)
-		{
-			GPS_GPRS(GpsInfo,beiJingTime,sendData);
-			i=0;
-		}
+//		i++;
+//		if(i>100)
+//		{
+////			GPS_GPRS(GpsInfo,beiJingTime,sendData);
+//			i=0;
+//		}
 
-//			UltrasonicWave(num);								//获取超声波数据
-			if(direction_flag)
-			{
-					angle=getAngle();
-					direction_flag=0;
-					printf("%d",angle);
-			}
-			angle=0;
-//			num[AVER_NUM-1]=angle;
-//			for(i=0;i<AVER_NUM;i++)				//num的最后一个数据用来发送方位信息
-//			{
-//				printf("%d",num[i]);
-//			}
-//			delayMs(600);            //问题1：这个会使gprs卡住，不知道为什么
+			UltrasonicWave(num);								//获取超声波数据
+			delayMs(600);            //问题1：这个会使gprs卡住，不知道为什么
 	}
 }
 
