@@ -24,13 +24,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "bsp_usart1.h"
-#include "bsp_usart2.h"
 #include <stdio.h>
-#include "gps_config.h"
 #include "bsp_GeneralTim.h"
 #include "UltrasonicWave.h"
+#include "gps.h" 
 extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
+extern _SaveData Save_Data;
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
   */
@@ -160,12 +160,6 @@ void USART1_IRQHandler(void)
 
 
 
-void GPS_DMA_IRQHANDLER(void)
-{
-  
-  GPS_ProcessDMAIRQ();
-
-}
 
 
 
@@ -415,6 +409,46 @@ void EXTI0_IRQHandler(void)
 		direction_flag=1;												//将按键标志位进行标记
 		EXTI_ClearITPendingBit(EXTI_Line0);     //清除中断标志位
 	}  
+}
+
+/**
+  * @brief  串口2中断，用于gps
+  * @param  None
+  * @retval None
+  */
+
+void USART2_IRQHandler(void)                	//串口2中断服务程序
+{
+	u8 Res;
+	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) 
+	{
+		Res =USART_ReceiveData(USART2);						//读取接收到的数据
+	
+	if(Res == '$')
+	{
+		point1 = 0;	
+	}
+		
+
+	  USART_RX_BUF[point1++] = Res;
+
+	if(USART_RX_BUF[0] == '$' && USART_RX_BUF[4] == 'M' && USART_RX_BUF[5] == 'C')			//确定是否收到"GPRMC/GNRMC"这一帧数据
+	{
+		if(Res == '\n')									   
+		{
+			memset(Save_Data.GPS_Buffer, 0, GPS_Buffer_Length);      //将GPS数据初始化
+			memcpy(Save_Data.GPS_Buffer, USART_RX_BUF, point1); 		 //将读取的数据保存到GPS数据中
+			Save_Data.isGetData = true;
+			point1 = 0;
+			memset(USART_RX_BUF, 0, USART_REC_LEN);      						 //将串口接收数据清空				
+		}	
+	}
+	
+	if(point1 >= USART_REC_LEN)
+	{
+		point1 = USART_REC_LEN;
+	}	 		 
+   } 
 }
 
 

@@ -595,41 +595,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>gps</GroupName>
-          <Files>
-            <File>
-              <FileName>gps.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\gps\gps.c</FilePath>
-            </File>
-            <File>
-              <FileName>gps_config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\gps\gps_config.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_usart2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\usart\bsp_usart2.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>gprs</GroupName>
-          <Files>
-            <File>
-              <FileName>bsp_usart3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\gprs\bsp_usart3.c</FilePath>
-            </File>
-            <File>
-              <FileName>sim900a.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\gprs\sim900a.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>nmea_decode</GroupName>
           <Files>
             <File>
@@ -731,6 +696,16 @@
               <FileName>bsp_exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\key\bsp_exti.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>GPS</GroupName>
+          <Files>
+            <File>
+              <FileName>gps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\gps\gps.c</FilePath>
             </File>
           </Files>
         </Group>

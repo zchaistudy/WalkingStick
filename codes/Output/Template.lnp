@@ -29,11 +29,6 @@
 "..\..\output\stm32f10x_it.o"
 "..\..\output\bsp_systick.o"
 "..\..\output\bsp_usart1.o"
-"..\..\output\gps.o"
-"..\..\output\gps_config.o"
-"..\..\output\bsp_usart2.o"
-"..\..\output\bsp_usart3.o"
-"..\..\output\sim900a.o"
 "..\..\output\context.o"
 "..\..\output\generate.o"
 "..\..\output\generator.o"
@@ -49,6 +44,7 @@
 "..\..\output\bsp_delay.o"
 "..\..\output\bsp_angle.o"
 "..\..\output\bsp_exti.o"
+"..\..\output\gps.o"
 --library_type=microlib --strict --scatter "..\..\Output\Template.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
