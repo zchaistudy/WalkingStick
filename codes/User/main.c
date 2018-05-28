@@ -40,7 +40,6 @@ int main(void)
 	delayInit();												//初始化滴答定时器
 	
 	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
-	
 	NVIC_Configuration();								//配置外部中断0优先级
 	
 	UltrasonicWave_Configuration();			//初始化引脚
@@ -56,6 +55,7 @@ int main(void)
 	GENERAL_TIM_Init();									//初始化定时器
 	
 	USART2_Config();										//串口2，用于gps
+	
 	 while(1)           
 	{
 //		i++;
@@ -79,6 +79,12 @@ int main(void)
 //				printf("%d",num[i]);
 //			}
 //			delayMs(600);            //问题1：这个会使gprs卡住，不知道为什么
+////			GPS_GPRS(GpsInfo,beiJingTime,sendData);
+//			i=0;
+//		}
+
+			UltrasonicWave(num);								//获取超声波数据
+			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
 	}
 }
 

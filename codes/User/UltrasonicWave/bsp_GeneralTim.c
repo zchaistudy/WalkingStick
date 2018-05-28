@@ -54,13 +54,14 @@ static void TIM3_GPIO_Config(void)
 
   // 输入捕获通道 GPIO 初始化
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 	
-  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_4;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);	
+  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_6;
+  GPIO_Init(GPIOA, &GPIO_InitStructure);	
 	
-  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_5;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_7;
+  GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
   GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -124,6 +125,8 @@ static void GENERAL_TIM_Mode_Config(void)
   // 开启更新和捕获中断  
 	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC3, ENABLE );
 	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC4, ENABLE );
+//	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC3, DISABLE);
+//	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC4, DISABLE );
 	// 使能计数器
 	TIM_Cmd(GENERAL_TIM, ENABLE);
 }
@@ -136,7 +139,7 @@ static void TIM3_Mode_Config(void)
 	
   // 开启定时器时钟,即内部时钟CK_INT=72M
 	GENERAL_TIM_APBxClock_FUN(RCC_APB1Periph_TIM3,ENABLE);
-	GPIO_PinRemapConfig(GPIO_PartialRemap_TIM3, ENABLE);
+
 
 /*--------------------时基结构体初始化-------------------------*/	
   
