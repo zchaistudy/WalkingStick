@@ -67,7 +67,7 @@ int main(void)
 //		}
 
 			UltrasonicWave(num);								//获取超声波数据
-			delayMs(600);            //问题1：这个会使gprs卡住，不知道为什么
+			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
 	}
 }
 

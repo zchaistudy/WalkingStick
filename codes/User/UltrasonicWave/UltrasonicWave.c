@@ -14,10 +14,14 @@
 *********************************************************************************/
 
 #include "UltrasonicWave.h"
+#include "debug.h"
 
-
-
-
+////////调试开关//////////////
+#ifdef DEBUG_ON_OFF 
+#undef  DEBUG_ON_OFF
+#define DEBUG_ON_OFF 1
+#endif
+//////////////////////////////
 
 static void UltrasonicWave_StartMeasure(GPIO_TypeDef *  port, int32_t pin);              
 
@@ -103,7 +107,7 @@ void dealTIM_ICUserValueStructureData(TIM_ICUserValueTypeDef TIM_ICUserValueStru
 
 /*
  * 函数名：UltrasonicWave_StartMeasure
- * 描述  ：开始测距，发送一个>10us的脉冲，然后测量返回的高电平时间
+ * 描述  ：开始测距，打开中断，并发送一个>10us的脉冲
  * 输入  ：port = TRIG_PORTX ,pin = TRIG_PINX
  * 输出  ：无	
  */
@@ -114,6 +118,7 @@ void UltrasonicWave_StartMeasure(GPIO_TypeDef *  port, int32_t pin)
   GPIO_ResetBits(port,pin);
 
 }
+
 
 
 ///*
@@ -228,7 +233,7 @@ void UltrasonicWave(int* num)
 		TIM_ICUserValueStructure2.Capture_FinishFlag = 0;
 	    dealTIM_ICUserValueStructureData(TIM_ICUserValueStructure2, tag);
 	}	
-	getDistance(num);                     //获取障碍物距离
+//	getDistance(num);                     //获取障碍物距离
 	switch(tag)          //开始测距，发送一个>10us的脉冲，
 	{
 		case 0: UltrasonicWave_StartMeasure(TRIG_PORT1,TRIG_PIN1); break;
@@ -239,7 +244,16 @@ void UltrasonicWave(int* num)
 		case 5: UltrasonicWave_StartMeasure(TRIG_PORT6,TRIG_PIN6); break;
 	}
 	tag = (tag +1) % ULTR_NUM;
-//	printf("\r\n tag : %d \r\n", tag);
+	
+
+////////调试开关//////////////
+#ifdef DEBUG_ON_OFF 
+#undef  DEBUG_ON_OFF
+#endif
+#define DEBUG_ON_OFF 0
+//////////////////////////////
+	
+	p_debug("\r\n tag : %d \r\n", tag);
 	
 }
 

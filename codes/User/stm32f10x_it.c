@@ -29,8 +29,18 @@
 #include "gps_config.h"
 #include "bsp_GeneralTim.h"
 #include "UltrasonicWave.h"
+
+#include "debug.h"
 extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
+
+////////调试开关//////////////
+#ifdef DEBUG_ON_OFF 
+#undef  DEBUG_ON_OFF
+#define DEBUG_ON_OFF 0
+#endif
+//////////////////////////////
+
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
   */
@@ -182,6 +192,7 @@ void GENERAL_TIM_INT_FUN(void)
 	if ( TIM_GetITStatus ( GENERAL_TIM, TIM_IT_Update) != RESET )               
 	{	
 //		TIM_ICUserValueStructure.Capture_FinishFlag = 1;	
+		TIM_ICUserValueStructure2.Capture_CcrValue += GENERAL_TIM_PERIOD+1;
 		TIM_ClearITPendingBit ( GENERAL_TIM, TIM_FLAG_Update ); 		
 	}
 
@@ -213,7 +224,9 @@ void GENERAL_TIM_INT_FUN(void)
       // 开始捕获标志清0		
 			TIM_ICUserValueStructure.Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure.Capture_FinishFlag = 1;	
+            p_debug("tim2, cc0\r\n");
+            			
 		}
 		TIM_ClearITPendingBit (GENERAL_TIM,TIM_IT_CC3);	    
 	}	
@@ -248,7 +261,8 @@ void GENERAL_TIM_INT_FUN(void)
       // 开始捕获标志清0		
 			TIM_ICUserValueStructure.Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure.Capture_FinishFlag = 1;	
+             p_debug("tim2, cc1\r\n");			
 		}
 		TIM_ClearITPendingBit (GENERAL_TIM,TIM_IT_CC4);	    
 	}	
@@ -295,7 +309,8 @@ void TIM3_IRQHandler(void)
       // 开始捕获标志清0		
 			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;	
+			p_debug("tim3, cc1\r\n");
 		}
 		TIM_ClearITPendingBit (TIM3,TIM_IT_CC1);	    
 	}	
@@ -327,7 +342,8 @@ void TIM3_IRQHandler(void)
       // 开始捕获标志清0		
 			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;	
+			p_debug("tim3, cc2\r\n");			
 		}
 		TIM_ClearITPendingBit (TIM3,TIM_IT_CC2);	    
 	}	
@@ -362,7 +378,8 @@ void TIM3_IRQHandler(void)
       // 开始捕获标志清0		
 			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;
+			p_debug("tim3, cc3\r\n");
 		}
 		TIM_ClearITPendingBit (TIM3,TIM_IT_CC3);	    
 	}	
@@ -396,7 +413,8 @@ void TIM3_IRQHandler(void)
       // 开始捕获标志清0		
 			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;	
+           p_debug("tim3, cc4\r\n");			
 		}
 		TIM_ClearITPendingBit (TIM3,TIM_IT_CC4);	    
 	}	

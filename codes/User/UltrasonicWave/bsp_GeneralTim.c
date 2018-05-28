@@ -125,6 +125,8 @@ static void GENERAL_TIM_Mode_Config(void)
   // 开启更新和捕获中断  
 	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC3, ENABLE );
 	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC4, ENABLE );
+//	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC3, DISABLE);
+//	TIM_ITConfig (GENERAL_TIM, TIM_IT_Update | TIM_IT_CC4, DISABLE );
 	// 使能计数器
 	TIM_Cmd(GENERAL_TIM, ENABLE);
 }
