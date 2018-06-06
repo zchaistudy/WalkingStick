@@ -16,6 +16,9 @@
 #include "bsp_angle.h"
 #include "bsp_exti.h"
 #include "gps.h"
+#include "timer.h"
+#include "bsp_usart4.h"
+#include "gprs.h"
 
 #define _DEBUG_ 1										//用于调试
 #if _DEBUG_
@@ -27,6 +30,13 @@
 
 uint8_t direction_flag;
 
+//GPRS相关外设初始化函数
+static void Periph_GPRS_Init()
+{
+	UART4_Init_Config(115200);//GPRS使用串口4初始化
+	SysTick_Init_Config();//滴答定时器初始化
+	Timer2_Init_Config();	//定时器2初始化
+}
 
 int main(void)
 {
@@ -40,7 +50,6 @@ int main(void)
 	delayInit();												//初始化滴答定时器
 	
 	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
-	
 	NVIC_Configuration();								//配置外部中断0优先级
 	
 	UltrasonicWave_Configuration();			//初始化引脚
@@ -51,11 +60,16 @@ int main(void)
 	
   InitLSM303D();											//方位模块的初始化
 	
-	SysTick_Init();                  	  //嘀嗒定时器初始化
+//	SysTick_Init();                  	  //嘀嗒定时器初始化
 	
 	GENERAL_TIM_Init();									//初始化定时器
 	
 	USART2_Config();										//串口2，用于gps
+	
+	Periph_GPRS_Init();	//GPRS相关外设初始化函数
+	UART1_SendString("系统启动.......................\r\n");
+
+	
 	 while(1)           
 	{
 //		i++;
@@ -79,6 +93,14 @@ int main(void)
 //				printf("%d",num[i]);
 //			}
 //			delayMs(600);            //问题1：这个会使gprs卡住，不知道为什么
+////			GPS_GPRS(GpsInfo,beiJingTime,sendData);
+//			i=0;
+//		}
+
+			UltrasonicWave(num);								//获取超声波数据
+			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
+
+//			GPRS_test();	//GPRS测试函数
 	}
 }
 
