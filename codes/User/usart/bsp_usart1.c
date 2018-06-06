@@ -104,4 +104,25 @@ int fgetc(FILE *f)
     return (int)USART_ReceiveData(USART1);
 }
 
+
+/*******************************************************************************
+* 函数名  : UART1_SendString
+* 描述    : USART1发送字符串
+* 输入    : *s字符串指针
+* 输出    : 无
+* 返回    : 无 
+* 说明    : 无
+*******************************************************************************/
+void UART1_SendString(char* s)
+{
+	while(*s)//检测字符串结束符
+	{
+		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+		USART_SendData(USART1 ,*s++);//发送当前字符
+	}
+}
+
+
+
+
 /*********************************************END OF FILE**********************/

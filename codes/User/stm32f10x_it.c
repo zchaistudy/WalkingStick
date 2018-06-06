@@ -150,9 +150,10 @@ void PendSV_Handler(void)
   * @param  None
   * @retval None
   */
+extern void SysTickDelayTime_Counter(void);
 void SysTick_Handler(void)
 {
-	TimingDelay_Decrement();	
+	SysTickDelayTime_Counter();
 }
 
 /******************************************************************************/
