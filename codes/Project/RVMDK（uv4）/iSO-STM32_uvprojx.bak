@@ -701,6 +701,13 @@
         </Group>
         <Group>
           <GroupName>GPS</GroupName>
+          <Files>
+            <File>
+              <FileName>gps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\gps\gps.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
