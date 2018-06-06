@@ -29,6 +29,7 @@
 #include "UltrasonicWave.h"
 #include "debug.h"
 #include "gps.h" 
+#include "gprs.h"
 
 extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
@@ -162,9 +163,27 @@ void SysTick_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f10x_xx.s).                                            */
 /******************************************************************************/
+
+/**
+  * @brief  USART1_IRQHandler,用于接收求救信息
+  * @param  None
+  * @retval None
+  */
+
+
 void USART1_IRQHandler(void)
 {
-
+	u8 Res;
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
+	{
+		Res =USART_ReceiveData(USART1);						//读取接收到的数据
+		UART1_SendString("救命.......................\r\n");
+//		if(Res == '1')
+//		{
+//			UART1_SendString("救命.......................\r\n");
+////			GPRS_test();
+//		}
+	}
 
 }
 
@@ -429,6 +448,7 @@ void EXTI0_IRQHandler(void)
 		EXTI_ClearITPendingBit(EXTI_Line0);     //清除中断标志位
 	}  
 }
+
 
 /**
   * @brief  串口2中断，用于gps

@@ -54,7 +54,7 @@ int main(void)
 	
 	UltrasonicWave_Configuration();			//初始化引脚
 	
-	USART1_Config(38400);               //串口1初始化,用于调
+	USART1_Config(38400);               //串口1初始化,用于蓝牙
 	
 	I2C_GPIO_Config();									//I2C通讯的初始化
 	
@@ -67,18 +67,19 @@ int main(void)
 	USART2_Config();										//串口2，用于gps
 	
 	Periph_GPRS_Init();	//GPRS相关外设初始化函数
-	UART1_SendString("系统启动.......................\r\n");
+
 
 	
 	 while(1)           
 	{
+
 //		i++;
 //		if(i>100)
 //		{
 //			i=0;
 //		}
-		parseGpsBuffer();									
-		printGpsBuffer();
+//		parseGpsBuffer();									
+//		printGpsBuffer();
 //			UltrasonicWave(num);								//获取超声波数据
 //			if(direction_flag)
 //			{
@@ -97,8 +98,8 @@ int main(void)
 //			i=0;
 //		}
 
-			UltrasonicWave(num);								//获取超声波数据
-			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
+//			UltrasonicWave(num);								//获取超声波数据
+//			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
 
 //			GPRS_test();	//GPRS测试函数
 	}

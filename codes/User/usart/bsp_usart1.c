@@ -27,7 +27,7 @@ void USART1_Config(u32 bound)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
-
+		NVIC_InitTypeDef NVIC_InitStructure;
     /* config USART1 clock */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA , ENABLE);
 
@@ -50,8 +50,15 @@ void USART1_Config(u32 bound)
     USART_InitStructure.USART_Parity = USART_Parity_No ;
     USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+		
+		NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3 ;//抢占优先级3
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;		//子优先级3
+		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
+		NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
+		
     USART_Init(USART1, &USART_InitStructure);
-		USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);//开启串口接受中断
+		USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);	//开启串口接受中断
     USART_Cmd(USART1, ENABLE);
 }
 
