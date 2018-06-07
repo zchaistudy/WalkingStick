@@ -120,7 +120,7 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 		}
 		
 		delay_ms(50);
-		UART1_SendString(Uart4_Buf);//首次连接，显示服务器发来的连接成功消息
+		UART1_SendString(Uart4_Buf);//MY 首次连接，显示服务器发来的连接成功消息
 		
 		
 		ret = UART4_Send_AT_Command("AT+CIPSEND",">",3,50);//开始发送数据
@@ -132,7 +132,7 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 		UART4_SendString(content);
 		ret = UART4_Send_AT_Command_End(end_char,"SEND OK",1,250);//发送结束符，等待返回ok,等待5S发一次，因为发送数据时间可能较长
 			
-			if(ret == 0)
+		if(ret == 0)
 		{
 			return END_CHAR_ERROR;
 		}
@@ -142,70 +142,6 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 	}
 }
 
-/*******************************************************************************
-* 函数名 : GPRS_test
-* 描述   : GPRStest函数
-* 输入   : 
-* 输出   : 
-* 返回   : 
-* 注意   : 串口2负责与GA6模块通信，串口1用于串口调试，
-*******************************************************************************/
-void GPRS_test(void)
-{
-	u8  i;
-	u8  run_led_flag = 0;
-	int  ret;
-		
-	UART1_SendString("GPRS数据传输功能启动.......................\r\n");
-	
-	//后期决定是否删除
-	for(i = 0;i < STABLE_TIMES;i++)
-	{
-		delay_ms(50);
-	}
-	
-	memset(error_result,'\0',20);
-
-	delay_ms(50);
-	
-	if(run_led_flag == 0)
-	{
-		UART1_SendString("LED0_ON\r\n");
-		run_led_flag = 1;
-	}
-	else
-	{
-		UART1_SendString("LED0_OFF\r\n");
-		run_led_flag = 0;
-	}
-/****************************  GPRS数据发送  ******************************/
-	
-	ret = check_status();
-	if(ret == 1)
-	{
-		ret = send_data_to_server("\"182.254.216.22\",8687","GA6 tcp test!");//发送数据到服务器					
-	}
-	
-	if(ret == 1)
-	{
-		sprintf(error_result,"成功发送到server\r\n");
-		UART1_SendString(error_result);
-		delay_ms(50);
-		UART1_SendString("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
-		UART1_SendString(Uart4_Buf);
-		UART1_SendString("\r\n");
-		
-	}
-	else //数据发送失败，此时可能连接时间过长导致的失败，这样就断开连接，然后就可以继续连接上了
-	{
-		sprintf(error_result,"错误代码 : %d\r\n",ret);
-		UART1_SendString(error_result);
-		UART4_Send_AT_Command("AT+CIPCLOSE","OK",3,150);//关闭链接
-		
-	}
-	
-
-}
 
 /*******************************************************************************
 * 函数名  : USART2_IRQHandler
@@ -340,4 +276,99 @@ u8 Find(char *a)
 		
 }
 
+
+/*******************************************************************************
+* 函数名 : GPRS_Send_help
+* 描述   : GPRS_Send_help函数
+* 输入   : 
+* 输出   : 
+* 返回   : 
+* 注意   : 串口2负责与GA6模块通信，串口1用于串口调试，
+*******************************************************************************/
+void GPRS_Send_help(void)
+{
+	u8  i;
+	int  ret;
+		
+	UART1_SendString("GPRS传输help功能启动.......................\r\n");
+	
+	//后期决定是否删除
+	for(i = 0;i < STABLE_TIMES;i++)
+	{
+		delay_ms(50);
+	}
+	
+	memset(error_result,'\0',20);
+
+	delay_ms(50);
+		
+	ret = check_status();
+	if(ret == 1)
+	{
+		ret = send_data_to_server("\"47.106.74.67\",10001","help");//发送数据到服务器					
+	}
+	
+	if(ret == 1)
+	{
+		sprintf(error_result,"成功发送到server\r\n");
+		UART1_SendString(error_result);
+		delay_ms(50);
+		UART1_SendString("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
+		UART1_SendString(Uart4_Buf);
+		UART1_SendString("\r\n");
+		
+	}
+	else //数据发送失败，此时可能连接时间过长导致的失败，这样就断开连接，然后就可以继续连接上了
+	{
+		sprintf(error_result,"错误代码 : %d\r\n",ret);
+		UART1_SendString(error_result);
+		UART4_Send_AT_Command("AT+CIPCLOSE","OK",3,150);//关闭链接
+		
+	}
+	
+
+}
+
+void GPRS_Send_GPS(float lo, float la)
+{
+	u8  i;
+	int  ret;
+	char sendData[30]; //需要发送的内容
+		
+	UART1_SendString("GPRS传输坐标功能启动.......................\r\n");
+	
+	for(i = 0;i < STABLE_TIMES;i++)
+	{
+		delay_ms(50);
+	}
+	memset(error_result,'\0',20);
+	memset(sendData,'\0',30);
+
+	delay_ms(50);
+		
+	ret = check_status();
+	if(ret == 1)
+	{
+		sprintf(sendData,"lo:%f,la:%f\r\n",lo, la);//需要发送的内容
+		ret = send_data_to_server("\"47.106.74.67\",10001",sendData);//发送数据到服务器					
+	}
+	
+	if(ret == 1)
+	{
+		sprintf(error_result,"成功发送到server\r\n");
+		UART1_SendString(error_result);
+		delay_ms(50);
+		UART1_SendString("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
+		UART1_SendString(Uart4_Buf);
+		UART1_SendString("\r\n");
+		
+	}
+	else //数据发送失败，此时可能连接时间过长导致的失败，这样就断开连接，然后就可以继续连接上了
+	{
+		sprintf(error_result,"错误代码 : %d\r\n",ret);
+		UART1_SendString(error_result);
+		UART4_Send_AT_Command("AT+CIPCLOSE","OK",3,150);//关闭链接
+		
+	}
+}
 

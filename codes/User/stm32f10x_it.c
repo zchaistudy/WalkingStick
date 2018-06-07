@@ -152,6 +152,7 @@ void PendSV_Handler(void)
   * @retval None
   */
 extern void SysTickDelayTime_Counter(void);
+
 void SysTick_Handler(void)
 {
 	SysTickDelayTime_Counter();
@@ -181,7 +182,10 @@ void USART1_IRQHandler(void)
 //		if(Res == '1')
 //		{
 //			UART1_SendString("救命.......................\r\n");
-////			GPRS_test();
+//		GPRS_Send_help();	//使用GPRS发送求救信号
+//		GPRS_Send_GPS(22.2, 33.3);	//使用GPRS发送位置坐标
+
+		
 //		}
 	}
 

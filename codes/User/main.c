@@ -47,7 +47,7 @@ int main(void)
 	
 	int sendByBlueTooth[MAX_SEND];		  //发送避障数据以及方位数据
 	
-	delayInit();												//初始化滴答定时器
+//	delayInit();												//初始化滴答定时器
 	
 	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
 	NVIC_Configuration();								//配置外部中断0优先级
@@ -73,6 +73,10 @@ int main(void)
 	 while(1)           
 	{
 
+//		printf("系统启动......");
+//		GPRS_Send_help();	//使用GPRS发送求救信号
+//		GPRS_Send_GPS(22.2, 33.3);	//使用GPRS发送位置坐标
+		
 //		i++;
 //		if(i>100)
 //		{
@@ -101,7 +105,6 @@ int main(void)
 //			UltrasonicWave(num);								//获取超声波数据
 //			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
 
-//			GPRS_test();	//GPRS测试函数
 	}
 }
 
