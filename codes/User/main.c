@@ -27,7 +27,7 @@
     #define DEBUG(x) 
 #endif
 
-
+extern char *pdu_content ;
 uint8_t direction_flag;
 
 //GPRS相关外设初始化函数
@@ -40,7 +40,7 @@ static void Periph_GPRS_Init()
 
 int main(void)
 {
-	
+	int ret;
 	int angle=0; 
 	int i=0;
 	int num[AVER_NUM];									//保存超声波数据
@@ -50,7 +50,7 @@ int main(void)
 //	delayInit();												//初始化滴答定时器
 	
 	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
-	NVIC_Configuration();								//配置外部中断0优先级
+//	NVIC_Configuration();								//配置外部中断0优先级
 	
 	UltrasonicWave_Configuration();			//初始化引脚
 	
@@ -68,8 +68,8 @@ int main(void)
 	
 	Periph_GPRS_Init();	//GPRS相关外设初始化函数
 
+	send_pdu_message(pdu_content);     //发送pdu短信
 
-	
 	 while(1)           
 	{
 

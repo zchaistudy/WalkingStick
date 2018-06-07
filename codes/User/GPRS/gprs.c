@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include "gprs.h"
 
+char *AT_CMGS = "AT+CMGS=71";	
+char *pdu_content = "0011000D91685112584368F90008AA3851736CE85BF98C6151FA73B07D27602560C551B5FF0C8BF7901A8FC7624B673A006100700070786E8BA476F24EBA4F4D7F6EFF01FF01FF01";
 #define Buf4_Max 	  100 //串口2缓存长度
 #define STABLE_TIMES  10  //等待系统上电后的稳定
 
@@ -372,3 +374,41 @@ void GPRS_Send_GPS(float lo, float la)
 	}
 }
 
+//发送信息函数
+int send_pdu_message(char *content)
+{
+	int ret;
+	char end_char[2];
+	
+	end_char[0] = 0x1A;
+	end_char[1] = '\0';
+	
+	//设置存储位置，不做返回值判断了
+	ret = UART4_Send_AT_Command("AT+CPMS=\"SM\",\"ME\",\"SM\"","OK",3,100);
+	if(ret == 0)
+	{
+		return AT_CPMS_ERROR;
+	}
+		
+	ret = UART4_Send_AT_Command("AT+CMGF=0","OK",3,50);//配置为PDU模式
+	if(ret == 0)
+	{
+		return AT_CMGF_ERROR;
+	}
+	
+	ret = UART4_Send_AT_Command(AT_CMGS,">",3,50);//发送字符个数指令
+	
+	if(ret == 0)
+	{
+		return AT_CMGS_ERROR;
+	}
+	
+	UART4_SendString(content);
+	ret = UART4_Send_AT_Command_End(end_char,"OK",3,250);//发送结束符，等待返回ok,等待5S发一次，因为短信成功发送的状态时间比较长
+	if(ret == 0)
+	{
+		return END_CHAR_ERROR;
+	}
+	
+	return 1;
+}
