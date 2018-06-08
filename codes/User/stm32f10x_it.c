@@ -181,15 +181,17 @@ void USART1_IRQHandler(void)
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
-		UART1_SendString("救命.......................\r\n");
-//		if(Res == '1')
-//		{
-//			UART1_SendString("救命.......................\r\n");
-//			GPRS_Send_help();	//使用GPRS发送求救信号
-//			GPRS_Send_GPS(lo, la);	//使用GPRS发送位置坐标
+		if(Res == '1')
+		{
+			UART1_SendString("救命.......................\r\n");       //替换成相应的呼救函数
+		}
+		else if(Res == 1)
+		{
+			
+		}
+			
 
-//		
-//		}
+
 	}
 
 }
