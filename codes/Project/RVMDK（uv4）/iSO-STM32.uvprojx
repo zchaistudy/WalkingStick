@@ -663,11 +663,6 @@
           <GroupName>UltrasonicWave</GroupName>
           <Files>
             <File>
-              <FileName>bsp_GeneralTim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\UltrasonicWave\bsp_GeneralTim.c</FilePath>
-            </File>
-            <File>
               <FileName>UltrasonicWave.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\UltrasonicWave\UltrasonicWave.c</FilePath>
@@ -676,6 +671,11 @@
               <FileName>bsp_delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\UltrasonicWave\bsp_delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>waveConfig.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\UltrasonicWave\waveConfig.c</FilePath>
             </File>
           </Files>
         </Group>

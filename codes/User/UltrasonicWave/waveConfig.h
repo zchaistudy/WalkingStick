@@ -37,15 +37,40 @@ typedef struct
 {   
 	uint8_t   Capture_FinishFlag;   // 捕获结束标志位
 	uint8_t   Capture_StartFlag;    // 捕获开始标志位
-	uint16_t  Capture_CcrValue;     // 捕获寄存器的值
+	int16_t  Capture_CcrValue;     // 捕获寄存器的值
 	uint16_t  Capture_Period;       // 自动重装载寄存器更新标志 
+	uint8_t   Capture_CCx;          //对应通道标志
 }TIM_ICUserValueTypeDef;
 
-extern TIM_ICUserValueTypeDef TIM_ICUserValueStructure;
-extern TIM_ICUserValueTypeDef TIM_ICUserValueStructure2;
+extern TIM_ICUserValueTypeDef TIM_ICUserValueStructure[];
+
 /**************************函数声明********************************/
 void GENERAL_TIM_Init(void);
 
+
+
+
+
+#define	TRIG_PORT1     			  GPIOC		//TRIG       
+#define	TRIG_PIN1      			  GPIO_Pin_0   //TRIG       
+
+#define	TRIG_PORT2     			  GPIOC		//TRIG       
+#define	TRIG_PIN2      			  GPIO_Pin_1   //TRIG     
+
+#define	TRIG_PORT3     			  GPIOC		//TRIG       
+#define	TRIG_PIN3      			  GPIO_Pin_2   //TRIG       
+
+#define	TRIG_PORT4     			  GPIOC		//TRIG       
+#define	TRIG_PIN4      			  GPIO_Pin_3   //TRIG     
+
+#define	TRIG_PORT5     			  GPIOC		//TRIG       
+#define	TRIG_PIN5     			  GPIO_Pin_4   //TRIG 
+
+#define	TRIG_PORT6     			  GPIOC		//TRIG       
+#define	TRIG_PIN6      			  GPIO_Pin_5   //TRIG 
+
+
+#define RCC_APB2Periph_GPIOx  RCC_APB2Periph_GPIOC
 
 #endif	/* __BSP_GENERALTIME_H */
 
