@@ -34,7 +34,7 @@
 extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
 extern _SaveData Save_Data;
-
+extern int8_t  MEASURE_FLAG;          //测距请求标志
 ////////调试开关//////////////
 #ifdef DEBUG_ON_OFF 
 #undef  DEBUG_ON_OFF
@@ -187,10 +187,8 @@ void USART1_IRQHandler(void)
 		}
 		else if(Res == 1)
 		{
-			
+			MEASURE_FLAG=1;
 		}
-			
-
 
 	}
 
