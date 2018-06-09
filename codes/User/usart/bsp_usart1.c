@@ -129,7 +129,24 @@ void UART1_SendString(char* s)
 	}
 }
 
-
+/*******************************************************************************
+* 函数名  : SendGlasses
+* 描述    : USART1向眼镜发送拐杖超声波数据
+* 输入    : *s指针
+* 输出    : 无
+* 返回    : 无 
+* 说明    : 无
+*******************************************************************************/
+void SendGlasses(int* s)
+{
+	while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+	USART_SendData(USART1 ,'!');                                  //发送超声波数据标志位
+	while(*s)//检测字符串结束符
+	{
+		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+		USART_SendData(USART1 ,*s++);																//发送当前字符
+	}
+}
 
 
 /*********************************************END OF FILE**********************/
