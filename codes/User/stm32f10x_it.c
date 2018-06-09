@@ -175,8 +175,8 @@ void SysTick_Handler(void)
 void USART1_IRQHandler(void)
 {
 	u8 Res;
-//	float lo, la;
-//	lo=22.2, la=33.3;
+	float lo, la;			//存放GPS数据
+	lo=22.2, la=33.3;
 	
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
@@ -190,6 +190,17 @@ void USART1_IRQHandler(void)
 			MEASURE_FLAG=1;
 		}
 
+		if(Res == '1')	//发送求救 信息和GPRS信息
+		{
+			//发送短信
+			GPRS_Send_help();	//使用GPRS发送求救信号
+			GPRS_Send_GPS(lo, la);	//使用GPRS发送当前位置坐标
+
+		}
+		if(Res == '2')		//一般性求助
+		{
+			//发送短信
+		}
 	}
 
 }

@@ -61,7 +61,7 @@ int main(void)
   InitLSM303D();											//方位模块的初始化
 	
 //	SysTick_Init();                  	  //嘀嗒定时器初始化
-	
+	 
 	GENERAL_TIM_Init();									//初始化定时器
 	
 	USART2_Config();										//串口2，用于gps
