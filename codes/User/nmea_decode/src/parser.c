@@ -20,7 +20,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "bsp_usart2.h"
+
 
 typedef struct _nmeaParserNODE
 {

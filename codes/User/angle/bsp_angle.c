@@ -43,12 +43,14 @@ void I2C_GPIO_Config(void)
 {
   GPIO_InitTypeDef  GPIO_InitStructure;  
   
-  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_6;
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB , ENABLE);
+	
+  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_6;				//SCL
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;  
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_7;
+  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_7;				//SDA
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -290,29 +292,22 @@ int getAngle()
 	M_y=(BUF[2] << 8) | BUF[3]; //合成16位数据
 	M_z=(BUF[4] << 8) | BUF[5]; //合成16位数据
 	angle= atan2(M_y,M_x) * (180 / 3.14159265) + 180; // angle in degrees
+	printf("angle=%f\r\n",angle);
 		if(angle<30||angle>350)//南
-//			printf(" S11316TE");
 		num = 0;
 		if(angle>=30&&angle<=62)//西南
-//			printf("S11327TE");
 		num = 1;
 		if(angle>62&&angle<105)//西
-//			printf("S11338TE");
 			num =2;
 		if(angle>=105&&angle<160)//西北
-//			printf("S11349TE");
 			num = 3;
 		if(angle>160&&angle<200)//北
-//			printf("S11349TE");
 			num = 4;
 		if(angle>200&&angle<300)//东北
-//			printf("S11349TE");
 			num = 5;
 		if(angle>300&angle<330) //东
-//			printf("S11349TE");
 			num = 6;
 		if(angle>330&&angle<350)  //东南
-//			printf("S11349TE");
 			num = 7;
 		return num;
 }

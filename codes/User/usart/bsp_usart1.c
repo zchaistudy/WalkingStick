@@ -27,9 +27,9 @@ void USART1_Config(u32 bound)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
-
+		NVIC_InitTypeDef NVIC_InitStructure;
     /* config USART1 clock */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA| RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA , ENABLE);
 
     /* USART1 GPIO config */
     /* Configure USART1 Tx (PA.09) as alternate function push-pull */
@@ -50,8 +50,15 @@ void USART1_Config(u32 bound)
     USART_InitStructure.USART_Parity = USART_Parity_No ;
     USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+		
+		NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3 ;//抢占优先级3
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;		//子优先级3
+		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
+		NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
+		
     USART_Init(USART1, &USART_InitStructure);
-		USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);//开启串口接受中断
+		USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);	//开启串口接受中断
     USART_Cmd(USART1, ENABLE);
 }
 
@@ -103,5 +110,43 @@ int fgetc(FILE *f)
 
     return (int)USART_ReceiveData(USART1);
 }
+
+
+/*******************************************************************************
+* 函数名  : UART1_SendString
+* 描述    : USART1发送字符串
+* 输入    : *s字符串指针
+* 输出    : 无
+* 返回    : 无 
+* 说明    : 无
+*******************************************************************************/
+void UART1_SendString(char* s)
+{
+	while(*s)//检测字符串结束符
+	{
+		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+		USART_SendData(USART1 ,*s++);//发送当前字符
+	}
+}
+
+/*******************************************************************************
+* 函数名  : SendGlasses
+* 描述    : USART1向眼镜发送拐杖超声波数据
+* 输入    : *s指针
+* 输出    : 无
+* 返回    : 无 
+* 说明    : 无
+*******************************************************************************/
+void SendGlasses(int* s)
+{
+	while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+	USART_SendData(USART1 ,'!');                                  //发送超声波数据标志位
+	while(*s)//检测字符串结束符
+	{
+		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+		USART_SendData(USART1 ,*s++);																//发送当前字符
+	}
+}
+
 
 /*********************************************END OF FILE**********************/

@@ -24,13 +24,24 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "bsp_usart1.h"
-#include "bsp_usart2.h"
 #include <stdio.h>
-#include "gps_config.h"
-#include "bsp_GeneralTim.h"
+#include "waveConfig.h"
 #include "UltrasonicWave.h"
+#include "debug.h"
+#include "gps.h" 
+#include "gprs.h"
+
 extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
+extern _SaveData Save_Data;
+extern int8_t  MEASURE_FLAG;          //测距请求标志
+////////调试开关//////////////
+#ifdef DEBUG_ON_OFF 
+#undef  DEBUG_ON_OFF
+#define DEBUG_ON_OFF 0
+#endif
+//////////////////////////////
+
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
   */
@@ -140,9 +151,11 @@ void PendSV_Handler(void)
   * @param  None
   * @retval None
   */
+extern void SysTickDelayTime_Counter(void);
+
 void SysTick_Handler(void)
 {
-	TimingDelay_Decrement();	
+	SysTickDelayTime_Counter();
 }
 
 /******************************************************************************/
@@ -151,255 +164,258 @@ void SysTick_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f10x_xx.s).                                            */
 /******************************************************************************/
-void USART1_IRQHandler(void)
-{
-
-
-}
-
-
-
-
-void GPS_DMA_IRQHANDLER(void)
-{
-  
-  GPS_ProcessDMAIRQ();
-
-}
-
-
-
 
 /**
-  * @brief  This function handles PPP interrupt request.
+  * @brief  USART1_IRQHandler,用于接收求救信息
   * @param  None
   * @retval None
   */
 
-void GENERAL_TIM_INT_FUN(void)
+
+void USART1_IRQHandler(void)
 {
-	// 当要被捕获的信号的周期大于定时器的最长定时时，定时器就会溢出，产生更新中断
-	if ( TIM_GetITStatus ( GENERAL_TIM, TIM_IT_Update) != RESET )               
-	{	
-//		TIM_ICUserValueStructure.Capture_FinishFlag = 1;	
-		TIM_ClearITPendingBit ( GENERAL_TIM, TIM_FLAG_Update ); 		
+	u8 Res;
+	float lo, la;			//存放GPS数据
+	lo=22.2, la=33.3;
+	
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
+	{
+		Res =USART_ReceiveData(USART1);						//读取接收到的数据
+		if(Res == '1')
+		{
+			UART1_SendString("救命.......................\r\n");       //替换成相应的呼救函数
+		}
+		else if(Res == 1)
+		{
+			MEASURE_FLAG=1;
+		}
+
+		if(Res == '1')	//发送求救 信息和GPRS信息
+		{
+			//发送短信
+			GPRS_Send_help();	//使用GPRS发送求救信号
+			GPRS_Send_GPS(lo, la);	//使用GPRS发送当前位置坐标
+
+		}
+		if(Res == '2')		//一般性求助
+		{
+			//发送短信
+		}
 	}
 
-//第一个超声波模块上升沿捕获中断
-	if ( TIM_GetITStatus (GENERAL_TIM, TIM_IT_CC3 ) != RESET)
+}
+
+
+
+
+
+
+
+
+void GENERAL1_TIM_INT_FUN(void)
+{
+	// 当要被捕获的信号的周期大于定时器的最长定时时，定时器就会溢出，产生更新中断
+	// 这个时候我们需要把这个最长的定时周期加到捕获信号的时间里面去
+	if ( TIM_GetITStatus ( GENERAL1_TIM, TIM_IT_Update) != RESET )               
+	{	
+		TIM_ICUserValueStructure[0].Capture_CcrValue += GENERAL1_TIM_PERIOD;
+		TIM_ICUserValueStructure[1].Capture_CcrValue += GENERAL1_TIM_PERIOD;	
+		TIM_ICUserValueStructure[2].Capture_CcrValue += GENERAL1_TIM_PERIOD;	
+		TIM_ICUserValueStructure[3].Capture_CcrValue += GENERAL1_TIM_PERIOD;			
+		TIM_ClearITPendingBit ( GENERAL1_TIM, TIM_FLAG_Update ); 		
+	}
+
+//第一
+	if ( TIM_GetITStatus (GENERAL1_TIM, GENERAL1_TIM_IT_CC1 ) != RESET)
 	{
 		// 第一次捕获
-		if ( TIM_ICUserValueStructure.Capture_StartFlag == 0 )
+		if ( TIM_ICUserValueStructure[0].Capture_StartFlag == 0 )
 		{
-			// 计数器清0
-			TIM_SetCounter ( GENERAL_TIM, 0 );
-			// 自动重装载寄存器更新标志清0
-			TIM_ICUserValueStructure.Capture_Period = 0;
       // 存捕获比较寄存器的值的变量的值清0			
-			TIM_ICUserValueStructure.Capture_CcrValue = 0;
-
+			TIM_ICUserValueStructure[0].Capture_CcrValue = 0;
+            TIM_ICUserValueStructure[0].Capture_First  = GENERAL1_TIM_GetCapture1_FUN (GENERAL1_TIM);
 			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
-			TIM_OC3PolarityConfig(GENERAL_TIM, TIM_ICPolarity_Falling);
+			GENERAL1_TIM_OC1PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Falling);
       // 开始捕获标准置1			
-			TIM_ICUserValueStructure.Capture_StartFlag = 1;			
+			TIM_ICUserValueStructure[0].Capture_StartFlag = 1;			
 		}
 		// 下降沿捕获中断
 		else // 第二次捕获
 		{
 			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
-			TIM_ICUserValueStructure.Capture_CcrValue = TIM_GetCapture3 (GENERAL_TIM);
+			TIM_ICUserValueStructure[0].Capture_CcrValue += GENERAL1_TIM_GetCapture1_FUN (GENERAL1_TIM) - TIM_ICUserValueStructure[0].Capture_First;
+
 			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
-			TIM_OC3PolarityConfig(GENERAL_TIM, TIM_ICPolarity_Rising);
+			GENERAL1_TIM_OC1PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Rising);
       // 开始捕获标志清0		
-			TIM_ICUserValueStructure.Capture_StartFlag = 0;
+			TIM_ICUserValueStructure[0].Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure[0].Capture_FinishFlag = 1;		
 		}
-		TIM_ClearITPendingBit (GENERAL_TIM,TIM_IT_CC3);	    
+
+		TIM_ClearITPendingBit (GENERAL1_TIM,GENERAL1_TIM_IT_CC1);	    
 	}	
 
-//第二个超声波模块上升沿捕获中断
-	else if ( TIM_GetITStatus (GENERAL_TIM, TIM_IT_CC4 ) != RESET)
+//第二
+	if ( TIM_GetITStatus (GENERAL1_TIM, GENERAL1_TIM_IT_CC2 ) != RESET)
 	{
 		// 第一次捕获
-		if ( TIM_ICUserValueStructure.Capture_StartFlag == 0 )
+		if ( TIM_ICUserValueStructure[1].Capture_StartFlag == 0 )
 		{
-			// 计数器清0
-			TIM_SetCounter ( GENERAL_TIM, 0 );
-			// 自动重装载寄存器更新标志清0
-			TIM_ICUserValueStructure.Capture_Period = 0;
       // 存捕获比较寄存器的值的变量的值清0			
-			TIM_ICUserValueStructure.Capture_CcrValue = 0;
-
+			TIM_ICUserValueStructure[1].Capture_CcrValue = 0;
+            TIM_ICUserValueStructure[1].Capture_First  = GENERAL1_TIM_GetCapture2_FUN (GENERAL1_TIM);
 			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
-			TIM_OC4PolarityConfig(GENERAL_TIM, TIM_ICPolarity_Falling);
+			GENERAL1_TIM_OC2PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Falling);
       // 开始捕获标准置1			
-			TIM_ICUserValueStructure.Capture_StartFlag = 1;			
+			TIM_ICUserValueStructure[1].Capture_StartFlag = 1;			
 		}
 		// 下降沿捕获中断
 		else // 第二次捕获
 		{
 			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
-			TIM_ICUserValueStructure.Capture_CcrValue = 
-			TIM_GetCapture4 (GENERAL_TIM);
+			TIM_ICUserValueStructure[1].Capture_CcrValue += GENERAL1_TIM_GetCapture2_FUN (GENERAL1_TIM) - TIM_ICUserValueStructure[1].Capture_First;
 
 			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
-			TIM_OC4PolarityConfig(GENERAL_TIM, TIM_ICPolarity_Rising);
+			GENERAL1_TIM_OC2PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Rising);
       // 开始捕获标志清0		
-			TIM_ICUserValueStructure.Capture_StartFlag = 0;
+			TIM_ICUserValueStructure[1].Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure[1].Capture_FinishFlag = 1;		
 		}
-		TIM_ClearITPendingBit (GENERAL_TIM,TIM_IT_CC4);	    
+
+		TIM_ClearITPendingBit (GENERAL1_TIM,GENERAL1_TIM_IT_CC2);	    
+	}
+
+//第三
+	if ( TIM_GetITStatus (GENERAL1_TIM, GENERAL1_TIM_IT_CC3 ) != RESET)
+	{
+		// 第一次捕获
+		if ( TIM_ICUserValueStructure[2].Capture_StartFlag == 0 )
+		{
+      // 存捕获比较寄存器的值的变量的值清0			
+			TIM_ICUserValueStructure[2].Capture_CcrValue = 0;
+            TIM_ICUserValueStructure[2].Capture_First  = GENERAL1_TIM_GetCapture3_FUN (GENERAL1_TIM);
+			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
+			GENERAL1_TIM_OC3PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Falling);
+      // 开始捕获标准置1			
+			TIM_ICUserValueStructure[2].Capture_StartFlag = 1;			
+		}
+		// 下降沿捕获中断
+		else // 第二次捕获
+		{
+			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
+			TIM_ICUserValueStructure[2].Capture_CcrValue += GENERAL1_TIM_GetCapture3_FUN (GENERAL1_TIM) - TIM_ICUserValueStructure[2].Capture_First;
+
+			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
+			GENERAL1_TIM_OC3PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Rising);
+      // 开始捕获标志清0		
+			TIM_ICUserValueStructure[2].Capture_StartFlag = 0;
+      // 捕获完成标志置1			
+			TIM_ICUserValueStructure[2].Capture_FinishFlag = 1;			
+		}
+
+		TIM_ClearITPendingBit (GENERAL1_TIM,GENERAL1_TIM_IT_CC3);	    
+	}
+
+//第四
+	if ( TIM_GetITStatus (GENERAL1_TIM, GENERAL1_TIM_IT_CC4 ) != RESET)
+	{
+		// 第一次捕获
+		if ( TIM_ICUserValueStructure[3].Capture_StartFlag == 0 )
+		{
+      // 存捕获比较寄存器的值的变量的值清0			
+			TIM_ICUserValueStructure[3].Capture_CcrValue = 0;
+            TIM_ICUserValueStructure[3].Capture_First  = GENERAL1_TIM_GetCapture4_FUN (GENERAL1_TIM);
+			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
+			GENERAL1_TIM_OC4PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Falling);
+      // 开始捕获标准置1			
+			TIM_ICUserValueStructure[3].Capture_StartFlag = 1;			
+		}
+		// 下降沿捕获中断
+		else // 第二次捕获
+		{
+			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
+			TIM_ICUserValueStructure[3].Capture_CcrValue += GENERAL1_TIM_GetCapture4_FUN (GENERAL1_TIM) - TIM_ICUserValueStructure[3].Capture_First;
+
+			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
+			GENERAL1_TIM_OC4PolarityConfig_FUN(GENERAL1_TIM, TIM_ICPolarity_Rising);
+      // 开始捕获标志清0		
+			TIM_ICUserValueStructure[3].Capture_StartFlag = 0;
+      // 捕获完成标志置1			
+			TIM_ICUserValueStructure[3].Capture_FinishFlag = 1;		
+		}
+
+		TIM_ClearITPendingBit (GENERAL1_TIM,GENERAL1_TIM_IT_CC4);	    
 	}	
 }
 
 
-void TIM3_IRQHandler(void)
+void GENERAL2_TIM_INT_FUN(void)
 {
 	// 当要被捕获的信号的周期大于定时器的最长定时时，定时器就会溢出，产生更新中断
-	if ( TIM_GetITStatus ( TIM3, TIM_IT_Update) != RESET )               
+	// 这个时候我们需要把这个最长的定时周期加到捕获信号的时间里面去
+	if ( TIM_GetITStatus ( GENERAL2_TIM, TIM_IT_Update) != RESET )               
 	{	
-//		TIM_ICUserValueStructure.Capture_FinishFlag = 1;	
-		TIM_ClearITPendingBit ( TIM3, TIM_FLAG_Update ); 		
+		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL1_TIM_PERIOD;		
+		TIM_ClearITPendingBit ( GENERAL2_TIM, TIM_FLAG_Update ); 		
 	}
-//printf("tim3\r\n");
-//第三个超声波模块上升沿捕获中断
-	if ( TIM_GetITStatus (TIM3, TIM_IT_CC1 ) != RESET)
-	{  	
-//printf("cc1\r\n");		
-		// 第一次捕获
-		if ( TIM_ICUserValueStructure2.Capture_StartFlag == 0 )
-		{
-			// 计数器清0
-			TIM_SetCounter ( TIM3, 0 );
-			// 自动重装载寄存器更新标志清0
-			TIM_ICUserValueStructure2.Capture_Period = 0;
-      // 存捕获比较寄存器的值的变量的值清0			
-			TIM_ICUserValueStructure2.Capture_CcrValue = 0;
 
+//第一
+	if ( TIM_GetITStatus (GENERAL2_TIM, GENERAL1_TIM_IT_CC3 ) != RESET)
+	{
+		// 第一次捕获
+		if ( TIM_ICUserValueStructure[4].Capture_StartFlag == 0 )
+		{
+      // 存捕获比较寄存器的值的变量的值清0			
+			TIM_ICUserValueStructure[4].Capture_CcrValue = 0;
+            TIM_ICUserValueStructure[4].Capture_First  = GENERAL2_TIM_GetCapture3_FUN (GENERAL2_TIM);
 			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
-			TIM_OC1PolarityConfig(TIM3, TIM_ICPolarity_Falling);
+			GENERAL2_TIM_OC3PolarityConfig_FUN(GENERAL2_TIM, TIM_ICPolarity_Falling);
       // 开始捕获标准置1			
-			TIM_ICUserValueStructure2.Capture_StartFlag = 1;			
+			TIM_ICUserValueStructure[4].Capture_StartFlag = 1;			
 		}
 		// 下降沿捕获中断
 		else // 第二次捕获
 		{
 			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
-			TIM_ICUserValueStructure2.Capture_CcrValue = 
-			TIM_GetCapture1 (TIM3);
+			TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL2_TIM_GetCapture3_FUN (GENERAL2_TIM) - TIM_ICUserValueStructure[4].Capture_First;
 
 			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
-			TIM_OC1PolarityConfig(TIM3, TIM_ICPolarity_Rising);
+			GENERAL2_TIM_OC3PolarityConfig_FUN(GENERAL2_TIM, TIM_ICPolarity_Rising);
       // 开始捕获标志清0		
-			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
+			TIM_ICUserValueStructure[4].Capture_StartFlag = 0;
       // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
+			TIM_ICUserValueStructure[4].Capture_FinishFlag = 1;		
+			printf ( "5\r\n：%d us\r\n", TIM_ICUserValueStructure[4].Capture_CcrValue);
 		}
-		TIM_ClearITPendingBit (TIM3,TIM_IT_CC1);	    
+
+		TIM_ClearITPendingBit (GENERAL2_TIM,GENERAL2_TIM_IT_CC3);	    
 	}	
-//第四个超声波模块上升沿捕获中断
-	else if ( TIM_GetITStatus (TIM3, TIM_IT_CC2 ) != RESET)
-	{	
-		// 第一次捕获
-		if ( TIM_ICUserValueStructure2.Capture_StartFlag == 0 )
+}
+void TIM5_IRQHandler(void)
+{
+	extern int8_t  MEASURE_FLAG;   // 1 采集数据
+	
+	static int portNum = 0;      //选择测距通道
+	
+	if ( TIM_GetITStatus( TIM5, TIM_IT_Update) != RESET ) 
+	{			
+		if( MEASURE_FLAG)
 		{
-			// 计数器清0
-			TIM_SetCounter ( TIM3, 0 );
-			// 自动重装载寄存器更新标志清0
-			TIM_ICUserValueStructure2.Capture_Period = 0;
-      // 存捕获比较寄存器的值的变量的值清0			
-			TIM_ICUserValueStructure2.Capture_CcrValue = 0;
-
-			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
-			TIM_OC2PolarityConfig(TIM3, TIM_ICPolarity_Falling);
-      // 开始捕获标准置1			
-			TIM_ICUserValueStructure2.Capture_StartFlag = 1;			
+			UltrasonicWave(portNum);    //采集一个模块数据
+			portNum++;
+			if( portNum == ULTR_NUM)   //拐杖上模块数据采集完毕
+			{
+				//MEASURE_FLAG = 0;
+				portNum = 0; 
+                //$$$$$$$$$$$$$$$$$$$4发送数据 				
+			}
 		}
-		// 下降沿捕获中断
-		else // 第二次捕获
-		{
-			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
-			TIM_ICUserValueStructure2.Capture_CcrValue = TIM_GetCapture2 (TIM3);
-			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
-			TIM_OC2PolarityConfig(TIM3, TIM_ICPolarity_Rising);
-      // 开始捕获标志清0		
-			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
-      // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
-		}
-		TIM_ClearITPendingBit (TIM3,TIM_IT_CC2);	    
-	}	
-
-//第五个超声波模块上升沿捕获中断
-	else if ( TIM_GetITStatus (TIM3, TIM_IT_CC3 ) != RESET)
-	{	
-		// 第一次捕获
-		if ( TIM_ICUserValueStructure2.Capture_StartFlag == 0 )
-		{
-			// 计数器清0
-			TIM_SetCounter ( TIM3, 0 );
-			// 自动重装载寄存器更新标志清0
-			TIM_ICUserValueStructure2.Capture_Period = 0;
-      // 存捕获比较寄存器的值的变量的值清0			
-			TIM_ICUserValueStructure2.Capture_CcrValue = 0;
-
-			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
-			TIM_OC3PolarityConfig(TIM3, TIM_ICPolarity_Falling);
-      // 开始捕获标准置1			
-			TIM_ICUserValueStructure2.Capture_StartFlag = 1;			
-		}
-		// 下降沿捕获中断
-		else // 第二次捕获
-		{
-			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
-			TIM_ICUserValueStructure2.Capture_CcrValue = 
-			TIM_GetCapture3(TIM3);
-
-			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
-			TIM_OC3PolarityConfig(TIM3, TIM_ICPolarity_Rising);
-      // 开始捕获标志清0		
-			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
-      // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
-		}
-		TIM_ClearITPendingBit (TIM3,TIM_IT_CC3);	    
-	}	
-//第六个超声波模块上升沿捕获中断
-	else if ( TIM_GetITStatus (TIM3, TIM_IT_CC4 ) != RESET)
-	{	
-		// 第一次捕获
-		if ( TIM_ICUserValueStructure2.Capture_StartFlag == 0 )
-		{
-			// 计数器清0
-			TIM_SetCounter ( TIM3, 0 );
-			// 自动重装载寄存器更新标志清0
-			TIM_ICUserValueStructure2.Capture_Period = 0;
-      // 存捕获比较寄存器的值的变量的值清0			
-			TIM_ICUserValueStructure2.Capture_CcrValue = 0;
-
-			// 当第一次捕获到上升沿之后，就把捕获边沿配置为下降沿
-			TIM_OC4PolarityConfig(TIM3, TIM_ICPolarity_Falling);
-      // 开始捕获标准置1			
-			TIM_ICUserValueStructure2.Capture_StartFlag = 1;			
-		}
-		// 下降沿捕获中断
-		else // 第二次捕获
-		{
-			// 获取捕获比较寄存器的值，这个值就是捕获到的高电平的时间的值
-			TIM_ICUserValueStructure2.Capture_CcrValue = 
-			TIM_GetCapture4(TIM3);
-
-			// 当第二次捕获到下降沿之后，就把捕获边沿配置为上升沿，好开启新的一轮捕获
-			TIM_OC4PolarityConfig(TIM3, TIM_ICPolarity_Rising);
-      // 开始捕获标志清0		
-			TIM_ICUserValueStructure2.Capture_StartFlag = 0;
-      // 捕获完成标志置1			
-			TIM_ICUserValueStructure2.Capture_FinishFlag = 1;		
-		}
-		TIM_ClearITPendingBit (TIM3,TIM_IT_CC4);	    
-	}	
+		
+		TIM_ClearITPendingBit(TIM5 , TIM_FLAG_Update);  		 
+	}		
+	
 }
 
 /**
@@ -415,6 +431,47 @@ void EXTI0_IRQHandler(void)
 		direction_flag=1;												//将按键标志位进行标记
 		EXTI_ClearITPendingBit(EXTI_Line0);     //清除中断标志位
 	}  
+}
+
+
+/**
+  * @brief  串口2中断，用于gps
+  * @param  None
+  * @retval None
+  */
+
+void USART2_IRQHandler(void)                	//串口2中断服务程序
+{
+	u8 Res;
+	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) 
+	{
+		Res =USART_ReceiveData(USART2);						//读取接收到的数据
+	
+	if(Res == '$')
+	{
+		point1 = 0;	
+	}
+		
+
+	  USART_RX_BUF[point1++] = Res;
+
+	if(USART_RX_BUF[0] == '$' && USART_RX_BUF[4] == 'M' && USART_RX_BUF[5] == 'C')			//确定是否收到"GPRMC/GNRMC"这一帧数据
+	{
+		if(Res == '\n')									   
+		{
+			memset(Save_Data.GPS_Buffer, 0, GPS_Buffer_Length);      //将GPS数据初始化
+			memcpy(Save_Data.GPS_Buffer, USART_RX_BUF, point1); 		 //将读取的数据保存到GPS数据中
+			Save_Data.isGetData = true;
+			point1 = 0;
+			memset(USART_RX_BUF, 0, USART_REC_LEN);      						 //将串口接收数据清空				
+		}	
+	}
+	
+	if(point1 >= USART_REC_LEN)
+	{
+		point1 = USART_REC_LEN;
+	}	 		 
+   } 
 }
 
 
