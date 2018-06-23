@@ -2,6 +2,7 @@
 
 u16 point1 = 0;
 _SaveData Save_Data;
+GPSData SendGPS;
 char USART_RX_BUF[USART_REC_LEN];     //接收缓冲,最大USART_REC_LEN个字节.
 u16 USART_RX_STA=0;       //接收状态标记	  
 void CLR_Buf(void)                           // 串口缓存清理
@@ -81,6 +82,7 @@ void parseGpsBuffer(void)
 	char *subString;			//用于分截
 	char *subStringNext;
 	char i = 0;
+	int a,b;
 	if (Save_Data.isGetData)
 	{
 		Save_Data.isGetData = false;
@@ -109,7 +111,11 @@ void parseGpsBuffer(void)
 						case 4:memcpy(Save_Data.N_S, 			 subString, subStringNext - subString);break;				//获取N/S
 						case 5:memcpy(Save_Data.longitude, subString, subStringNext - subString);break;				//获取经度信息
 						case 6:memcpy(Save_Data.E_W, 			 subString, subStringNext - subString);break;				//获取E/W
-
+						
+						a=(int)(atof(Save_Data.longitude)/100);
+						b=(int)(atof(Save_Data.latitude)/100);
+						SendGPS.lo=(atof(Save_Data.longitude)-100*a)/60+a;
+						SendGPS.la=(atof(Save_Data.latitude)-100*b)/60+b;
 						default:break;
 					}
 

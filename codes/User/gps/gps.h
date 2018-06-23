@@ -3,6 +3,7 @@
 #include "stdio.h"	
 #include "string.h"
 #include "stm32f10x.h"
+#include "stdlib.h"
 
 #define USART_REC_LEN  			200  	//定义最大接收字节数 200
  	
@@ -36,7 +37,11 @@ typedef struct SaveData
 	char isUsefull;											//定位信息是否有效
 } _SaveData;
 
-
+typedef struct GPSData 
+{
+	float lo;
+	float la;
+} GPSData;
 
 
 void USART2_Config(void);

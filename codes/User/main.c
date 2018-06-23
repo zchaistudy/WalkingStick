@@ -68,7 +68,7 @@ int main(void)
 	
 	Periph_GPRS_Init();	//GPRS相关外设初始化函数
 
-	send_pdu_message(pdu_content);     //发送pdu短信
+//	send_pdu_message(pdu_content);     //发送pdu短信
 
 	 while(1)           
 	{
@@ -85,13 +85,14 @@ int main(void)
 //		parseGpsBuffer();									
 //		printGpsBuffer();
 //			UltrasonicWave(num);								//获取超声波数据
-//			if(direction_flag)
-//			{
-//					angle=getAngle();
-//					direction_flag=0;
-//					printf("%d",angle);
-//			}
-//			angle=0;
+			if(direction_flag)
+			{
+					angle=getAngle();
+					direction_flag=0;
+					printf("%d",angle);
+			}
+			angle=0;
+			printf("%d",angle);
 //			num[AVER_NUM-1]=angle;
 //			for(i=0;i<AVER_NUM;i++)				//num的最后一个数据用来发送方位信息
 //			{
