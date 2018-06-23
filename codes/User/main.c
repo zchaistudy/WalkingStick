@@ -50,9 +50,7 @@ int main(void)
 //	delayInit();												//初始化滴答定时器
 	
 	EXTI_PA0_Config(); 									//方位按键及按键中断初始化
-//	NVIC_Configuration();								//配置外部中断0优先级
-	
-	UltrasonicWave_Configuration();			//初始化引脚
+//	NVIC_Configuration();								//配置外部中断0优先
 	
 	USART1_Config(38400);               //串口1初始化,用于蓝牙
 	
@@ -61,14 +59,15 @@ int main(void)
   InitLSM303D();											//方位模块的初始化
 	
 //	SysTick_Init();                  	  //嘀嗒定时器初始化
-	 
-	GENERAL_TIM_Init();									//初始化定时器
-	
-	USART2_Config();										//串口2，用于gps
-	
-	Periph_GPRS_Init();	//GPRS相关外设初始化函数
+	 WaveConfig();
 
+	USART2_Config();										//串口2，用于gps
+
+
+//	Periph_GPRS_Init();	//GPRS相关外设初始化函数
+//    
 //	send_pdu_message(pdu_content);     //发送pdu短信
+
 
 	 while(1)           
 	{

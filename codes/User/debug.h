@@ -16,7 +16,6 @@ void OnDebug(void);    //´ò¿ªµ÷ÊÔ
 //////////////////////////////
 */
 #define p_debug(restrict,args...)  do{if(DEBUG_ON_OFF){printf(restrict,##args);}}while(0)
-
 #define p_err(restrict,args...)  do{if(DEBUG_ON_OFF){printf("file:%s line:%d: \r\n",__FILE__,__LINE__);printf(restrict,##args);}}while(0)
 
 #endif
