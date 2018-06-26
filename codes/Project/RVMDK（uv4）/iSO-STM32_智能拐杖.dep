@@ -1,10 +1,10 @@
 Dependencies for Project 'iSO-STM32', Target '÷«ƒ‹π’’»': (DO NOT MODIFY !)
 F (..\..\Libraries\CMSIS\startup\startup_stm32f10x_hd.s)(0x54F27458)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0--list ..\..\listing\startup_stm32f10x_hd.lst --xref -o ..\..\output\startup_stm32f10x_hd.o --depend ..\..\output\startup_stm32f10x_hd.d)
-F (..\..\Libraries\CMSIS\core_cm3.c)(0x54F273E8)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\core_cm3.o --omf_browse ..\..\output\core_cm3.crf --depend ..\..\output\core_cm3.d)
+F (..\..\Libraries\CMSIS\core_cm3.c)(0x54F273E8)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\core_cm3.o --omf_browse ..\..\output\core_cm3.crf --depend ..\..\output\core_cm3.d)
 I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
 F (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)()
 F (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)()
-F (..\..\Libraries\CMSIS\system_stm32f10x.c)(0x54F273EA)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\system_stm32f10x.o --omf_browse ..\..\output\system_stm32f10x.crf --depend ..\..\output\system_stm32f10x.d)
+F (..\..\Libraries\CMSIS\system_stm32f10x.c)(0x54F273EA)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\system_stm32f10x.o --omf_browse ..\..\output\system_stm32f10x.crf --depend ..\..\output\system_stm32f10x.d)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
 I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -34,7 +34,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
 F (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)()
-F (..\..\Libraries\FWlib\src\misc.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\misc.o --omf_browse ..\..\output\misc.crf --depend ..\..\output\misc.d)
+F (..\..\Libraries\FWlib\src\misc.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\misc.o --omf_browse ..\..\output\misc.crf --depend ..\..\output\misc.d)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -63,7 +63,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
-F (..\..\Libraries\FWlib\src\stm32f10x_adc.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_adc.o --omf_browse ..\..\output\stm32f10x_adc.crf --depend ..\..\output\stm32f10x_adc.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_adc.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_adc.o --omf_browse ..\..\output\stm32f10x_adc.crf --depend ..\..\output\stm32f10x_adc.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -92,7 +92,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_bkp.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_bkp.o --omf_browse ..\..\output\stm32f10x_bkp.crf --depend ..\..\output\stm32f10x_bkp.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_bkp.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_bkp.o --omf_browse ..\..\output\stm32f10x_bkp.crf --depend ..\..\output\stm32f10x_bkp.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -121,7 +121,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_can.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_can.o --omf_browse ..\..\output\stm32f10x_can.crf --depend ..\..\output\stm32f10x_can.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_can.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_can.o --omf_browse ..\..\output\stm32f10x_can.crf --depend ..\..\output\stm32f10x_can.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -150,7 +150,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_cec.c)(0x54F27464)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_cec.o --omf_browse ..\..\output\stm32f10x_cec.crf --depend ..\..\output\stm32f10x_cec.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_cec.c)(0x54F27464)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_cec.o --omf_browse ..\..\output\stm32f10x_cec.crf --depend ..\..\output\stm32f10x_cec.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -179,7 +179,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_crc.c)(0x54F27464)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_crc.o --omf_browse ..\..\output\stm32f10x_crc.crf --depend ..\..\output\stm32f10x_crc.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_crc.c)(0x54F27464)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_crc.o --omf_browse ..\..\output\stm32f10x_crc.crf --depend ..\..\output\stm32f10x_crc.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -208,7 +208,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_dac.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_dac.o --omf_browse ..\..\output\stm32f10x_dac.crf --depend ..\..\output\stm32f10x_dac.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_dac.c)(0x54F27462)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_dac.o --omf_browse ..\..\output\stm32f10x_dac.crf --depend ..\..\output\stm32f10x_dac.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -237,7 +237,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_dbgmcu.c)(0x54F27464)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_dbgmcu.o --omf_browse ..\..\output\stm32f10x_dbgmcu.crf --depend ..\..\output\stm32f10x_dbgmcu.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_dbgmcu.c)(0x54F27464)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_dbgmcu.o --omf_browse ..\..\output\stm32f10x_dbgmcu.crf --depend ..\..\output\stm32f10x_dbgmcu.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -266,7 +266,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_dma.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_dma.o --omf_browse ..\..\output\stm32f10x_dma.crf --depend ..\..\output\stm32f10x_dma.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_dma.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_dma.o --omf_browse ..\..\output\stm32f10x_dma.crf --depend ..\..\output\stm32f10x_dma.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -295,7 +295,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_exti.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_exti.o --omf_browse ..\..\output\stm32f10x_exti.crf --depend ..\..\output\stm32f10x_exti.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_exti.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_exti.o --omf_browse ..\..\output\stm32f10x_exti.crf --depend ..\..\output\stm32f10x_exti.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -324,7 +324,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_flash.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_flash.o --omf_browse ..\..\output\stm32f10x_flash.crf --depend ..\..\output\stm32f10x_flash.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_flash.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_flash.o --omf_browse ..\..\output\stm32f10x_flash.crf --depend ..\..\output\stm32f10x_flash.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -353,7 +353,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_fsmc.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_fsmc.o --omf_browse ..\..\output\stm32f10x_fsmc.crf --depend ..\..\output\stm32f10x_fsmc.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_fsmc.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_fsmc.o --omf_browse ..\..\output\stm32f10x_fsmc.crf --depend ..\..\output\stm32f10x_fsmc.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -382,7 +382,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_gpio.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_gpio.o --omf_browse ..\..\output\stm32f10x_gpio.crf --depend ..\..\output\stm32f10x_gpio.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_gpio.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_gpio.o --omf_browse ..\..\output\stm32f10x_gpio.crf --depend ..\..\output\stm32f10x_gpio.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -411,7 +411,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_i2c.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_i2c.o --omf_browse ..\..\output\stm32f10x_i2c.crf --depend ..\..\output\stm32f10x_i2c.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_i2c.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_i2c.o --omf_browse ..\..\output\stm32f10x_i2c.crf --depend ..\..\output\stm32f10x_i2c.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -440,7 +440,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_iwdg.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_iwdg.o --omf_browse ..\..\output\stm32f10x_iwdg.crf --depend ..\..\output\stm32f10x_iwdg.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_iwdg.c)(0x54F27466)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_iwdg.o --omf_browse ..\..\output\stm32f10x_iwdg.crf --depend ..\..\output\stm32f10x_iwdg.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -469,7 +469,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_pwr.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_pwr.o --omf_browse ..\..\output\stm32f10x_pwr.crf --depend ..\..\output\stm32f10x_pwr.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_pwr.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_pwr.o --omf_browse ..\..\output\stm32f10x_pwr.crf --depend ..\..\output\stm32f10x_pwr.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -498,7 +498,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_rcc.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_rcc.o --omf_browse ..\..\output\stm32f10x_rcc.crf --depend ..\..\output\stm32f10x_rcc.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_rcc.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_rcc.o --omf_browse ..\..\output\stm32f10x_rcc.crf --depend ..\..\output\stm32f10x_rcc.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -527,7 +527,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_rtc.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_rtc.o --omf_browse ..\..\output\stm32f10x_rtc.crf --depend ..\..\output\stm32f10x_rtc.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_rtc.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_rtc.o --omf_browse ..\..\output\stm32f10x_rtc.crf --depend ..\..\output\stm32f10x_rtc.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -556,7 +556,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_sdio.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_sdio.o --omf_browse ..\..\output\stm32f10x_sdio.crf --depend ..\..\output\stm32f10x_sdio.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_sdio.c)(0x54F27468)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_sdio.o --omf_browse ..\..\output\stm32f10x_sdio.crf --depend ..\..\output\stm32f10x_sdio.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -585,7 +585,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_spi.c)(0x54F2746A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_spi.o --omf_browse ..\..\output\stm32f10x_spi.crf --depend ..\..\output\stm32f10x_spi.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_spi.c)(0x54F2746A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_spi.o --omf_browse ..\..\output\stm32f10x_spi.crf --depend ..\..\output\stm32f10x_spi.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -614,7 +614,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_tim.c)(0x54F2746A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_tim.o --omf_browse ..\..\output\stm32f10x_tim.crf --depend ..\..\output\stm32f10x_tim.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_tim.c)(0x54F2746A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_tim.o --omf_browse ..\..\output\stm32f10x_tim.crf --depend ..\..\output\stm32f10x_tim.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -643,7 +643,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_usart.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_usart.o --omf_browse ..\..\output\stm32f10x_usart.crf --depend ..\..\output\stm32f10x_usart.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_usart.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_usart.o --omf_browse ..\..\output\stm32f10x_usart.crf --depend ..\..\output\stm32f10x_usart.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -672,7 +672,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\Libraries\FWlib\src\stm32f10x_wwdg.c)(0x54F2746A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_wwdg.o --omf_browse ..\..\output\stm32f10x_wwdg.crf --depend ..\..\output\stm32f10x_wwdg.d)
+F (..\..\Libraries\FWlib\src\stm32f10x_wwdg.c)(0x54F2746A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_wwdg.o --omf_browse ..\..\output\stm32f10x_wwdg.crf --depend ..\..\output\stm32f10x_wwdg.d)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -701,8 +701,8 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\User\main.c)(0x5B2E3730)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
-I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B1A281F)
+F (..\..\User\main.c)(0x5AFD2029)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5AFADC74)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
 I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -732,21 +732,32 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
 I (..\..\User\UltrasonicWave\bsp_delay.h)(0x59897A90)
-I (..\..\User\usart\bsp_usart1.h)(0x5B1A266E)
+I (..\..\User\usart\bsp_usart1.h)(0x5AFADCA9)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (..\..\User\UltrasonicWave\waveConfig.h)(0x5B2E357E)
+I (..\..\User\UltrasonicWave\bsp_GeneralTim.h)(0x5A33C190)
+I (..\..\User\gps\gps_config.h)(0x5AFADCAA)
+I (..\..\User\nmea_decode\include\nmea/nmea.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./config.h)(0x54F274AC)
+I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
+I (..\..\User\nmea_decode\include\nmea/./units.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./gmath.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./info.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./time.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./sentence.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./generate.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./generator.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parse.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parser.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./context.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (..\..\User\SysTick\bsp_SysTick.h)(0x5B17DB5C)
+I (..\..\User\SysTick\bsp_SysTick.h)(0x54F273F2)
+I (..\..\User\gprs\bsp_usart3.h)(0x59391F38)
+I (..\..\User\gprs\sim900a.h)(0x5A278D81)
 I (..\..\User\angle\bsp_angle.h)(0x5AB61E85)
 I (..\..\User\angle\bsp_angle_define.h)(0x5AACD723)
 I (G:\software\keil5\ARM\ARMCC\include\math.h)(0x53463A44)
 I (..\..\User\key\bsp_exti.h)(0x52947C5B)
-I (..\..\User\gps\gps.h)(0x5B1C226F)
-I (G:\software\keil5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-I (..\..\User\gprs\timer.h)(0x5B17DB5C)
-I (..\..\User\usart\bsp_usart4.h)(0x5B17DB5C)
-I (..\..\User\gprs\gprs.h)(0x5B18ABF9)
-F (..\..\User\stm32f10x_it.c)(0x5B2E357E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_it.o --omf_browse ..\..\output\stm32f10x_it.crf --depend ..\..\output\stm32f10x_it.d)
+F (..\..\User\stm32f10x_it.c)(0x5AFADCA6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_it.o --omf_browse ..\..\output\stm32f10x_it.crf --depend ..\..\output\stm32f10x_it.d)
 I (..\..\User\stm32f10x_it.h)(0x54F273CC)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -776,18 +787,28 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-I (..\..\User\usart\bsp_usart1.h)(0x5B1A266E)
+I (..\..\User\usart\bsp_usart1.h)(0x5AFADCA9)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (..\..\User\UltrasonicWave\waveConfig.h)(0x5B2E357E)
-I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B1A281F)
+I (..\..\User\usart\bsp_usart2.h)(0x54F273F4)
+I (..\..\User\gps\gps_config.h)(0x5AFADCAA)
+I (..\..\User\nmea_decode\include\nmea/nmea.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./config.h)(0x54F274AC)
+I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
+I (..\..\User\nmea_decode\include\nmea/./units.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./gmath.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./info.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./time.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./sentence.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./generate.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./generator.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parse.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parser.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./context.h)(0x54F274AC)
+I (..\..\User\UltrasonicWave\bsp_GeneralTim.h)(0x5A33C190)
+I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5AFADC74)
 I (..\..\User\UltrasonicWave\bsp_delay.h)(0x59897A90)
-I (..\..\User\debug.h)(0x5B2E357E)
-I (..\..\User\gps\gps.h)(0x5B1C226F)
-I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (G:\software\keil5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-I (..\..\User\gprs\gprs.h)(0x5B18ABF9)
-F (..\..\User\SysTick\bsp_SysTick.c)(0x5B17DB5C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_systick.o --omf_browse ..\..\output\bsp_systick.crf --depend ..\..\output\bsp_systick.d)
-I (..\..\User\SysTick\bsp_SysTick.h)(0x5B17DB5C)
+F (..\..\User\SysTick\bsp_SysTick.c)(0x59C1134F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_systick.o --omf_browse ..\..\output\bsp_systick.crf --depend ..\..\output\bsp_systick.d)
+I (..\..\User\SysTick\bsp_SysTick.h)(0x54F273F2)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
 I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -816,8 +837,8 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\User\usart\bsp_usart1.c)(0x5B1A485B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_usart1.o --omf_browse ..\..\output\bsp_usart1.crf --depend ..\..\output\bsp_usart1.d)
-I (..\..\User\usart\bsp_usart1.h)(0x5B1A266E)
+F (..\..\User\usart\bsp_usart1.c)(0x5AFD2003)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_usart1.o --omf_browse ..\..\output\bsp_usart1.crf --depend ..\..\output\bsp_usart1.d)
+I (..\..\User\usart\bsp_usart1.h)(0x5AFADCA9)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
 I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -847,14 +868,210 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\context.c)(0x59C0F187)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\context.o --omf_browse ..\..\output\context.crf --depend ..\..\output\context.d)
+F (..\..\User\gps\gps.c)(0x5AFD2003)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\gps.o --omf_browse ..\..\output\gps.crf --depend ..\..\output\gps.d)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+I (..\..\User\usart\bsp_usart1.h)(0x5AFADCA9)
+I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\..\User\usart\bsp_usart2.h)(0x54F273F4)
+I (..\..\User\gps\gps_config.h)(0x5AFADCAA)
+I (..\..\User\nmea_decode\include\nmea/nmea.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./config.h)(0x54F274AC)
+I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
+I (..\..\User\nmea_decode\include\nmea/./units.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./gmath.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./info.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./time.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./sentence.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./generate.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./generator.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parse.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parser.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./context.h)(0x54F274AC)
+I (..\..\User\SysTick\bsp_SysTick.h)(0x54F273F2)
+I (..\..\User\gprs\sim900a.h)(0x5A278D81)
+I (..\..\User\gprs\bsp_usart3.h)(0x59391F38)
+F (..\..\User\gps\gps_config.c)(0x5A1454A6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\gps_config.o --omf_browse ..\..\output\gps_config.crf --depend ..\..\output\gps_config.d)
+I (..\..\User\gps\gps_config.h)(0x5AFADCAA)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+I (..\..\User\nmea_decode\include\nmea/nmea.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./config.h)(0x54F274AC)
+I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
+I (..\..\User\nmea_decode\include\nmea/./units.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./gmath.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./info.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./time.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./sentence.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./generate.h)(0x54F274AC)
+I (..\..\User\nmea_decode\include\nmea/./generator.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parse.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./parser.h)(0x54F274AE)
+I (..\..\User\nmea_decode\include\nmea/./context.h)(0x54F274AC)
+I (..\..\User\usart\bsp_usart1.h)(0x5AFADCA9)
+I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\..\User\usart\bsp_usart2.h)(0x54F273F4)
+F (..\..\User\usart\bsp_usart2.c)(0x5A327F21)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_usart2.o --omf_browse ..\..\output\bsp_usart2.crf --depend ..\..\output\bsp_usart2.d)
+I (..\..\User\usart\bsp_usart2.h)(0x54F273F4)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (G:\software\keil5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+F (..\..\User\gprs\bsp_usart3.c)(0x5A327F21)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_usart3.o --omf_browse ..\..\output\bsp_usart3.crf --depend ..\..\output\bsp_usart3.d)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+I (..\..\User\SysTick\bsp_SysTick.h)(0x54F273F2)
+I (..\..\User\gprs\bsp_usart3.h)(0x59391F38)
+I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (G:\software\keil5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+F (..\..\User\gprs\sim900a.c)(0x5AFD2003)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\sim900a.o --omf_browse ..\..\output\sim900a.crf --depend ..\..\output\sim900a.d)
+I (G:\software\keil5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (..\..\User\gprs\bsp_usart3.h)(0x59391F38)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\..\User\gprs\sim900a.h)(0x5A278D81)
+I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (..\..\User\SysTick\bsp_SysTick.h)(0x54F273F2)
+F (..\..\User\nmea_decode\src\context.c)(0x59C0F187)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\context.o --omf_browse ..\..\output\context.crf --depend ..\..\output\context.d)
 I (..\..\User\nmea_decode\include\nmea/context.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\generate.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\generate.o --omf_browse ..\..\output\generate.crf --depend ..\..\output\generate.d)
+F (..\..\User\nmea_decode\src\generate.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\generate.o --omf_browse ..\..\output\generate.crf --depend ..\..\output\generate.d)
 I (..\..\User\nmea_decode\include\nmea/tok.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
@@ -866,7 +1083,7 @@ I (..\..\User\nmea_decode\include\nmea/units.h)(0x54F274AE)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\math.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\generator.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\generator.o --omf_browse ..\..\output\generator.crf --depend ..\..\output\generator.d)
+F (..\..\User\nmea_decode\src\generator.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\generator.o --omf_browse ..\..\output\generator.crf --depend ..\..\output\generator.d)
 I (..\..\User\nmea_decode\include\nmea/gmath.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/info.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/time.h)(0x54F274AE)
@@ -878,7 +1095,7 @@ I (..\..\User\nmea_decode\include\nmea/generator.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/context.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\gmath.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\gmath.o --omf_browse ..\..\output\gmath.crf --depend ..\..\output\gmath.d)
+F (..\..\User\nmea_decode\src\gmath.c)(0x54F2746C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\gmath.o --omf_browse ..\..\output\gmath.crf --depend ..\..\output\gmath.d)
 I (..\..\User\nmea_decode\include\nmea/gmath.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/info.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/time.h)(0x54F274AE)
@@ -886,13 +1103,13 @@ I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\math.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\float.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\info.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\info.o --omf_browse ..\..\output\info.crf --depend ..\..\output\info.d)
+F (..\..\User\nmea_decode\src\info.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\info.o --omf_browse ..\..\output\info.crf --depend ..\..\output\info.d)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (..\..\User\nmea_decode\include\nmea/info.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/time.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\parse.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\parse.o --omf_browse ..\..\output\parse.crf --depend ..\..\output\parse.d)
+F (..\..\User\nmea_decode\src\parse.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\parse.o --omf_browse ..\..\output\parse.crf --depend ..\..\output\parse.d)
 I (..\..\User\nmea_decode\include\nmea/tok.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
@@ -905,7 +1122,7 @@ I (..\..\User\nmea_decode\include\nmea/gmath.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/units.h)(0x54F274AE)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\parser.c)(0x5B17526A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\parser.o --omf_browse ..\..\output\parser.crf --depend ..\..\output\parser.d)
+F (..\..\User\nmea_decode\src\parser.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\parser.o --omf_browse ..\..\output\parser.crf --depend ..\..\output\parser.d)
 I (..\..\User\nmea_decode\include\nmea/tok.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
@@ -917,7 +1134,37 @@ I (..\..\User\nmea_decode\include\nmea/parser.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/context.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\tok.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\tok.o --omf_browse ..\..\output\tok.crf --depend ..\..\output\tok.d)
+I (..\..\User\usart\bsp_usart2.h)(0x54F273F4)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+F (..\..\User\nmea_decode\src\tok.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\tok.o --omf_browse ..\..\output\tok.crf --depend ..\..\output\tok.d)
 I (..\..\User\nmea_decode\include\nmea/tok.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
@@ -927,12 +1174,12 @@ I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\ctype.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\limits.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\time.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\time.o --omf_browse ..\..\output\time.crf --depend ..\..\output\time.d)
+F (..\..\User\nmea_decode\src\time.c)(0x54F2746E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\time.o --omf_browse ..\..\output\time.crf --depend ..\..\output\time.d)
 I (..\..\User\nmea_decode\include\nmea/time.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\time.h)(0x53463A44)
-F (..\..\User\nmea_decode\src\sentence.c)(0x59C0F3BD)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\sentence.o --omf_browse ..\..\output\sentence.crf --depend ..\..\output\sentence.d)
+F (..\..\User\nmea_decode\src\sentence.c)(0x59C0F3BD)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\sentence.o --omf_browse ..\..\output\sentence.crf --depend ..\..\output\sentence.d)
 I (..\..\User\nmea_decode\include\nmea/sentence.h)(0x54F274AE)
 I (..\..\User\nmea_decode\include\nmea/info.h)(0x54F274AC)
 I (..\..\User\nmea_decode\include\nmea/time.h)(0x54F274AE)
@@ -940,8 +1187,38 @@ I (..\..\User\nmea_decode\include\nmea/config.h)(0x54F274AC)
 I (G:\software\keil5\ARM\ARMCC\include\assert.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
 F (..\..\Doc\readme.txt)(0x59F9DE4C)()
-F (..\..\User\UltrasonicWave\UltrasonicWave.c)(0x5B2E357E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\ultrasonicwave.o --omf_browse ..\..\output\ultrasonicwave.crf --depend ..\..\output\ultrasonicwave.d)
-I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B1A281F)
+F (..\..\User\UltrasonicWave\bsp_GeneralTim.c)(0x5AB616A6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_generaltim.o --omf_browse ..\..\output\bsp_generaltim.crf --depend ..\..\output\bsp_generaltim.d)
+I (..\..\User\UltrasonicWave\bsp_GeneralTim.h)(0x5A33C190)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
+I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
+I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
+F (..\..\User\UltrasonicWave\UltrasonicWave.c)(0x5AAE2EE7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\ultrasonicwave.o --omf_browse ..\..\output\ultrasonicwave.crf --depend ..\..\output\ultrasonicwave.d)
+I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5AFADC74)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
 I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -971,11 +1248,10 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
 I (..\..\User\UltrasonicWave\bsp_delay.h)(0x59897A90)
-I (..\..\User\usart\bsp_usart1.h)(0x5B1A266E)
+I (..\..\User\usart\bsp_usart1.h)(0x5AFADCA9)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (..\..\User\UltrasonicWave\waveConfig.h)(0x5B2E357E)
-I (..\..\User\debug.h)(0x5B2E357E)
-F (..\..\User\UltrasonicWave\bsp_delay.c)(0x5B1A281F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_delay.o --omf_browse ..\..\output\bsp_delay.crf --depend ..\..\output\bsp_delay.d)
+I (..\..\User\UltrasonicWave\bsp_GeneralTim.h)(0x5A33C190)
+F (..\..\User\UltrasonicWave\bsp_delay.c)(0x5AFADCA8)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_delay.o --omf_browse ..\..\output\bsp_delay.crf --depend ..\..\output\bsp_delay.d)
 I (..\..\User\UltrasonicWave\bsp_delay.h)(0x59897A90)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -1005,41 +1281,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\User\UltrasonicWave\waveConfig.c)(0x5B2E357E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\waveconfig.o --omf_browse ..\..\output\waveconfig.crf --depend ..\..\output\waveconfig.d)
-I (..\..\User\UltrasonicWave\waveConfig.h)(0x5B2E357E)
-I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
-I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
-I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
-I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
-I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B1A281F)
-I (..\..\User\UltrasonicWave\bsp_delay.h)(0x59897A90)
-I (..\..\User\usart\bsp_usart1.h)(0x5B1A266E)
-I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-F (..\..\User\angle\bsp_angle.c)(0x5B17526A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_angle.o --omf_browse ..\..\output\bsp_angle.crf --depend ..\..\output\bsp_angle.d)
+F (..\..\User\angle\bsp_angle.c)(0x5AFD2003)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_angle.o --omf_browse ..\..\output\bsp_angle.crf --depend ..\..\output\bsp_angle.d)
 I (..\..\User\angle\bsp_angle_define.h)(0x5AACD723)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -1071,7 +1313,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
 I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
 I (G:\software\keil5\ARM\ARMCC\include\math.h)(0x53463A44)
-F (..\..\User\key\bsp_exti.c)(0x4779FDEB)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_exti.o --omf_browse ..\..\output\bsp_exti.crf --depend ..\..\output\bsp_exti.d)
+F (..\..\User\key\bsp_exti.c)(0x5AFACA0C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_exti.o --omf_browse ..\..\output\bsp_exti.crf --depend ..\..\output\bsp_exti.d)
 I (..\..\User\key\bsp_exti.h)(0x52947C5B)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
@@ -1101,134 +1343,3 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\User\gps\gps.c)(0x5B1C226F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\gps.o --omf_browse ..\..\output\gps.crf --depend ..\..\output\gps.d)
-I (..\..\User\gps\gps.h)(0x5B1C226F)
-I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
-I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
-I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
-I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
-I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-I (G:\software\keil5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-F (..\..\User\GPRS\gprs.c)(0x5B18B1B7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\gprs.o --omf_browse ..\..\output\gprs.crf --depend ..\..\output\gprs.d)
-I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
-I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
-I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
-I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
-I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-I (..\..\User\usart\bsp_usart1.h)(0x5B1A266E)
-I (G:\software\keil5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (..\..\User\SysTick\bsp_SysTick.h)(0x5B17DB5C)
-I (..\..\User\GPRS\timer.h)(0x5B17DB5C)
-I (G:\software\keil5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (..\..\User\GA6_module_errors.h)(0x5B17DB5C)
-I (..\..\User\usart\bsp_usart4.h)(0x5B17DB5C)
-I (..\..\User\GPRS\gprs.h)(0x5B18ABF9)
-F (..\..\User\GPRS\timer.c)(0x5B17DB5C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\timer.o --omf_browse ..\..\output\timer.crf --depend ..\..\output\timer.d)
-I (..\..\User\GPRS\timer.h)(0x5B17DB5C)
-I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
-I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
-I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
-I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
-I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-F (..\..\User\usart\bsp_usart4.c)(0x5B17DB5C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\User\usart -I..\..\User\nmea_decode\include -I..\..\User\gps -I..\..\User\SysTick -I..\..\User\gprs -I..\..\User\angle -I..\..\User\Wave -I..\..\User\UltrasonicWave -I..\..\User\key -I..\..\User\GPRS-I G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK£®uv4£©\RTE-I G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_usart4.o --omf_browse ..\..\output\bsp_usart4.crf --depend ..\..\output\bsp_usart4.d)
-I (..\..\User\usart\bsp_usart4.h)(0x5B17DB5C)
-I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5A1433D3)
-I (..\..\Libraries\CMSIS\core_cm3.h)(0x54F273EA)
-I (G:\software\keil5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x54F273EA)
-I (..\..\User\stm32f10x_conf.h)(0x5A2FDAEA)
-I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x54F2745A)
-I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x54F2745C)
-I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x54F2745E)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x54F27460)
-I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x54F27462)
-I (..\..\Libraries\FWlib\inc\misc.h)(0x54F2745A)
-I (..\..\User\SysTick\bsp_SysTick.h)(0x5B17DB5C)
