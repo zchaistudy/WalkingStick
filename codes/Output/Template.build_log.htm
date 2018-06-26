@@ -4,95 +4,9 @@
 <h1>礦ision Build Log</h1>
 <h2>Project:</h2>
 G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\iSO-STM32.uvprojx
-Project File Date:  06/14/2018
+Project File Date:  06/25/2018
 
 <h2>Output:</h2>
-Build target '智能拐杖'
-compiling main.c...
-..\..\User\main.c(43): warning:  #177-D: variable "ret" was declared but never referenced
-        int ret;
-..\..\User\main.c(45): warning:  #177-D: variable "i" was declared but never referenced
-        int i=0;
-..\..\User\main.c(46): warning:  #177-D: variable "num" was declared but never referenced
-        int num[AVER_NUM];                                                                      //保存超声波数据
-..\..\User\main.c(48): warning:  #177-D: variable "sendByBlueTooth" was declared but never referenced
-        int sendByBlueTooth[MAX_SEND];            //发送避障数据以及方位数据
-..\..\User\main.c(34): warning:  #177-D: function "Periph_GPRS_Init" was declared but never referenced
-  static void Periph_GPRS_Init()
-..\..\User\main.c: 5 warnings, 0 errors
-linking...
-Program Size: Code=20128 RO-data=656 RW-data=120 ZI-data=1560  
-FromELF: creating hex file...
-"..\..\Output\Template.axf" - 0 Error(s), 5 Warning(s).
-
-<h2>Software Packages used:</h2>
-
-Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.4.1.0.pack
-                ARM::CMSIS:CORE:3.30.0
-                CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 3.30.0
-
-<h2>Collection of Component include folders:</h2>
-  G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\RTE
-  G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include
-  G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0
-
-<h2>Collection of Component Files used:</h2>
-
-   * Component: ARM::CMSIS:CORE:3.30.0
-      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
 </pre>
 </body>
 </html>
-
-..\..\User\main.c(46): warning:  #177-D: variable "num" was declared but never referenced
-        int num[AVER_NUM];                                                                      //保存超声波数据
-..\..\User\main.c(48): warning:  #177-D: variable "sendByBlueTooth" was declared but never referenced
-        int sendByBlueTooth[MAX_SEND];            //发送避障数据以及方位数据
-..\..\User\main.c(111): error:  #169: expected a declaration
-  }
-..\..\User\main.c(115): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-..\..\User\main.c(34): warning:  #177-D: function "Periph_GPRS_Init" was declared but never referenced
-  static void Periph_GPRS_Init()
-..\..\User\main.c: 9 warnings, 4 errors
-compiling stm32f10x_it.c...
-..\..\User\stm32f10x_it.c(179): warning:  #550-D: variable "lo" was set but never used
-        float lo, la;                   //存放GPS数据
-..\..\User\stm32f10x_it.c(179): warning:  #550-D: variable "la" was set but never used
-        float lo, la;                   //存放GPS数据
-..\..\User\stm32f10x_it.c: 2 warnings, 0 errors
-compiling bsp_SysTick.c...
-compiling bsp_usart1.c...
-compiling UltrasonicWave.c...
-compiling bsp_delay.c...
-compiling waveConfig.c...
-compiling bsp_angle.c...
-compiling bsp_exti.c...
-compiling gps.c...
-..\..\User\gps\gps.c(115): warning:  #111-D: statement is unreachable
-                                                a=(int)(atof(Save_Data.longitude)/100);
-..\..\User\gps\gps.c: 1 warning, 0 errors
-compiling gprs.c...
-compiling timer.c...
-compiling bsp_usart4.c...
-"..\..\Output\Template.axf" - 4 Error(s), 12 Warning(s).
-
-<h2>Software Packages used:</h2>
-
-Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.4.1.0.pack
-                ARM::CMSIS:CORE:3.30.0
-                CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 3.30.0
-
-<h2>Collection of Component include folders:</h2>
-  G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\RTE
-  G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include
-  G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0
-
-<h2>Collection of Component Files used:</h2>
-
-   * Component: ARM::CMSIS:CORE:3.30.0
-      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
-Target not created

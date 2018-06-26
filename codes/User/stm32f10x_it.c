@@ -195,7 +195,7 @@ void USART1_IRQHandler(void)
 						GPRS_Send_help();	//使用GPRS发送求救信号
 //			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
 		}
-		else if(Res == 1)
+		else if(Res == '3')               //接收到获取数据信息的信号
 		{
 			MEASURE_FLAG=1;
 		}

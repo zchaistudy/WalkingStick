@@ -35,27 +35,28 @@ int check_status(void)
 	int ret;
 	char esc_char[2];
 	
-	esc_char[0] = 0x1B;//退出字符
-	esc_char[1] = '\0';
-	
-	ret = UART4_Send_AT_Command("AT","OK",5,50);//测试通信是否成功
-	if(ret == 0)
-	{
-		UART4_SendString(esc_char);//万一进入>状态，那么久发送一个ESC字符
-		return COMMUNITE_ERROR;
-	}
-	
-	ret = UART4_Send_AT_Command("AT+CPIN?","READY",2,50);//查询卡是否插上
-	if(ret == 0)
-	{
-		return NO_SIM_CARD_ERROR;
-	}
-	
-	ret = Wait_CREG(3);//查询卡是否注册到网络
-	if(ret == 0)
-	{
-		return SIM_CARD_NO_REG_ERROR;
-	}
+//	esc_char[0] = 0x1B;//退出字符
+//	esc_char[1] = '\0';
+//	
+//	ret = UART4_Send_AT_Command("AT","OK",5,50);//测试通信是否成功
+
+//	if(ret == 0)
+//	{	
+//		UART4_SendString(esc_char);//万一进入>状态，那么久发送一个ESC字符
+//		return COMMUNITE_ERROR;
+//	}
+//	
+//	ret = UART4_Send_AT_Command("AT+CPIN?","READY",2,50);//查询卡是否插上
+//	if(ret == 0)
+//	{
+//		return NO_SIM_CARD_ERROR;
+//	}
+//	
+//	ret = Wait_CREG(3);//查询卡是否注册到网络
+//	if(ret == 0)
+//	{
+//		return SIM_CARD_NO_REG_ERROR;
+//	}
     
     ret = UART4_Send_AT_Command("ATE0","OK",2,50);//关闭回显功能
 	if(ret == 0)
@@ -81,7 +82,8 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 	ret = UART4_Send_AT_Command("AT+CIPSTATUS","CONNECT OK",3,50*2);//查询连接状态
 	if(ret == 1)//说明服务器处于连接状态
 	{
-		ret = UART4_Send_AT_Command("AT+CIPSEND",">",3,50);//开发发送数据
+
+		ret = UART4_Send_AT_Command("AT+CIPSEND",">",3,50);           //开发发送数据
 		if(ret == 0)
 		{
 			return AT_CIPSEND_ERROR;
@@ -116,6 +118,7 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 		strcat(server_ip_port_cmd,server_IP_and_port);
 		
 		ret = UART4_Send_AT_Command(server_ip_port_cmd,"CONNECT OK",3,50*2);//连接服务器
+		
 		if(ret == 0)
 		{
 			return AT_CIPSTART_ERROR;
@@ -343,6 +346,7 @@ void GPRS_Send_GPS(float lo, float la)
 	{
 		delay_ms(50);
 	}
+	
 	memset(error_result,'\0',20);
 	memset(sendData,'\0',30);
 
@@ -352,7 +356,7 @@ void GPRS_Send_GPS(float lo, float la)
 	if(ret == 1)
 	{
 		sprintf(sendData,"lo:%f,la:%f\r\n",lo, la);//需要发送的内容
-		ret = send_data_to_server("\"47.106.74.67\",10001",sendData);//发送数据到服务器					
+		ret = send_data_to_server("\"47.106.74.67\",10001",sendData);          //发送数据到服务器					
 	}
 	
 	if(ret == 1)
