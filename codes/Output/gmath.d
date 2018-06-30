@@ -3,6 +3,6 @@
 ..\..\output\gmath.o: ..\..\User\nmea_decode\include\nmea/info.h
 ..\..\output\gmath.o: ..\..\User\nmea_decode\include\nmea/time.h
 ..\..\output\gmath.o: ..\..\User\nmea_decode\include\nmea/config.h
-..\..\output\gmath.o: G:\software\keil5\ARM\ARMCC\bin\..\include\assert.h
-..\..\output\gmath.o: G:\software\keil5\ARM\ARMCC\bin\..\include\math.h
-..\..\output\gmath.o: G:\software\keil5\ARM\ARMCC\bin\..\include\float.h
+..\..\output\gmath.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+..\..\output\gmath.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\..\output\gmath.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h

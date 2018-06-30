@@ -400,13 +400,14 @@ void TIM5_IRQHandler(void)
 	if ( TIM_GetITStatus( TIM5, TIM_IT_Update) != RESET ) 
 	{			
 		if( MEASURE_FLAG)
-		{
-			portNum++;
+		{	
 			UltrasonicWave(portNum);    //采集一个模块数据
-			if( portNum == ULTR_NUM-1)   //拐杖上模块数据采集完毕
+			portNum++;
+			if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕
 			{
 			    portNum = 0; 	
 #ifndef ONLY_WALKINGSTICK               //眼镜+拐杖
+				
 				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
 				MEASURE_FLAG = 0;
 #endif							

@@ -20,7 +20,7 @@ static void NVIC_Configuration(void)
   NVIC_InitTypeDef NVIC_InitStructure;
   
   /* Configure one bit for preemption priority */
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
   
   /* 配置中断源 */
   NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;  //外部中断0

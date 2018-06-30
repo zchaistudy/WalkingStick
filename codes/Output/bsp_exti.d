@@ -2,7 +2,7 @@
 ..\..\output\bsp_exti.o: ..\..\User\key\bsp_exti.h
 ..\..\output\bsp_exti.o: ..\..\Libraries\CMSIS\stm32f10x.h
 ..\..\output\bsp_exti.o: ..\..\Libraries\CMSIS\core_cm3.h
-..\..\output\bsp_exti.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdint.h
+..\..\output\bsp_exti.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\bsp_exti.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\bsp_exti.o: ..\..\User\stm32f10x_conf.h
 ..\..\output\bsp_exti.o: ..\..\Libraries\FWlib\inc\stm32f10x_adc.h

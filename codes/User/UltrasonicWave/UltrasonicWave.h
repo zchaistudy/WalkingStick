@@ -13,7 +13,7 @@
 
 extern int8_t  IT_TAG;
 extern int UltrasonicWave_Distance[];
-
+extern uint8_t MEASURE_FINISH;               //测距完成标志
 int getRange(void);
 int minusDistance(int distance);
 int addDistance(int distance);

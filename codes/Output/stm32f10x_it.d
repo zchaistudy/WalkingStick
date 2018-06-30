@@ -2,7 +2,7 @@
 ..\..\output\stm32f10x_it.o: ..\..\User\stm32f10x_it.h
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\CMSIS\stm32f10x.h
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\CMSIS\core_cm3.h
-..\..\output\stm32f10x_it.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdint.h
+..\..\output\stm32f10x_it.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\stm32f10x_it.o: ..\..\User\stm32f10x_conf.h
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\FWlib\inc\stm32f10x_adc.h
@@ -30,12 +30,12 @@
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 ..\..\output\stm32f10x_it.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\stm32f10x_it.o: ..\..\User\usart\bsp_usart1.h
-..\..\output\stm32f10x_it.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
+..\..\output\stm32f10x_it.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\stm32f10x_it.o: ..\..\User\UltrasonicWave\waveConfig.h
 ..\..\output\stm32f10x_it.o: ..\..\User\UltrasonicWave\UltrasonicWave.h
 ..\..\output\stm32f10x_it.o: ..\..\User\UltrasonicWave\bsp_delay.h
 ..\..\output\stm32f10x_it.o: ..\..\User\debug.h
 ..\..\output\stm32f10x_it.o: ..\..\User\gps\gps.h
-..\..\output\stm32f10x_it.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
-..\..\output\stm32f10x_it.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdlib.h
+..\..\output\stm32f10x_it.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\stm32f10x_it.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\stm32f10x_it.o: ..\..\User\gprs\gprs.h

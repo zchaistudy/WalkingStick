@@ -13,6 +13,7 @@ data 2018.6.30
 //////////////////////////////       
 
 int UltrasonicWave_Distance[ULTR_NUM] = {1,2,3};      //计算出的距离 
+uint8_t MEASURE_FINISH = 0;               //测距完成标志
 #ifdef ONLY_WALKINGSTICK                 //拐杖单独测试
 int8_t  MEASURE_FLAG = 1;          //测距请求标志
 #else
@@ -70,6 +71,10 @@ void UltrasonicWave(int measureNum)
 		{	
 			dealTIM_ICUserValueStructureData(TIM_ICUserValueStructure[i] ,i);
 			TIM_ICUserValueStructure[i].Capture_FinishFlag = 0;
+            if( i == ULTR_NUM - 1)
+			{
+				MEASURE_FINISH  = 1;
+			}
 		}		
 	}
 	switch(measureNum)          //开始测距，发送一个>10us的脉冲，
