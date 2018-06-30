@@ -6,10 +6,13 @@
 #include "bsp_usart1.h"
 #include "waveConfig.h"
 
+//#define ONLY_WALKINGSTICK             //拐杖单独测试
+
 #define ULTR_NUM        5              //超声波数量
 #define AVER_NUM        ULTR_NUM+1            //超声波数量+一位方位模块
 
 extern int8_t  IT_TAG;
+extern int UltrasonicWave_Distance[];
 
 int getRange(void);
 int minusDistance(int distance);

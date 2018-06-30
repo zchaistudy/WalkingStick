@@ -15,6 +15,6 @@ void NVIC_Configuration(void);
 extern void bsp_USART1_IRQHandler(void);
 extern char *get_rebuff(uint8_t *len);
 extern void clean_rebuff(void);
-void SendGlasses(int* s); //发送超声波数据到眼镜
+void SendGlasses(int* p,int cnt); //发送超声波数据到眼镜
 
 #endif /* __USART1_H */

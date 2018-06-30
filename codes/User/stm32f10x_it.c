@@ -178,10 +178,10 @@ void USART1_IRQHandler(void)
 	u8 Res;
 	float lo, la;			//存放GPS数据
 	lo=22.2, la=33.3;
-	
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
+		printf("收到获取数据请求\r\n");
 		if(Res == '1')
 		{
 			UART1_SendString("救命1.......................\r\n");       //替换成相应的呼救函数
@@ -203,7 +203,6 @@ void USART1_IRQHandler(void)
 	}
 
 }
-
 
 
 
@@ -356,7 +355,7 @@ void GENERAL2_TIM_INT_FUN(void)
 	// 这个时候我们需要把这个最长的定时周期加到捕获信号的时间里面去
 	if ( TIM_GetITStatus ( GENERAL2_TIM, TIM_IT_Update) != RESET )               
 	{	
-		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL1_TIM_PERIOD;		
+		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL2_TIM_PERIOD;		
 		TIM_ClearITPendingBit ( GENERAL2_TIM, TIM_FLAG_Update ); 		
 	}
 
@@ -386,7 +385,7 @@ void GENERAL2_TIM_INT_FUN(void)
 			TIM_ICUserValueStructure[4].Capture_StartFlag = 0;
       // 捕获完成标志置1			
 			TIM_ICUserValueStructure[4].Capture_FinishFlag = 1;		
-			printf ( "5\r\n：%d us\r\n", TIM_ICUserValueStructure[4].Capture_CcrValue);
+//			printf ( "5\r\n：%d us\r\n", TIM_ICUserValueStructure[4].Capture_CcrValue);
 		}
 
 		TIM_ClearITPendingBit (GENERAL2_TIM,GENERAL2_TIM_IT_CC3);	    
@@ -402,20 +401,22 @@ void TIM5_IRQHandler(void)
 	{			
 		if( MEASURE_FLAG)
 		{
-			UltrasonicWave(portNum);    //采集一个模块数据
 			portNum++;
-			if( portNum == ULTR_NUM)   //拐杖上模块数据采集完毕
+			UltrasonicWave(portNum);    //采集一个模块数据
+			if( portNum == ULTR_NUM-1)   //拐杖上模块数据采集完毕
 			{
-				//MEASURE_FLAG = 0;
-				portNum = 0; 
-                //$$$$$$$$$$$$$$$$$$$4发送数据 				
+			    portNum = 0; 	
+#ifndef ONLY_WALKINGSTICK               //眼镜+拐杖
+				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
+				MEASURE_FLAG = 0;
+#endif							
 			}
-		}
-		
+		}	
 		TIM_ClearITPendingBit(TIM5 , TIM_FLAG_Update);  		 
 	}		
 	
 }
+
 
 /**
   * @brief  外部中断0，用于检测按键

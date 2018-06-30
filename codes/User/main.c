@@ -28,7 +28,9 @@
 #endif
 
 extern char *pdu_content ;
+extern int8_t  MEASURE_FLAG;
 uint8_t direction_flag;
+extern int UltrasonicWave_Distance[];     
 
 //GPRS相关外设初始化函数
 static void Periph_GPRS_Init()
@@ -36,6 +38,11 @@ static void Periph_GPRS_Init()
 	UART4_Init_Config(115200);//GPRS使用串口4初始化
 	SysTick_Init_Config();//滴答定时器初始化
 	Timer2_Init_Config();	//定时器2初始化
+}
+
+void delay_0(u32 time)
+{
+  while(time--);
 }
 
 int main(void)
@@ -46,7 +53,8 @@ int main(void)
 	int num[AVER_NUM];									         //保存超声波数据
 	
 	int sendByBlueTooth[MAX_SEND];		           //发送避障数据以及方位数据
-	
+	int XX[5]={1,2,3,4,5};
+	MEASURE_FLAG=0;
 //	delayInit();												       //初始化滴答定时器
 	
 	EXTI_PA0_Config(); 									         //方位按键及按键中断初始化
@@ -68,9 +76,15 @@ int main(void)
 //    
 //	send_pdu_message(pdu_content);     //发送pdu短信
 		printf("系统启动......");
-
+  
 	 while(1)           
 	{
+//			if(MEASURE_FLAG)
+//			{
+//					SendGlasses(UltrasonicWave_Distance,ULTR_NUM);
+//					MEASURE_FLAG=0;
+//			}
+
 
 //		printf("系统启动......");
 

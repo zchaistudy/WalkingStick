@@ -1,15 +1,23 @@
+/************************************************************
+data 2018.6.30
+/************************************************************/
 #include "UltrasonicWave.h"
 #include "debug.h"
+
 
 ////////调试开关//////////////
 #ifdef DEBUG_ON_OFF 
 #undef  DEBUG_ON_OFF
-#define DEBUG_ON_OFF 0
+#define DEBUG_ON_OFF 1
 #endif
 //////////////////////////////       
 
-int UltrasonicWave_Distance[ULTR_NUM];      //计算出的距离    
+int UltrasonicWave_Distance[ULTR_NUM] = {1,2,3};      //计算出的距离 
+#ifdef ONLY_WALKINGSTICK                 //拐杖单独测试
 int8_t  MEASURE_FLAG = 1;          //测距请求标志
+#else
+int8_t  MEASURE_FLAG;          //测距请求标志
+#endif
 /*
  * 函数名：dealTIM_ICUserValueStructureData
  * 描述  ：将捕捉到的时间数据转化为距离
@@ -25,8 +33,8 @@ static void dealTIM_ICUserValueStructureData(TIM_ICUserValueTypeDef TIM_ICUserVa
 	UltrasonicWave_Distance[i] = time * 340 / 2  * 100 / TIM_PscCLK ;
 	// 打印高电平脉宽时间
 //	ftime = ((double) TIM_ICUserValueStructurex.Capture_CcrValue+1)/TIM_PscCLK;
-	printf( "%d : distance %d\r\n",i, UltrasonicWave_Distance[i]);
-	printf( "\r\n：%d us\r\n",time );	
+	p_debug( "%d : distance %d\r\n",i, UltrasonicWave_Distance[i]);
+//	printf( "\r\n：%d us\r\n",time );	
 }
 
 

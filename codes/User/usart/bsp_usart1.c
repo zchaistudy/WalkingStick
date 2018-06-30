@@ -17,7 +17,7 @@
 
 #include "bsp_usart1.h"
 
-
+char YY[10]={'\0'};
 /**
  * @brief  USART1 GPIO 配置,工作模式配置。115200 8-N-1
  * @param  无
@@ -137,15 +137,22 @@ void UART1_SendString(char* s)
 * 返回    : 无 
 * 说明    : 无
 *******************************************************************************/
-void SendGlasses(int* s)
+void SendGlasses(int* p,int cnt)
 {
-	while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
-	USART_SendData(USART1 ,'!');                                  //发送超声波数据标志位
-	while(*s)//检测字符串结束符
-	{
-		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
-		USART_SendData(USART1 ,*s++);																//发送当前字符
-	}
+	int i,aa;
+//		YY[0]='!';
+//		for(i=0;i<5;i++)                   //直接使用for循环会出现位置错乱——逆序
+//		{
+//			YY[i+1]=p[i]+'0';			
+//		}
+//		YY[i+1]='\0';											//USART_SendData发送单个数据，串口调试助手收到的是正常数据，而串口中断接收到的却顺序错乱
+//		printf("%s",YY);									//使用printf发数据，串口接收到的都是字符型   ch = USART_ReceiveData(USART1); 此时ch=49
+		printf("!");
+			for(i=0;i<5;i++)                   //直接使用for循环会出现位置错乱——逆序
+		{
+			aa=*p++;
+			printf("%d%d%d",aa/100,(aa%100)/10,aa%10);
+		}
 }
 
 
