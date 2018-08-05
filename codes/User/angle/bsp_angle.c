@@ -297,11 +297,11 @@ int getAngle()
 		num = 0;
 		if(angle>=30&&angle<=62)//西南
 		num = 1;
-		if(angle>62&&angle<105)//西
+		if(angle>62&&angle<95)//西
 			num =2;
-		if(angle>=105&&angle<160)//西北
+		if(angle>=95&&angle<140)//西北
 			num = 3;
-		if(angle>160&&angle<200)//北
+		if(angle>140&&angle<200)//北
 			num = 4;
 		if(angle>200&&angle<300)//东北
 			num = 5;

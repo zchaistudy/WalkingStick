@@ -5,6 +5,14 @@
 #include <stdio.h>
 #define	MAX_SEND 10
 
+//#define __HLOG__  
+
+#ifdef __HLOG__  
+#define DEBUG(format,...) printf (format, ##__VA_ARGS__)   //' ## '的意思是，如果可变参数被忽略或为空，将使预处理器（ preprocessor ）去除掉它前面的那个逗号。
+#else  
+#define DEBUG(format,...)  
+#endif  
+
 void UART1_SendString(char* s);
 
 

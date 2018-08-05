@@ -191,15 +191,15 @@ void USART1_IRQHandler(void)
 		}
 		else if(Res == '2')
 		{
-			UART1_SendString("救命2.......................\r\n");       //替换成相应的呼救函数
-						GPRS_Send_help();	//使用GPRS发送求救信号
+			printf("#");
+			printf("5");
+			GPRS_Send_help();	//使用GPRS发送求救信号
 //			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
 		}
 		else if(Res == '3')               //接收到获取数据信息的信号
 		{
 			MEASURE_FLAG=1;
 		}
-
 	}
 
 }
@@ -393,6 +393,7 @@ void GENERAL2_TIM_INT_FUN(void)
 }
 void TIM5_IRQHandler(void)
 {
+	int i;
 	extern int8_t  MEASURE_FLAG;   // 1 采集数据
 	
 	static int portNum = 0;      //选择测距通道
@@ -407,6 +408,10 @@ void TIM5_IRQHandler(void)
 			{
 			    portNum = 0; 	
 #ifndef ONLY_WALKINGSTICK               //眼镜+拐杖
+//				for( i  = 0; i < ULTR_NUM; i++ )
+//				{
+//					UltrasonicWave_Distance[i] = 200;
+//				}
 				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
 				MEASURE_FLAG = 0;
 #endif							

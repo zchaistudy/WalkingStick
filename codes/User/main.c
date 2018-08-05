@@ -20,12 +20,7 @@
 #include "bsp_usart4.h"
 #include "gprs.h"
 
-#define _DEBUG_ 1										//用于调试
-#if _DEBUG_
-    #define DEBUG(x) printf(x)
-#else
-    #define DEBUG(x) 
-#endif
+
 
 extern char *pdu_content ;
 extern int8_t  MEASURE_FLAG;
@@ -56,29 +51,22 @@ int main(void)
 	int XX[5]={1,2,3,4,5};
 	MEASURE_FLAG=0;
 //	delayInit();												       //初始化滴答定时器
-	
-	EXTI_PA0_Config(); 									         //方位按键及按键中断初始化
+
 //	NVIC_Configuration();								       //配置外部中断0优先
-	
 	USART1_Config(38400);                        //串口1初始化,用于蓝牙
-	
 	I2C_GPIO_Config();									         //I2C通讯的初始化
-	
   InitLSM303D();											         //方位模块的初始化
-	
 //	SysTick_Init();                  	         //嘀嗒定时器初始化
 	 WaveConfig();
 
 	USART2_Config();										         //串口2，用于gps
+	EXTI_PA0_Config(); 									         //方位按键及按键中断初始化
+	Periph_GPRS_Init();	//GPRS相关外设初始化函数   
 
-
-	Periph_GPRS_Init();	//GPRS相关外设初始化函数
-//    
-//	send_pdu_message(pdu_content);     //发送pdu短信
-		printf("系统启动......");
-  
+		DEBUG("系统启动......");
 	 while(1)           
 	{
+
 //			if(MEASURE_FLAG)
 //			{
 //					SendGlasses(UltrasonicWave_Distance,ULTR_NUM);
@@ -86,10 +74,8 @@ int main(void)
 //			}
 
 
-//		printf("系统启动......");
-
 //		GPRS_Send_GPS(22.2, 33.3);	//使用GPRS发送位置坐标
-//		 GPRS_Send_help();	//使用GPRS发送求救信号
+//		 GPRS_Send_help();					//使用GPRS发送求救信号
 //		i++;
 //		if(i>100)
 //		{
@@ -97,13 +83,15 @@ int main(void)
 //		}
 //		parseGpsBuffer();									
 //		printGpsBuffer();
+
 //			UltrasonicWave(num);								//获取超声波数据
-//			if(direction_flag)
-//			{
-//					angle=getAngle();
-//					direction_flag=0;
-//					printf("%d",angle);
-//			}
+			if(direction_flag)
+			{
+					angle=getAngle();
+					direction_flag=0;
+					DEBUG("当前方位为：");
+					DEBUG("%d",angle);
+			}
 //			angle=0;
 //			printf("%d",angle);
 //			num[AVER_NUM-1]=angle;

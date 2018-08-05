@@ -32,3 +32,4 @@
 ..\..\output\gps.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 ..\..\output\gps.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\gps.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdlib.h
+..\..\output\gps.o: ..\..\User\gprs\gprs.h

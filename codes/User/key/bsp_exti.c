@@ -15,17 +15,17 @@
   * @param  无
   * @retval 无
   */
-static void NVIC_Configuration(void)
+static void NVIC_Configuration_PA0(void)
 {
   NVIC_InitTypeDef NVIC_InitStructure;
   
   /* Configure one bit for preemption priority */
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+//  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
   
   /* 配置中断源 */
   NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;  //外部中断0
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 }
@@ -44,7 +44,7 @@ void EXTI_PA0_Config(void)
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,ENABLE);
 												
 	/* config the NVIC */
-	NVIC_Configuration();
+	NVIC_Configuration_PA0();
 
 	/* EXTI line gpio config*/	
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;       
