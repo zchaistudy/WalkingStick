@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\..\Output\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\..\Output\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Thu Aug 02 13:06:20 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Sun Aug 05 17:28:01 2018
 <BR><P>
 <H3>Maximum Stack Usage =        256 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -295,9 +295,8 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[107]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(.text), UNUSED)
 
-<P><STRONG><a name="[95]"></a>NVIC_PriorityGroupConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, misc.o(.text))
+<P><STRONG><a name="[95]"></a>NVIC_PriorityGroupConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, misc.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Configuration
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GENERAL1_TIM_NVIC_Config
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Configuration
 </UL>
 
@@ -956,7 +955,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
-<P><STRONG><a name="[3c]"></a>TIM5_IRQHandler</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f10x_it.o(.text))
+<P><STRONG><a name="[3c]"></a>TIM5_IRQHandler</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, stm32f10x_it.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = TIM5_IRQHandler &rArr; UltrasonicWave &rArr; dealTIM_ICUserValueStructureData &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
@@ -1066,7 +1065,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltrasonicWave
 </UL>
 
-<P><STRONG><a name="[89]"></a>UltrasonicWave</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, ultrasonicwave.o(.text))
+<P><STRONG><a name="[89]"></a>UltrasonicWave</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, ultrasonicwave.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = UltrasonicWave &rArr; dealTIM_ICUserValueStructureData &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltrasonicWave_StartMeasure
@@ -1444,14 +1443,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Periph_GPRS_Init
 </UL>
 
-<P><STRONG><a name="[6d]"></a>UART4_Init_Config</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, bsp_usart4.o(.text))
+<P><STRONG><a name="[6d]"></a>UART4_Init_Config</STRONG> (Thumb, 134 bytes, Stack size 32 bytes, bsp_usart4.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = UART4_Init_Config &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Configuration
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
 </UL>
@@ -1987,11 +1985,10 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltrasonicWave
 </UL>
 
-<P><STRONG><a name="[9e]"></a>GENERAL1_TIM_NVIC_Config</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, waveconfig.o(.text))
+<P><STRONG><a name="[9e]"></a>GENERAL1_TIM_NVIC_Config</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, waveconfig.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GENERAL1_TIM_NVIC_Config &rArr; NVIC_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GENERAL_TIM_Init
 </UL>
@@ -2065,13 +2062,9 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_PA0_Config
 </UL>
 
-<P><STRONG><a name="[dc]"></a>NVIC_Configuration</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, bsp_usart4.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = NVIC_Configuration &rArr; NVIC_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
+<P><STRONG><a name="[dc]"></a>NVIC_Configuration</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, bsp_usart4.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
-</UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_Init_Config
 </UL>
 
 <P><STRONG><a name="[f8]"></a>_fp_digits</STRONG> (Thumb, 334 bytes, Stack size 56 bytes, printfa.o(i._fp_digits), UNUSED)

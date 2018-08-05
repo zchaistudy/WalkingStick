@@ -8,8 +8,6 @@ TIM_ICUserValueTypeDef TIM_ICUserValueStructure[ULTR_NUM];
 static void GENERAL1_TIM_NVIC_Config(void)
 {
     NVIC_InitTypeDef NVIC_InitStructure; 
-    // 设置中断组为0
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);		
 		// 设置中断来源
     NVIC_InitStructure.NVIC_IRQChannel = GENERAL1_TIM_IRQ ;	
 		// 设置主优先级为 0

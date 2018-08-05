@@ -4,7 +4,7 @@
 <h1>礦ision Build Log</h1>
 <h2>Project:</h2>
 G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\iSO-STM32.uvprojx
-Project File Date:  06/30/2018
+Project File Date:  08/05/2018
 
 <h2>Output:</h2>
 Build target '智能拐杖'
@@ -16,6 +16,7 @@ compiling stm32f10x_it.c...
 ..\..\User\stm32f10x_it.c(396): warning:  #177-D: variable "i" was declared but never referenced
         int i;
 ..\..\User\stm32f10x_it.c: 3 warnings, 0 errors
+compiling bsp_exti.c...
 linking...
 Program Size: Code=21316 RO-data=812 RW-data=144 ZI-data=1544  
 FromELF: creating hex file...
@@ -38,83 +39,91 @@ Package Vendor: ARM
 
    * Component: ARM::CMSIS:CORE:3.30.0
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
-Load "..\\..\\Output\\Template.axf" 
-Set JLink Project File to "G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\JLinkSettings.ini"
-* JLink Info: Device "STM32F103ZE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link V9 compiled Mar  2 2018 17:07:57
-Hardware: V9.30
-S/N : 59304865 
-Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
- 
-* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
-* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103ZE
-VTarget = 3.325V
-State of Pins: 
-TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
 </pre>
 </body>
 </html>
-nclude
+d but never referenced
+        int sendByBlueTooth[MAX_SEND];                     //发送避障数据以及方位数据
+..\..\User\main.c(51): warning:  #177-D: variable "XX" was declared but never referenced
+        int XX[5]={1,2,3,4,5};
+..\..\User\main.c: 6 warnings, 0 errors
+compiling stm32f10x_it.c...
+..\..\User\stm32f10x_it.c(179): warning:  #550-D: variable "lo" was set but never used
+        float lo, la;                   //存放GPS数据
+..\..\User\stm32f10x_it.c(179): warning:  #550-D: variable "la" was set but never used
+        float lo, la;                   //存放GPS数据
+..\..\User\stm32f10x_it.c(411): error:  #29: expected an expression
+  <<<<<<< HEAD
+..\..\User\stm32f10x_it.c(419): warning:  #12-D: parsing restarts here after previous syntax error
+                                SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据     
+..\..\User\stm32f10x_it.c(396): warning:  #177-D: variable "i" was declared but never referenced
+        int i;
+..\..\User\stm32f10x_it.c: 4 warnings, 1 error
+compiling bsp_SysTick.c...
+compiling bsp_usart1.c...
+compiling context.c...
+compiling generate.c...
+compiling generator.c...
+compiling gmath.c...
+..\..\User\nmea_decode\src\gmath.c(166): warning:  #550-D: variable "tan_sigma" was set but never used
+          double tmp1, tmp2, tan_sigma, sin_alpha, cos_alpha, C, lambda_prev; 
+..\..\User\nmea_decode\src\gmath.c(264): warning:  #550-D: variable "tan_sigma1" was set but never used
+      double tan_sigma1, sigma1, sin_alpha, cos_alpha, sqr_cos_alpha, sqr_u, A, B;
+..\..\User\nmea_decode\src\gmath.c(264): warning:  #550-D: variable "cos_alpha" was set but never used
+      double tan_sigma1, sigma1, sin_alpha, cos_alpha, sqr_cos_alpha, sqr_u, A, B;
+..\..\User\nmea_decode\src\gmath.c: 3 warnings, 0 errors
+compiling info.c...
+compiling parse.c...
+compiling parser.c...
+compiling tok.c...
+compiling time.c...
+compiling sentence.c...
+compiling UltrasonicWave.c...
+..\..\User\UltrasonicWave\UltrasonicWave.c(3): warning:  #9-D: nested comment is not allowed
+  /************************************************************/
+..\..\User\UltrasonicWave\UltrasonicWave.c: 1 warning, 0 errors
+compiling bsp_delay.c...
+compiling waveConfig.c...
+compiling bsp_angle.c...
+compiling bsp_exti.c...
+..\..\User\key\bsp_exti.c(23): error:  #29: expected an expression
+  <<<<<<< HEAD
+..\..\User\key\bsp_exti.c(26): warning:  #12-D: parsing restarts here after previous syntax error
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+..\..\User\key\bsp_exti.c(27): error:  #29: expected an expression
+  >>>>>>> ebb11668c42fbdbe8466b4bfdf090795420133cb
+..\..\User\key\bsp_exti.c(30): warning:  #12-D: parsing restarts here after previous syntax error
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;  //外部中断0
+..\..\User\key\bsp_exti.c: 2 warnings, 2 errors
+compiling gps.c...
+compiling gprs.c...
+..\..\User\GPRS\gprs.c(36): warning:  #177-D: variable "esc_char" was declared but never referenced
+        char esc_char[2];
+..\..\User\GPRS\gprs.c(295): warning:  #177-D: variable "i" was declared but never referenced
+        u8  i;
+..\..\User\GPRS\gprs.c: 2 warnings, 0 errors
+compiling timer.c...
+compiling bsp_usart4.c...
+..\..\User\usart\bsp_usart4.c(12): warning:  #177-D: function "NVIC_Configuration" was declared but never referenced
+  static void NVIC_Configuration(void)
+..\..\User\usart\bsp_usart4.c: 1 warning, 0 errors
+"..\..\Output\Template.axf" - 3 Error(s), 19 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.1.0.pack
+                ARM::CMSIS:CORE:3.30.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 3.30.0
+
+<h2>Collection of Component include folders:</h2>
+  G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\RTE
+  G:\software\keil5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include
   G:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:3.30.0
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
-Load "..\\..\\Output\\Template.axf" 
-Set JLink Project File to "G:\QGStudio\Project\BlindTravelEquipment\codes\WalkingStick\codes\Project\RVMDK（uv4）\JLinkSettings.ini"
-* JLink Info: Device "STM32F103ZE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link V9 compiled Mar  2 2018 17:07:57
-Hardware: V9.30
-S/N : 59304865 
-Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
- 
-* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
-* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103ZE
-VTarget = 3.316V
-State of Pins: 
-TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+Target not created
