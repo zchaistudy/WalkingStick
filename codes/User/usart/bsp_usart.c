@@ -15,7 +15,8 @@
   ******************************************************************************
   */
 
-#include "bsp_usart1.h"
+#include "bsp_usart.h"
+#include "debug.h"
 
 char YY[10]={'\0'};
 /**
@@ -62,19 +63,6 @@ void USART1_Config(u32 bound)
     USART_Cmd(USART1, ENABLE);
 }
 
-void NVIC_Configuration(void)
-{
-	NVIC_InitTypeDef NVIC_InitStructure; 
-	/* Configure the NVIC Preemption Priority Bits */  
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-	
-	/* Enable the USARTy Interrupt */
-	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;	 
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-	NVIC_Init(&NVIC_InitStructure);
-}
 
 
 struct __FILE 
@@ -99,6 +87,16 @@ int fputc(int ch, FILE *f)
     /* 等待发送完毕 */
     while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
 
+	
+/***********************************/
+#if DEBUG_USART3_USART1_ENABLE == 1    //通过串口三打印数据
+	USART_SendData(USART3, (uint8_t) ch);
+    /* 等待发送完毕 */
+    while (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);	
+	
+#endif	
+/***********************************/	
+	
     return (ch);
 }
 
@@ -157,3 +155,73 @@ void SendGlasses(int* p,int cnt)
 
 
 /*********************************************END OF FILE**********************/
+
+
+void usart3Config(void)
+{
+		GPIO_InitTypeDef GPIO_InitStructure;
+		USART_InitTypeDef USART_InitStructure;
+		NVIC_InitTypeDef NVIC_InitStructure;
+		/* config USART3 clock */
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+		RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
+
+		/* USART3 GPIO config */
+		/* Configure USART3 Tx  as alternate function push-pull */
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+		GPIO_Init(GPIOB, &GPIO_InitStructure);
+				
+		/* Configure USART3 Rx  as input floating */
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+		GPIO_Init(GPIOB, &GPIO_InitStructure);
+			
+		/* USART2 mode config */
+		USART_InitStructure.USART_BaudRate = 115200;                
+		USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+		USART_InitStructure.USART_StopBits = USART_StopBits_1;
+		USART_InitStructure.USART_Parity = USART_Parity_No ;
+		USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+		USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+
+		NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=2 ;//抢占优先级2
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;		//子优先级3
+		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
+		NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
+		
+		USART_Init(USART3, &USART_InitStructure); 
+		USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);//开启串口接受中断
+		USART_Cmd(USART3, ENABLE);
+}
+
+
+
+//通过串口3发送一个字符
+//ch 待发送字符
+char Usart3Send(char ch)
+{
+    /* 发送一个字节数据到USART3 */
+    USART_SendData(USART3, (uint8_t) ch);
+
+    /* 等待发送完毕 */
+    while (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+
+    return (ch);
+}
+
+//通过串口3发送一个字符串
+//s 待发送字符串
+void Usart3SendString(char* s)
+{
+	while(*s)//检测字符串结束符
+	{
+		 while (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+		USART_SendData(USART3 ,*s++);//发送当前字符
+	}
+}
+
+
+

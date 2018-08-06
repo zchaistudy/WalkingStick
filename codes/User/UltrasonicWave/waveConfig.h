@@ -66,7 +66,7 @@
 // TIM 输入捕获通道GPIO相关宏定义
 #define            GENERAL2_TIM_CH3_GPIO_CLK      RCC_APB2Periph_GPIOB
 #define            GENERAL2_TIM_CH3_PORT          GPIOB
-#define            GENERAL2_TIM_CH3_PIN           GPIO_Pin_0
+#define            GENERAL2_TIM_CH3_PIN           GPIO_Pin_8
 #define            GENERAL2_TIM_CHANNEL_3         TIM_Channel_3
 
 #define            GENERAL2_TIM_CH4_GPIO_CLK      RCC_APB2Periph_GPIOB
