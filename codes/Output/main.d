@@ -30,7 +30,7 @@
 ..\..\output\main.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 ..\..\output\main.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\main.o: ..\..\User\UltrasonicWave\bsp_delay.h
-..\..\output\main.o: ..\..\User\usart\bsp_usart1.h
+..\..\output\main.o: ..\..\User\usart\bsp_usart.h
 ..\..\output\main.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
 ..\..\output\main.o: ..\..\User\UltrasonicWave\waveConfig.h
 ..\..\output\main.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
@@ -44,3 +44,4 @@
 ..\..\output\main.o: ..\..\User\gprs\timer.h
 ..\..\output\main.o: ..\..\User\usart\bsp_usart4.h
 ..\..\output\main.o: ..\..\User\gprs\gprs.h
+..\..\output\main.o: ..\..\User\debug\debug.h

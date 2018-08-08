@@ -146,7 +146,7 @@
             <UsePdscDebugDescription>1</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>6</TargetSelection>
+          <TargetSelection>11</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -160,7 +160,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>Segger\JL2CM3.dll</Driver>
+            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -364,7 +364,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\nmea_decode\include;..\..\User\gps;..\..\User\SysTick;..\..\User\gprs;..\..\User\angle;..\..\User\Wave;..\..\User\UltrasonicWave;..\..\User\key;..\..\User\GPRS</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\nmea_decode\include;..\..\User\gps;..\..\User\SysTick;..\..\User\gprs;..\..\User\angle;..\..\User\Wave;..\..\User\UltrasonicWave;..\..\User\key;..\..\User\GPRS;..\..\User\debug</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -588,9 +588,14 @@
               <FilePath>..\..\User\SysTick\bsp_SysTick.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_usart1.c</FileName>
+              <FileName>bsp_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\User\usart\bsp_usart1.c</FilePath>
+              <FilePath>..\..\User\usart\bsp_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>debug.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\debug\debug.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 #include "bsp_delay.h"
-#include "bsp_usart1.h"
+#include "bsp_usart.h"
 #include "waveConfig.h"
 
 //#define ONLY_WALKINGSTICK             //π’’»µ•∂¿≤‚ ‘

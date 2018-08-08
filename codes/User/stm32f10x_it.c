@@ -23,7 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-#include "bsp_usart1.h"
+#include "bsp_usart.h"
 #include <stdio.h>
 #include "waveConfig.h"
 #include "UltrasonicWave.h"
@@ -203,9 +203,6 @@ void USART1_IRQHandler(void)
 	}
 
 }
-
-
-
 
 
 
@@ -400,6 +397,9 @@ void TIM5_IRQHandler(void)
 	
 	if ( TIM_GetITStatus( TIM5, TIM_IT_Update) != RESET ) 
 	{			
+		p_debug("tim5");
+		
+#ifndef ONLY_WALKINGSTICK               //眼镜+拐杖		
 		if( MEASURE_FLAG)
 		{	
 			UltrasonicWave(portNum);    //采集一个模块数据
@@ -407,18 +407,22 @@ void TIM5_IRQHandler(void)
 			if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕
 			{
 			    portNum = 0; 	
-#ifndef ONLY_WALKINGSTICK               //眼镜+拐杖
-
-//				for( i  = 0; i < ULTR_NUM; i++ )
-//				{
-//					UltrasonicWave_Distance[i] = 200;
-//				}
-
 				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
 				MEASURE_FLAG = 0;
-#endif							
+							
 			}
-		}	
+		}
+
+#else
+/****************拐杖单独测试************************/
+		UltrasonicWave(portNum);    //采集一个模块数据
+		portNum++;
+		if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕
+		{
+			portNum = 0; 
+		}
+#endif
+		
 		TIM_ClearITPendingBit(TIM5 , TIM_FLAG_Update);  		 
 	}		
 	

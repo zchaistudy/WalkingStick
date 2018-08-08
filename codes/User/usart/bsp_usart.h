@@ -25,4 +25,10 @@ extern char *get_rebuff(uint8_t *len);
 extern void clean_rebuff(void);
 void SendGlasses(int* p,int cnt); //发送超声波数据到眼镜
 
+/*****************************************************/
+void usart3Config(void);
+char Usart3Send(char ch);
+void Usart3SendString(char* s);
+
+
 #endif /* __USART1_H */

@@ -31,5 +31,5 @@
 ..\..\output\waveconfig.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\waveconfig.o: ..\..\User\UltrasonicWave\UltrasonicWave.h
 ..\..\output\waveconfig.o: ..\..\User\UltrasonicWave\bsp_delay.h
-..\..\output\waveconfig.o: ..\..\User\usart\bsp_usart1.h
+..\..\output\waveconfig.o: ..\..\User\usart\bsp_usart.h
 ..\..\output\waveconfig.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
