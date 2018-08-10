@@ -701,7 +701,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x5B36CF16)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5B36CF16)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5B36CF16)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5B36CF16)
-F (..\..\User\main.c)(0x5B67A119)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+F (..\..\User\main.c)(0x5B6ADBB5)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
 I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B670905)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5B36CF16)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5B36CF16)
@@ -746,8 +746,8 @@ I (G:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\..\User\gprs\timer.h)(0x5B36CF34)
 I (..\..\User\usart\bsp_usart4.h)(0x5B36CF34)
 I (..\..\User\gprs\gprs.h)(0x5B36CF34)
-I (..\..\User\debug\debug.h)(0x5B67A0FC)
-F (..\..\User\stm32f10x_it.c)(0x5B67075D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_it.o --omf_browse ..\..\output\stm32f10x_it.crf --depend ..\..\output\stm32f10x_it.d)
+I (..\..\User\debug\debug.h)(0x5B6AE848)
+F (..\..\User\stm32f10x_it.c)(0x5B6ADD75)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\stm32f10x_it.o --omf_browse ..\..\output\stm32f10x_it.crf --depend ..\..\output\stm32f10x_it.d)
 I (..\..\User\stm32f10x_it.h)(0x5B36CF16)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5B36CF16)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5B36CF16)
@@ -782,7 +782,7 @@ I (G:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5B51A333)
 I (..\..\User\UltrasonicWave\waveConfig.h)(0x5B66C54F)
 I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B670905)
 I (..\..\User\UltrasonicWave\bsp_delay.h)(0x5B36CF16)
-I (..\..\User\debug\debug.h)(0x5B67A0FC)
+I (..\..\User\debug\debug.h)(0x5B6AE848)
 I (..\..\User\gps\gps.h)(0x5B36CF34)
 I (G:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (G:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
@@ -848,13 +848,13 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5B36CF16)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5B36CF16)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5B36CF16)
 I (G:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5B51A333)
-I (..\..\User\debug\debug.h)(0x5B67A0FC)
+I (..\..\User\debug\debug.h)(0x5B6AE848)
 F (..\..\User\debug\debug.c)(0x5B67089A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\debug.o --omf_browse ..\..\output\debug.crf --depend ..\..\output\debug.d)
 I (G:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5B51A333)
 I (G:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (G:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (G:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
-I (..\..\User\debug\debug.h)(0x5B67A0FC)
+I (..\..\User\debug\debug.h)(0x5B6AE848)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5B36CF16)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5B36CF16)
 I (G:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
@@ -977,7 +977,7 @@ I (..\..\User\nmea_decode\include\nmea/config.h)(0x5B36CF16)
 I (G:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599ECD2A)
 I (G:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 F (..\..\Doc\readme.txt)(0x5B36CF16)()
-F (..\..\User\UltrasonicWave\UltrasonicWave.c)(0x5B6708E6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\ultrasonicwave.o --omf_browse ..\..\output\ultrasonicwave.crf --depend ..\..\output\ultrasonicwave.d)
+F (..\..\User\UltrasonicWave\UltrasonicWave.c)(0x5B6ADA84)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\ultrasonicwave.o --omf_browse ..\..\output\ultrasonicwave.crf --depend ..\..\output\ultrasonicwave.d)
 I (..\..\User\UltrasonicWave\UltrasonicWave.h)(0x5B670905)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5B36CF16)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5B36CF16)
@@ -1011,7 +1011,7 @@ I (..\..\User\UltrasonicWave\bsp_delay.h)(0x5B36CF16)
 I (..\..\User\usart\bsp_usart.h)(0x5B66ED9E)
 I (G:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5B51A333)
 I (..\..\User\UltrasonicWave\waveConfig.h)(0x5B66C54F)
-I (..\..\User\debug\debug.h)(0x5B67A0FC)
+I (..\..\User\debug\debug.h)(0x5B6AE848)
 F (..\..\User\UltrasonicWave\bsp_delay.c)(0x5B66C48B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc -I ..\..\User\usart -I ..\..\User\nmea_decode\include -I ..\..\User\gps -I ..\..\User\SysTick -I ..\..\User\gprs -I ..\..\User\angle -I ..\..\User\Wave -I ..\..\User\UltrasonicWave -I ..\..\User\key -I ..\..\User\GPRS -I ..\..\User\debug-I.\RTE\_________-IG:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IG:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_delay.o --omf_browse ..\..\output\bsp_delay.crf --depend ..\..\output\bsp_delay.d)
 I (..\..\User\UltrasonicWave\bsp_delay.h)(0x5B36CF16)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5B36CF16)

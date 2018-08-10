@@ -181,22 +181,23 @@ void USART1_IRQHandler(void)
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
-		printf("收到获取数据请求\r\n");
-		if(Res == '1')
-		{
-			UART1_SendString("救命1.......................\r\n");       //替换成相应的呼救函数
-						//发送短信
-			GPRS_Send_help();	//使用GPRS发送求救信号
-			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-		}
-		else if(Res == '2')
-		{
-			printf("#");
-			printf("5");
-			GPRS_Send_help();	//使用GPRS发送求救信号
+//		printf("收到获取数据请求\r\n");
+//		if(Res == '1')
+//		{
+//			UART1_SendString("救命1.......................\r\n");       //替换成相应的呼救函数
+//						//发送短信
+//			GPRS_Send_help();	//使用GPRS发送求救信号
 //			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-		}
-		else if(Res == '3')               //接收到获取数据信息的信号
+//		}
+//		else if(Res == '2')
+//		{
+//			printf("#");
+//			printf("5");
+//			GPRS_Send_help();	//使用GPRS发送求救信号
+////			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+//		}
+//		else 
+			if(Res == '3')               //接收到获取数据信息的信号
 		{
 			MEASURE_FLAG=1;
 		}

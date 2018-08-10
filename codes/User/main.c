@@ -98,7 +98,7 @@ int main(void)
 					DEBUG("%d",angle);
 			}
 			
-			
+			my_printf("start debug\r\n");
 			
 //			angle=0;
 //			printf("%d",angle);
