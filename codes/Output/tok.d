@@ -1,10 +1,10 @@
 ..\..\output\tok.o: ..\..\User\nmea_decode\src\tok.c
 ..\..\output\tok.o: ..\..\User\nmea_decode\include\nmea/tok.h
 ..\..\output\tok.o: ..\..\User\nmea_decode\include\nmea/config.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\..\output\tok.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\assert.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdarg.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdlib.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\ctype.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
+..\..\output\tok.o: G:\software\keil5\ARM\ARMCC\bin\..\include\limits.h
