@@ -179,7 +179,7 @@ void usart3Config(void)
 		GPIO_Init(GPIOB, &GPIO_InitStructure);
 			
 		/* USART2 mode config */
-		USART_InitStructure.USART_BaudRate = 115200;                
+		USART_InitStructure.USART_BaudRate = 38400;                
 		USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 		USART_InitStructure.USART_StopBits = USART_StopBits_1;
 		USART_InitStructure.USART_Parity = USART_Parity_No ;
@@ -193,7 +193,7 @@ void usart3Config(void)
 		NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
 		
 		USART_Init(USART3, &USART_InitStructure); 
-		USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);//开启串口接受中断
+//		USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);//开启串口接受中断
 		USART_Cmd(USART3, ENABLE);
 }
 

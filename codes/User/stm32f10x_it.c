@@ -353,7 +353,9 @@ void GENERAL2_TIM_INT_FUN(void)
 	// 这个时候我们需要把这个最长的定时周期加到捕获信号的时间里面去
 	if ( TIM_GetITStatus ( GENERAL2_TIM, TIM_IT_Update) != RESET )               
 	{	
-		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL2_TIM_PERIOD;		
+		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL2_TIM_PERIOD;
+        if(  TIM_ICUserValueStructure[4].Capture_StartFlag != 0 ) 		
+			p_debug("capture 4:over");		
 		TIM_ClearITPendingBit ( GENERAL2_TIM, TIM_FLAG_Update ); 		
 	}
 
@@ -403,6 +405,8 @@ void TIM5_IRQHandler(void)
 #ifndef ONLY_WALKINGSTICK               //眼镜+拐杖		
 		if( MEASURE_FLAG)
 		{	
+			
+			
 			UltrasonicWave(portNum);    //采集一个模块数据
 			portNum++;
 			if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕
