@@ -66,12 +66,12 @@ int main(void)
 	Periph_GPRS_Init();	//GPRS相关外设初始化函数   
 
 	
-	DEBUG("系统启动......");
-	my_printf("start debug\r\n");
+	my_printf("系统启动......");
+	
 	printf("test\r\n");
 	 while(1)           
 	{
-
+		my_printf("start debug\r\n");
 //			if(MEASURE_FLAG)
 //			{
 //					SendGlasses(UltrasonicWave_Distance,ULTR_NUM);
