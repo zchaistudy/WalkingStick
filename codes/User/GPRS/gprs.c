@@ -35,16 +35,16 @@ int check_status(void)
 	int ret;
 	char esc_char[2];
 	
-//	esc_char[0] = 0x1B;//退出字符
-//	esc_char[1] = '\0';
+	esc_char[0] = 0x1B;//退出字符
+	esc_char[1] = '\0';
 //	
-//	ret = UART4_Send_AT_Command("AT","OK",5,50);//测试通信是否成功
+	ret = UART4_Send_AT_Command("AT","OK",5,50);//测试通信是否成功
 
-//	if(ret == 0)
-//	{	
-//		UART4_SendString(esc_char);//万一进入>状态，那么久发送一个ESC字符
-//		return COMMUNITE_ERROR;
-//	}
+	if(ret == 0)
+	{	
+		UART4_SendString(esc_char);//万一进入>状态，那么久发送一个ESC字符
+		return COMMUNITE_ERROR;
+	}
 //	
 //	ret = UART4_Send_AT_Command("AT+CPIN?","READY",2,50);//查询卡是否插上
 //	if(ret == 0)
@@ -295,38 +295,30 @@ void GPRS_Send_help(void)
 	u8  i;
 	int  ret;
 		
-	DEBUG("GPRS传输help功能启动.......................\r\n");
-	
-	//后期决定是否删除
-//	for(i = 0;i < STABLE_TIMES;i++)
-//	{
-//		delay_ms(50);
-//	}
+	my_printf("GPRS传输help功能启动.......................\r\n");
 	
 	memset(error_result,'\0',20);
-
-//	delay_ms(50);
 		
-	ret = check_status();
-	if(ret == 1)
-	{
-		DEBUG("GA6模块连接正常\r\n");
+//	ret = check_status();
+//	if(ret == 1)
+//	{
+//		my_printf("GA6模块连接正常\r\n");
 		ret = send_data_to_server("\"39.108.110.121\",10001","help");//发送数据到服务器					
-	}
+//	}
 	
 	if(ret == 1)
 	{
 		sprintf(error_result,"成功发送到server\r\n");
-		DEBUG("%s",error_result);
+		my_printf("%s",error_result);
 		delay_ms(50);
-		DEBUG("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
-		DEBUG("%s",Uart4_Buf);
-		DEBUG("\r\n");
+		my_printf("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
+		my_printf("%s",Uart4_Buf);
+		my_printf("\r\n");
 	} 
 	else //数据发送失败，此时可能连接时间过长导致的失败，这样就断开连接，然后就可以继续连接上了
 	{
 		sprintf(error_result,"错误代码 : %d\r\n",ret);
-		DEBUG("%s",error_result);
+		my_printf("%s",error_result);
 		UART4_Send_AT_Command("AT+CIPCLOSE","OK",3,150);//关闭链接
 	}
 }
@@ -337,38 +329,29 @@ void GPRS_Send_GPS(float lo, float la)
 	int  ret;
 	char sendData[30]; //需要发送的内容
 		
-	DEBUG("GPRS传输坐标功能启动.......................\r\n");
+	my_printf("GPRS传输坐标功能启动.......................\r\n");
 	
-	for(i = 0;i < STABLE_TIMES;i++)
-	{
-		delay_ms(50);
-	}
 	
 	memset(error_result,'\0',20);
 	memset(sendData,'\0',30);
 
-	delay_ms(50);
-		
-	ret = check_status();
-	if(ret == 1)
-	{
 		sprintf(sendData,"lo:%f,la:%f\r\n",lo, la);//需要发送的内容
 		ret = send_data_to_server("\"39.108.110.121\",10001",sendData);          //发送数据到服务器					
-	}
+
 	
 	if(ret == 1)
 	{
 		sprintf(error_result,"成功发送到server\r\n");
-		DEBUG("%s",error_result);
+		my_printf("%s",error_result);
 		delay_ms(50);
-		DEBUG("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
-		DEBUG("%s",Uart4_Buf);
-		DEBUG("\r\n");
+		my_printf("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
+		my_printf("%s",Uart4_Buf);
+		my_printf("\r\n");
 	}
 	else //数据发送失败，此时可能连接时间过长导致的失败，这样就断开连接，然后就可以继续连接上了
 	{
 		sprintf(error_result,"错误代码 : %d\r\n",ret);
-		DEBUG("%s",error_result);
+		my_printf("%s",error_result);
 		UART4_Send_AT_Command("AT+CIPCLOSE","OK",3,150);//关闭链接
 	}
 }

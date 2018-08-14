@@ -73,7 +73,7 @@ void errorLog(int num)
 	
 	while (1)
 	{
-	  	printf("ERROR%d\r\n",num);
+	  	my_printf("ERROR%d\r\n",num);
 	}
 }
 
@@ -86,8 +86,8 @@ void parseGpsBuffer(void)
 	if (Save_Data.isGetData)
 	{
 		Save_Data.isGetData = false;
-		printf("**************\r\n");
-		printf(Save_Data.GPS_Buffer);
+		my_printf("**************\r\n");
+		my_printf(Save_Data.GPS_Buffer);
 
 		
 		for (i = 0 ; i <= 6 ; i++)
@@ -135,7 +135,8 @@ void parseGpsBuffer(void)
 						b=(int)(atof(Save_Data.latitude)/100);
 						SendGPS.lo=(atof(Save_Data.longitude)-100*a)/60+a;
 						SendGPS.la=(atof(Save_Data.latitude)-100*b)/60+b;
-						GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+//						GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+						my_printf("lo f% ,la f%\r\n",SendGPS.lo,SendGPS.la);
 	}
 }
 
@@ -144,36 +145,36 @@ void printGpsBuffer(void)
 	if (Save_Data.isParseData)
 	{
 		Save_Data.isParseData = false;
-		printf("Save_Data.UTCTime = ");
-		printf(Save_Data.UTCTime);
-		printf("\r\n");
+//		printf("Save_Data.UTCTime = ");
+//		printf(Save_Data.UTCTime);
+//		printf("\r\n");
 
-		if(Save_Data.isUsefull)
-		{
-			Save_Data.isUsefull = false;
-			printf("Save_Data.latitude = ");
-			printf(Save_Data.latitude);
-			printf("\r\n");
+//		if(Save_Data.isUsefull)
+//		{
+//			Save_Data.isUsefull = false;
+//			printf("Save_Data.latitude = ");
+//			printf(Save_Data.latitude);
+//			printf("\r\n");
 
 
-			printf("Save_Data.N_S = ");
-			printf(Save_Data.N_S);
-			printf("\r\n");
+//			printf("Save_Data.N_S = ");
+//			printf(Save_Data.N_S);
+//			printf("\r\n");
 
-			printf("Save_Data.longitude = ");
-			printf(Save_Data.longitude);
-			printf("\r\n");
+//			printf("Save_Data.longitude = ");
+//			printf(Save_Data.longitude);
+//			printf("\r\n");
 
-			printf("Save_Data.E_W = ");
-			printf(Save_Data.E_W);
-			printf("\r\n");
+//			printf("Save_Data.E_W = ");
+//			printf(Save_Data.E_W);
+//			printf("\r\n");
 		}
 		else
 		{
-			printf("GPS DATA is not usefull!\r\n");
+			my_printf("GPS DATA is not usefull!\r\n");
 		}
 		
-	}
+	
 }
 
 

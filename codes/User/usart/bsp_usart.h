@@ -24,6 +24,7 @@ extern void bsp_USART1_IRQHandler(void);
 extern char *get_rebuff(uint8_t *len);
 extern void clean_rebuff(void);
 void SendGlasses(int* p,int cnt); //发送超声波数据到眼镜
+void SendAngle(char ch);
 
 /*****************************************************/
 void usart3Config(void);

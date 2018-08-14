@@ -153,6 +153,19 @@ void SendGlasses(int* p,int cnt)
 		}
 }
 
+/*******************************************************************************
+* 函数名  : SendAngle
+* 描述    : USART1向眼镜发送拐杖方位信息
+* 输入    : *s指针
+* 输出    : 无
+* 返回    : 无 
+* 说明    : 无
+*******************************************************************************/
+void SendAngle(char ch)
+{
+		printf("#");
+		printf("%c",ch);
+}
 
 /*********************************************END OF FILE**********************/
 
@@ -179,7 +192,7 @@ void usart3Config(void)
 		GPIO_Init(GPIOB, &GPIO_InitStructure);
 			
 		/* USART2 mode config */
-		USART_InitStructure.USART_BaudRate = 115200;                
+		USART_InitStructure.USART_BaudRate = 38400;                
 		USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 		USART_InitStructure.USART_StopBits = USART_StopBits_1;
 		USART_InitStructure.USART_Parity = USART_Parity_No ;

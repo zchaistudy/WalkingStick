@@ -12,5 +12,5 @@ void Delay(u32 nTime);
 void Delayms(vu32 m);  
 void InitLSM303D(void);
 Statue Multiple_read(unsigned char SlaveAddress,unsigned char REG_Address);
-int getAngle(void);
+char getAngle(void);
 #endif

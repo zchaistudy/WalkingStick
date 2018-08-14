@@ -31,6 +31,7 @@
 #include "gps.h" 
 #include "gprs.h"
 
+int HelpFlag=0;
 extern GPSData SendGPS;
 extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
@@ -181,28 +182,24 @@ void USART1_IRQHandler(void)
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
-		printf("收到获取数据请求\r\n");
-//		if(Res == '1')
-//		{
-//			UART1_SendString("救命1.......................\r\n");       //替换成相应的呼救函数
-//						//发送短信
-//			GPRS_Send_help();	//使用GPRS发送求救信号
-//			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-//		}
-//		else if(Res == '2')
-//		{
-//			printf("#");
-//			printf("5");
-//			GPRS_Send_help();	//使用GPRS发送求救信号
-////			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-//		}
-//		else 
+		if(Res == '1')
+		{
+			my_printf("救命1.......................\r\n");       //替换成相应的呼救函数
+						//发送短信
+			GPRS_Send_help();	//使用GPRS发送求救信号
+			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+		}
+		else if(Res == '2')
+		{
+				HelpFlag=1;                   //不能在中断里面处理过长的函数
+				my_printf("收到报警信息\r\n");
+		}
+		else 
 			if(Res == '3')               //接收到获取数据信息的信号
 		{
 			MEASURE_FLAG=1;
 		}
 	}
-
 }
 
 
@@ -353,7 +350,9 @@ void GENERAL2_TIM_INT_FUN(void)
 	// 这个时候我们需要把这个最长的定时周期加到捕获信号的时间里面去
 	if ( TIM_GetITStatus ( GENERAL2_TIM, TIM_IT_Update) != RESET )               
 	{	
-		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL2_TIM_PERIOD;		
+		TIM_ICUserValueStructure[4].Capture_CcrValue += GENERAL2_TIM_PERIOD;
+        if(  TIM_ICUserValueStructure[4].Capture_StartFlag != 0 ) 		
+			p_debug("capture 4:over");		
 		TIM_ClearITPendingBit ( GENERAL2_TIM, TIM_FLAG_Update ); 		
 	}
 
@@ -403,6 +402,8 @@ void TIM5_IRQHandler(void)
 #ifndef ONLY_WALKINGSTICK               //眼镜+拐杖		
 		if( MEASURE_FLAG)
 		{	
+			
+			
 			UltrasonicWave(portNum);    //采集一个模块数据
 			portNum++;
 			if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕

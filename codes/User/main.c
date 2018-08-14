@@ -27,7 +27,8 @@ extern char *pdu_content ;
 extern int8_t  MEASURE_FLAG;
 uint8_t direction_flag;
 extern int UltrasonicWave_Distance[];     
-
+extern int HelpFlag;
+extern GPSData SendGPS;
 //GPRS相关外设初始化函数
 static void Periph_GPRS_Init()
 {
@@ -44,7 +45,7 @@ void delay_0(u32 time)
 int main(void)
 {
 	int ret;
-	int angle=0; 
+	char angle=0; 
 	int i=0;
 	int num[AVER_NUM];									         //保存超声波数据
 	
@@ -68,52 +69,29 @@ int main(void)
 	
 	my_printf("系统启动......");
 	
-	printf("test\r\n");
+	
 	 while(1)           
 	{
-		my_printf("start debug\r\n");
-//			if(MEASURE_FLAG)
-//			{
-//					SendGlasses(UltrasonicWave_Distance,ULTR_NUM);
-//					MEASURE_FLAG=0;
-//			}
-
-
-//		GPRS_Send_GPS(22.2, 33.3);	//使用GPRS发送位置坐标
-//		 GPRS_Send_help();					//使用GPRS发送求救信号
-//		i++;
-//		if(i>100)
-//		{
-//			i=0;
-//		}
-//		parseGpsBuffer();									
+		parseGpsBuffer();									
 //		printGpsBuffer();
-
 //			UltrasonicWave(num);								//获取超声波数据
-			if(direction_flag)
+			if(direction_flag)										//已经将角度调整完毕
 			{
 					angle=getAngle();
 					direction_flag=0;
-					DEBUG("当前方位为：");
-					DEBUG("%d",angle);
+					my_printf("当前方位为：");
+					my_printf("%c",angle);
+				SendAngle(angle);										//发送方位信息
 			}
-			
-			
-			
-//			angle=0;
-//			printf("%d",angle);
-//			num[AVER_NUM-1]=angle;
-//			for(i=0;i<AVER_NUM;i++)				//num的最后一个数据用来发送方位信息
-//			{
-//				printf("%d",num[i]);
-//			}
-//			delayMs(600);            //问题1：这个会使gprs卡住，不知道为什么
-////			GPS_GPRS(GpsInfo,beiJingTime,sendData);
-//			i=0;
-//		}
-
+			if(HelpFlag)
+			{
+					GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+				 GPRS_Send_help();					//使用GPRS发送求救信号
+					HelpFlag=0;
+			}
+//		my_printf("running\r\n");
 //			UltrasonicWave(num);								//获取超声波数据
-//			delayMs(500);            //问题1：这个会使gprs卡住，不知道为什么
+
 
 	}
 }

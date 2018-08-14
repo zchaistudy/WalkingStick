@@ -283,31 +283,31 @@ void delay1_1ms(unsigned int time)
 	
 	
 
-int getAngle()
+char getAngle()
 {
-	int num;
+	char num;
 	 //磁场数据读取与发送
 	Multiple_read(M_SlaveAddress,0x03);//OUT_X_M
 	M_x=(BUF[0] << 8) | BUF[1]; //合成16位数据
 	M_y=(BUF[2] << 8) | BUF[3]; //合成16位数据
 	M_z=(BUF[4] << 8) | BUF[5]; //合成16位数据
 	angle= atan2(M_y,M_x) * (180 / 3.14159265) + 180; // angle in degrees
-	printf("angle=%f\r\n",angle);
+//	printf("angle=%f\r\n",angle);
 		if(angle<30||angle>350)//南
-		num = 0;
+			num = '0';
 		if(angle>=30&&angle<=62)//西南
-		num = 1;
+			num = '1';
 		if(angle>62&&angle<95)//西
-			num =2;
+			num ='2';
 		if(angle>=95&&angle<140)//西北
-			num = 3;
+			num = '3';
 		if(angle>140&&angle<200)//北
-			num = 4;
+			num = '4';
 		if(angle>200&&angle<300)//东北
-			num = 5;
+			num = '5';
 		if(angle>300&angle<330) //东
-			num = 6;
+			num = '6';
 		if(angle>330&&angle<350)  //东南
-			num = 7;
+			num = '7';
 		return num;
 }
