@@ -79,9 +79,8 @@ int main(void)
 			}
 			if(HelpFlag)
 			{
-					parseGpsBuffer();
-					GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-				 GPRS_Send_help();					//使用GPRS发送求救信号
+//				GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+				 GPRS_Send_help();					//使用GPRS发送求救信号  会有一定时间的延时，所以导致数据不会很快被接收到
 					HelpFlag=0;
 			}
 			if( IsFinishMeasure() )   //拐杖上模块数据采集完毕

@@ -181,15 +181,9 @@ void USART1_IRQHandler(void)
 	lo=22.2, la=33.3;
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
+		my_printf("收到信息***************\r\n");
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
-		if(Res == '1')
-		{
-			my_printf("救命1.......................\r\n");       //替换成相应的呼救函数
-						//发送短信
-			GPRS_Send_help();	//使用GPRS发送求救信号
-			GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-		}
-		else if(Res == '2')
+		if(Res == '2')
 		{
 				HelpFlag=1;                   //不能在中断里面处理过长的函数
 				my_printf("收到报警信息\r\n");
@@ -201,8 +195,6 @@ void USART1_IRQHandler(void)
 		}
 	}
 }
-
-
 
 
 void GENERAL1_TIM_INT_FUN(void)
