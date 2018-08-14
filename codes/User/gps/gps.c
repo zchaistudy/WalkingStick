@@ -127,15 +127,13 @@ void parseGpsBuffer(void)
 					errorLog(2);	//解析错误
 				}
 			}
-
-
 		}
 						a=(int)(atof(Save_Data.longitude)/100);
 						b=(int)(atof(Save_Data.latitude)/100);
 						SendGPS.lo=(atof(Save_Data.longitude)-100*a)/60+a;
 						SendGPS.la=(atof(Save_Data.latitude)-100*b)/60+b;
-//						GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-						my_printf("lo f% ,la f%\r\n",SendGPS.lo,SendGPS.la);
+						GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+						my_printf("lo %f ,la %f\r\n",SendGPS.lo,SendGPS.la);
 	}
 }
 

@@ -299,18 +299,13 @@ void GPRS_Send_help(void)
 	
 	memset(error_result,'\0',20);
 		
-//	ret = check_status();
-//	if(ret == 1)
-//	{
-//		my_printf("GA6模块连接正常\r\n");
+
 		ret = send_data_to_server("\"39.108.110.121\",10001","help");//发送数据到服务器					
-//	}
 	
 	if(ret == 1)
 	{
 		sprintf(error_result,"成功发送到server\r\n");
 		my_printf("%s",error_result);
-		delay_ms(50);
 		my_printf("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
 		my_printf("%s",Uart4_Buf);
 		my_printf("\r\n");
@@ -342,8 +337,7 @@ void GPRS_Send_GPS(float lo, float la)
 	if(ret == 1)
 	{
 		sprintf(error_result,"成功发送到server\r\n");
-		my_printf("%s",error_result);
-		delay_ms(50);
+				my_printf("%s",error_result);
 		my_printf("收到回复：\r\n");  //received:后面的内容才是回复的真正内容
 		my_printf("%s",Uart4_Buf);
 		my_printf("\r\n");
