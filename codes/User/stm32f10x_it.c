@@ -391,6 +391,8 @@ void GENERAL2_TIM_INT_FUN(void)
 		TIM_ClearITPendingBit (GENERAL2_TIM,GENERAL2_TIM_IT_CC3);	    
 	}	
 }
+
+#if 0
 void TIM5_IRQHandler(void)
 {
 	int i;
@@ -433,6 +435,42 @@ void TIM5_IRQHandler(void)
 	
 }
 
+#else  /*************************非轮询*********************************/
+void TIM5_IRQHandler(void)
+{
+	
+	if ( TIM_GetITStatus( TIM5, TIM_IT_Update) != RESET ) 
+	{			
+#ifndef ONLY_WALKINGSTICK               //眼镜+拐杖		
+		if( MEASURE_FLAG)
+		{	
+			UltrasonicWave(0);    //采集一个模块数据
+//			portNum++;
+//			if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕
+//			{
+//			    portNum = 0; 	
+//				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
+//				MEASURE_FLAG = 0;
+//							
+//			}
+		}
+
+#else
+/****************拐杖单独测试************************/
+		UltrasonicWave(0);    //采集一个模块数据
+//		portNum++;
+//		if( portNum > ULTR_NUM)   //拐杖上模块数据采集完毕
+//		{
+//			portNum = 0; 
+//		}
+#endif
+		
+		TIM_ClearITPendingBit(TIM5 , TIM_FLAG_Update);  		 
+	}		
+	
+}
+
+#endif
 
 /**
   * @brief  外部中断0，用于检测按键

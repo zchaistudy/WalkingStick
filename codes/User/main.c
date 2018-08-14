@@ -43,13 +43,7 @@ void delay_0(u32 time)
 
 int main(void)
 {
-	int ret;
-	int angle=0; 
-	int i=0;
-	int num[AVER_NUM];									         //保存超声波数据
-	
-	int sendByBlueTooth[MAX_SEND];		           //发送避障数据以及方位数据
-	int XX[5]={1,2,3,4,5};
+	int angle;
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);       //中断优先级分组
 	
 	MEASURE_FLAG=0;
@@ -96,6 +90,14 @@ int main(void)
 					direction_flag=0;
 					DEBUG("当前方位为：");
 					DEBUG("%d",angle);
+			}
+
+
+
+			if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
+			{
+				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
+				MEASURE_FLAG = 0;			
 			}
 			
 //			my_printf("start debug\r\n");

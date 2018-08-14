@@ -62,6 +62,7 @@ void UltrasonicWave_StartMeasure(GPIO_TypeDef *  port, int32_t pin)
 * 说    明：
 * 调用方法：无 
 ****************************************************************************/
+#if 0
 void UltrasonicWave(int measureNum)
 {
 	int i= 0;	
@@ -77,15 +78,49 @@ void UltrasonicWave(int measureNum)
 			}
 		}		
 	}
-	switch(measureNum)          //开始测距，发送一个>10us的脉冲，
-	{
-		case 0: UltrasonicWave_StartMeasure(TRIG_PORT1,TRIG_PIN1); break;
-		case 1: UltrasonicWave_StartMeasure(TRIG_PORT2,TRIG_PIN2); break;
-		case 2: UltrasonicWave_StartMeasure(TRIG_PORT3,TRIG_PIN3); break;
-		case 3: UltrasonicWave_StartMeasure(TRIG_PORT4,TRIG_PIN4); break;
-		case 4: UltrasonicWave_StartMeasure(TRIG_PORT5,TRIG_PIN5); break;
-	}	
+	UltrasonicWave_StartMeasure(TRIG_PORT1,TRIG_PIN1);
+	UltrasonicWave_StartMeasure(TRIG_PORT2,TRIG_PIN2);
+	UltrasonicWave_StartMeasure(TRIG_PORT4,TRIG_PIN4);
+	UltrasonicWave_StartMeasure(TRIG_PORT5,TRIG_PIN5);
+//	switch(measureNum)          //开始测距，发送一个>10us的脉冲，
+//	{
+//		case 0: UltrasonicWave_StartMeasure(TRIG_PORT1,TRIG_PIN1); break;
+//		case 1: UltrasonicWave_StartMeasure(TRIG_PORT2,TRIG_PIN2); break;
+//		case 2: UltrasonicWave_StartMeasure(TRIG_PORT3,TRIG_PIN3); break;
+//		case 3: UltrasonicWave_StartMeasure(TRIG_PORT4,TRIG_PIN4); break;
+//		case 4: UltrasonicWave_StartMeasure(TRIG_PORT5,TRIG_PIN5); break;
+//	}	
 }
-
+#else
+void UltrasonicWave(int measureNum)
+{
+	UltrasonicWave_StartMeasure(TRIG_PORT1,TRIG_PIN1);
+	UltrasonicWave_StartMeasure(TRIG_PORT2,TRIG_PIN2);
+	UltrasonicWave_StartMeasure(TRIG_PORT3,TRIG_PIN3);
+	UltrasonicWave_StartMeasure(TRIG_PORT4,TRIG_PIN4);
+	UltrasonicWave_StartMeasure(TRIG_PORT5,TRIG_PIN5);
+}
+//判断测距是否完成
+// 返回： 1： 测距完成 0 测距未完成
+int IsFinishMeasure()
+{
+	int i= 0;	
+	for( i = 0; i < ULTR_NUM; i++ )
+	{
+		if( TIM_ICUserValueStructure[i].Capture_FinishFlag == 1 )  
+		{	
+			dealTIM_ICUserValueStructureData(TIM_ICUserValueStructure[i] ,i);
+			TIM_ICUserValueStructure[i].Capture_FinishFlag = 0;
+            MEASURE_FINISH++;              //每完成测距则加1
+		}		
+	}
+	if(MEASURE_FINISH == 5 )
+	{
+		MEASURE_FINISH = 0;
+		return 1;
+	}
+    return 0;  
+}
+#endif
 
 /******************* (C) 1209 Lab *****END OF FILE************/
