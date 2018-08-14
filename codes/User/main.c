@@ -44,13 +44,8 @@ void delay_0(u32 time)
 
 int main(void)
 {
-	int ret;
-	char angle=0; 
-	int i=0;
-	int num[AVER_NUM];									         //保存超声波数据
-	
-	int sendByBlueTooth[MAX_SEND];		           //发送避障数据以及方位数据
-	int XX[5]={1,2,3,4,5};
+
+	int angle;
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);       //中断优先级分组
 	
 	MEASURE_FLAG=0;
@@ -74,7 +69,6 @@ int main(void)
 	{
 		parseGpsBuffer();									
 //		printGpsBuffer();
-//			UltrasonicWave(num);								//获取超声波数据
 			if(direction_flag)										//已经将角度调整完毕
 			{
 					angle=getAngle();
@@ -89,9 +83,12 @@ int main(void)
 				 GPRS_Send_help();					//使用GPRS发送求救信号
 					HelpFlag=0;
 			}
-//		my_printf("running\r\n");
-//			UltrasonicWave(num);								//获取超声波数据
-
+			if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
+			{
+				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
+				MEASURE_FLAG = 0;			
+			}
+			
 
 	}
 }

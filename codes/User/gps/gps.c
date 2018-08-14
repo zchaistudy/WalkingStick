@@ -121,7 +121,6 @@ void parseGpsBuffer(void)
 						Save_Data.isUsefull = true;
 					else if(usefullBuffer[0] == 'V')
 						Save_Data.isUsefull = false;
-
 				}
 				else
 				{
