@@ -91,6 +91,8 @@ void UltrasonicWave(int measureNum)
 //		case 4: UltrasonicWave_StartMeasure(TRIG_PORT5,TRIG_PIN5); break;
 //	}	
 }
+
+
 #else
 void UltrasonicWave(int measureNum)
 {

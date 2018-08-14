@@ -1,12 +1,12 @@
 ..\..\output\debug.o: ..\..\User\debug\debug.c
-..\..\output\debug.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
-..\..\output\debug.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdlib.h
-..\..\output\debug.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
-..\..\output\debug.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdarg.h
+..\..\output\debug.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\debug.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\debug.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\debug.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\..\output\debug.o: ..\..\User\debug\debug.h
 ..\..\output\debug.o: ..\..\Libraries\CMSIS\stm32f10x.h
 ..\..\output\debug.o: ..\..\Libraries\CMSIS\core_cm3.h
-..\..\output\debug.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdint.h
+..\..\output\debug.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\debug.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\debug.o: ..\..\User\stm32f10x_conf.h
 ..\..\output\debug.o: ..\..\Libraries\FWlib\inc\stm32f10x_adc.h

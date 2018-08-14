@@ -1,7 +1,7 @@
 ..\..\output\parse.o: ..\..\User\nmea_decode\src\parse.c
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/tok.h
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/config.h
-..\..\output\parse.o: G:\software\keil5\ARM\ARMCC\bin\..\include\assert.h
+..\..\output\parse.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/parse.h
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/sentence.h
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/info.h
@@ -9,5 +9,5 @@
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/context.h
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/gmath.h
 ..\..\output\parse.o: ..\..\User\nmea_decode\include\nmea/units.h
-..\..\output\parse.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
-..\..\output\parse.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
+..\..\output\parse.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\parse.o: G:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

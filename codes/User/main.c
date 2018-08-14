@@ -67,7 +67,7 @@ int main(void)
 	
 	 while(1)           
 	{
-		parseGpsBuffer();									
+//		parseGpsBuffer();									
 //		printGpsBuffer();
 			if(direction_flag)										//已经将角度调整完毕
 			{
@@ -79,6 +79,7 @@ int main(void)
 			}
 			if(HelpFlag)
 			{
+					parseGpsBuffer();
 					GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
 				 GPRS_Send_help();					//使用GPRS发送求救信号
 					HelpFlag=0;
