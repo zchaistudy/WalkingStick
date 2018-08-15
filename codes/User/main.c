@@ -83,12 +83,12 @@ int main(void)
 				 GPRS_Send_help();					//使用GPRS发送求救信号  会有一定时间的延时，所以导致数据不会很快被接收到
 					HelpFlag=0;
 			}
-			if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
-			{
-				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
-				MEASURE_FLAG = 0;			
-			}
-			
+		if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
+		{
+			SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
+			MEASURE_FLAG = 0;			
+		}	
+        my_printf("running ");		
 
 	}
 }

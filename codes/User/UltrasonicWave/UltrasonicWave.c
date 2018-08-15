@@ -8,7 +8,7 @@ data 2018.6.30
 ////////调试开关//////////////
 #ifdef DEBUG_ON_OFF 
 #undef  DEBUG_ON_OFF
-#define DEBUG_ON_OFF 0
+#define DEBUG_ON_OFF 1
 #endif
 //////////////////////////////       
 
@@ -116,7 +116,7 @@ int IsFinishMeasure()
             MEASURE_FINISH++;              //每完成测距则加1
 		}		
 	}
-	if(MEASURE_FINISH == 5 )
+	if(MEASURE_FINISH == ULTR_NUM )
 	{
 		MEASURE_FINISH = 0;
 		return 1;

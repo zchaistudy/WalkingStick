@@ -443,7 +443,11 @@ void TIM5_IRQHandler(void)
 //							
 //			}
 		}
-
+//		if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
+//		{
+//			SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
+//			MEASURE_FLAG = 0;			
+//		}
 #else
 /****************拐杖单独测试************************/
 		UltrasonicWave(0);    //采集一个模块数据
