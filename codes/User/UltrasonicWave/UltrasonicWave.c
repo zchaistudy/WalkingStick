@@ -116,7 +116,8 @@ int IsFinishMeasure()
             MEASURE_FINISH++;              //每完成测距则加1
 		}		
 	}
-	if(MEASURE_FINISH == ULTR_NUM )
+//	p_debug("mearsureflag: %d", MEASURE_FINISH);
+	if(MEASURE_FINISH >= ULTR_NUM )
 	{
 		MEASURE_FINISH = 0;
 		return 1;

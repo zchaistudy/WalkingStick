@@ -40,7 +40,7 @@ extern int8_t  MEASURE_FLAG;          //测距请求标志
 ////////调试开关//////////////
 #ifdef DEBUG_ON_OFF 
 #undef  DEBUG_ON_OFF
-#define DEBUG_ON_OFF 0
+#define DEBUG_ON_OFF 1
 #endif
 //////////////////////////////
 
@@ -442,7 +442,13 @@ void TIM5_IRQHandler(void)
 //				MEASURE_FLAG = 0;
 //							
 //			}
+			MEASURE_FLAG = 0;		
 		}
+		if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
+		{
+			p_debug("finish measure");
+			SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 		
+		}	
 //		if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
 //		{
 //			SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
