@@ -88,7 +88,7 @@ int main(void)
 				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //·¢ËÍÊý¾Ý 	
 				MEASURE_FLAG = 0;			
 			}
-			
+			my_printf("running\r\n");
 
 	}
 }
