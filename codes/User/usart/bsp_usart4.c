@@ -82,10 +82,6 @@ void UART4_Init_Config(u32 bound)
 	
 	// 使能串口
 	USART_Cmd(DEBUG_USARTx, ENABLE);		
-
-  // 清除发送完成标志
-	//USART_ClearFlag(USART1, USART_FLAG_TC);  
-
 }
 
 /*******************************************************************************

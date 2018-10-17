@@ -30,6 +30,7 @@
 #include "debug.h"
 #include "gps.h" 
 #include "gprs.h"
+#include "shake.h"
 
 int HelpFlag=0;
 extern GPSData SendGPS;
@@ -37,6 +38,8 @@ extern void TimingDelay_Decrement(void);
 extern uint8_t direction_flag;
 extern _SaveData Save_Data;
 extern int8_t  MEASURE_FLAG;          //测距请求标志
+extern uint8_t gprs_flag;             //gprs发送数据标志位
+int time= 0;
 ////////调试开关//////////////
 #ifdef DEBUG_ON_OFF 
 #undef  DEBUG_ON_OFF
@@ -168,7 +171,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief  USART1_IRQHandler,用于接收求救信息
+  * @brief  USART1_IRQHandler,用于接收求救信息与传输数据信号
   * @param  None
   * @retval None
   */
@@ -183,16 +186,18 @@ void USART1_IRQHandler(void)
 	{
 		my_printf("收到信息***************\r\n");
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
-		if(Res == '2')
+		if(Res == '!')
 		{
 				HelpFlag=1;                   //不能在中断里面处理过长的函数
 				my_printf("收到报警信息\r\n");
 		}
 		else 
-			if(Res == '3')               //接收到获取数据信息的信号
+		if(Res == '#')               //接收到获取数据信息的信号
 		{
 			MEASURE_FLAG=1;
 		}
+		else
+			AdjustVibrationFrequencyWalking( Res );   
 	}
 }
 
@@ -442,7 +447,13 @@ void TIM5_IRQHandler(void)
 //				MEASURE_FLAG = 0;
 //							
 //			}
+			MEASURE_FLAG = 0;		
 		}
+		if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
+		{
+			p_debug("finish measure");
+			SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 		
+		}	
 //		if( IsFinishMeasure() )   //拐杖上模块数据采集完毕
 //		{
 //			SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
@@ -482,7 +493,7 @@ void EXTI0_IRQHandler(void)
 
 
 /**
-  * @brief  串口2中断，用于gps
+  * @brief  串口2中断，用于gps，在中断的过程中就已经在采集数据了
   * @param  None
   * @retval None
   */
@@ -498,7 +509,6 @@ void USART2_IRQHandler(void)                	//串口2中断服务程序
 	{
 		point1 = 0;	
 	}
-		
 
 	  USART_RX_BUF[point1++] = Res;
 
@@ -520,8 +530,24 @@ void USART2_IRQHandler(void)                	//串口2中断服务程序
 	}	 		 
    } 
 }
-
-
+/**
+  * @brief  定时器6中断，用于计时——控制gprs信息每10秒发送一次。
+  * @param  None
+  * @retval None
+  */
+void  TIM6_IRQHandler (void)
+{
+	if ( TIM_GetITStatus( TIM6, TIM_IT_Update) != RESET ) 
+	{	
+		time++;
+		if(time == 10000 )
+		{
+			time = 0;
+			gprs_flag = 1;
+		}
+		TIM_ClearITPendingBit(TIM6 , TIM_FLAG_Update);  		 
+	}		 	
+}
 /**
   * @brief  This function handles PPP interrupt request.
   * @param  None

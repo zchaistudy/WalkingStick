@@ -31,7 +31,6 @@
 ..\..\output\gprs.o: ..\..\User\usart\bsp_usart.h
 ..\..\output\gprs.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
 ..\..\output\gprs.o: ..\..\User\SysTick\bsp_SysTick.h
-..\..\output\gprs.o: ..\..\User\GPRS\timer.h
 ..\..\output\gprs.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
 ..\..\output\gprs.o: ..\..\User\GA6_module_errors.h
 ..\..\output\gprs.o: ..\..\User\usart\bsp_usart4.h

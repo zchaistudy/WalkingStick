@@ -39,3 +39,4 @@
 ..\..\output\stm32f10x_it.o: G:\software\keil5\ARM\ARMCC\bin\..\include\string.h
 ..\..\output\stm32f10x_it.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdlib.h
 ..\..\output\stm32f10x_it.o: ..\..\User\gprs\gprs.h
+..\..\output\stm32f10x_it.o: ..\..\User\Shaking\shake.h

@@ -47,8 +47,8 @@
 "..\..\output\bsp_exti.o"
 "..\..\output\gps.o"
 "..\..\output\gprs.o"
-"..\..\output\timer.o"
 "..\..\output\bsp_usart4.o"
+"..\..\output\shake.o"
 --library_type=microlib --strict --scatter "..\..\Output\Template.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

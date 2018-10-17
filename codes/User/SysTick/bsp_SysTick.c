@@ -23,7 +23,6 @@ static u32 SysTickDelayTime;
 *******************************************************************************/
 void SysTick_Init_Config(void)
 {
-
 	while(SysTick_Config(SystemCoreClock / 1000));	//初始化并使能系统滴答时钟,返回1表示计数设置太大			 
 	SysTick->CTRL &= ~ SysTick_CTRL_ENABLE_Msk;		//失能滴答定时器 
 }

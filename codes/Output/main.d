@@ -41,7 +41,7 @@
 ..\..\output\main.o: ..\..\User\key\bsp_exti.h
 ..\..\output\main.o: ..\..\User\gps\gps.h
 ..\..\output\main.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdlib.h
-..\..\output\main.o: ..\..\User\gprs\timer.h
 ..\..\output\main.o: ..\..\User\usart\bsp_usart4.h
 ..\..\output\main.o: ..\..\User\gprs\gprs.h
 ..\..\output\main.o: ..\..\User\debug\debug.h
+..\..\output\main.o: ..\..\User\Shaking\shake.h

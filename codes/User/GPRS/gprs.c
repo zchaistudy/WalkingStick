@@ -1,7 +1,6 @@
 #include "stm32f10x.h"
 #include "bsp_usart.h"
 #include "bsp_SysTick.h"
-#include "timer.h"
 #include "string.h"
 #include "GA6_module_errors.h"
 #include "bsp_usart4.h"
@@ -45,19 +44,6 @@ int check_status(void)
 		UART4_SendString(esc_char);//万一进入>状态，那么久发送一个ESC字符
 		return COMMUNITE_ERROR;
 	}
-//	
-//	ret = UART4_Send_AT_Command("AT+CPIN?","READY",2,50);//查询卡是否插上
-//	if(ret == 0)
-//	{
-//		return NO_SIM_CARD_ERROR;
-//	}
-//	
-//	ret = Wait_CREG(3);//查询卡是否注册到网络
-//	if(ret == 0)
-//	{
-//		return SIM_CARD_NO_REG_ERROR;
-//	}
-    
     ret = UART4_Send_AT_Command("ATE0","OK",2,50);//关闭回显功能
 	if(ret == 0)
 	{
@@ -74,7 +60,6 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 {
 	u8 ret;
 	char end_char[2];
-	
 	
 	end_char[0] = 0x1A;//结束字符
 	end_char[1] = '\0';
@@ -141,9 +126,7 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 		{
 			return END_CHAR_ERROR;
 		}
-		
 		return 1;
-
 	}
 }
 
@@ -292,7 +275,6 @@ u8 Find(char *a)
 *******************************************************************************/
 void GPRS_Send_help(void)
 {
-	u8  i;
 	int  ret;
 		
 	my_printf("GPRS传输help功能启动.......................\r\n");
@@ -300,7 +282,7 @@ void GPRS_Send_help(void)
 	memset(error_result,'\0',20);
 		
 
-		ret = send_data_to_server("\"39.108.110.121\",10001","help");//发送数据到服务器					
+	ret = send_data_to_server("\"39.108.110.121\",10001","help");//发送数据到服务器					
 	
 	if(ret == 1)
 	{
@@ -320,12 +302,10 @@ void GPRS_Send_help(void)
 
 void GPRS_Send_GPS(float lo, float la)
 {
-	u8  i;
 	int  ret;
 	char sendData[30]; //需要发送的内容
 		
-	my_printf("GPRS传输坐标功能启动.......................\r\n");
-	
+	my_printf("GPRS传输坐标功能启动.......................\r\n");	
 	
 	memset(error_result,'\0',20);
 	memset(sendData,'\0',30);
@@ -388,3 +368,74 @@ int send_pdu_message(char *content)
 	
 	return 1;
 }
+
+/*
+ * 函数名：TIM6_TIM_NVIC_Config
+ * 描述  ：配置定时器6的优先级，优先级分组使用NVIC_PriorityGroup_2
+ * 输入  ：无
+ * 输出  ：无	
+ */
+void TIM6_TIM_NVIC_Config(void)
+{
+    NVIC_InitTypeDef NVIC_InitStructure; 
+    // 设置中断组为0
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);		
+		// 设置中断来源
+    NVIC_InitStructure.NVIC_IRQChannel = TIM6_IRQn ;	
+		// 设置主优先级为 0
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;	 
+	  // 设置抢占优先级为3
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;	
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+}
+
+/*
+ * 注意：TIM_TimeBaseInitTypeDef结构体里面有5个成员，TIM6和TIM7的寄存器里面只有
+ * TIM_Prescaler和TIM_Period，所以使用TIM6和TIM7的时候只需初始化这两个成员即可，
+ * 另外三个成员是通用定时器和高级定时器才有.
+ *-----------------------------------------------------------------------------
+ *typedef struct
+ *{ TIM_Prescaler            都有
+ *	TIM_CounterMode			     TIMx,x[6,7]没有，其他都有
+ *  TIM_Period               都有
+ *  TIM_ClockDivision        TIMx,x[6,7]没有，其他都有
+ *  TIM_RepetitionCounter    TIMx,x[1,8,15,16,17]才有
+ *}TIM_TimeBaseInitTypeDef; 
+ *-----------------------------------------------------------------------------
+ */
+
+/*
+ * 函数名：TIM6_TIM_Mode_Config
+ * 描述  ：初始化定时器6
+ * 输入  ：无
+ * 输出  ：无	
+ */
+void TIM6_TIM_Mode_Config(void)
+{
+    TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+		
+		// 开启定时器时钟,即内部时钟CK_INT=72M
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM6, ENABLE);
+	
+		// 自动重装载寄存器的值，累计TIM_Period+1个频率后产生一个更新或者中断，一次中断时间为1us秒
+    TIM_TimeBaseStructure.TIM_Period = 999;	
+
+	  // 时钟预分频数为
+    TIM_TimeBaseStructure.TIM_Prescaler= 71;
+	
+	  // 初始化定时器
+    TIM_TimeBaseInit(TIM6, &TIM_TimeBaseStructure);
+		
+		// 清除计数器中断标志位
+    TIM_ClearFlag(TIM6, TIM_FLAG_Update);
+	  
+		// 开启计数器中断
+    TIM_ITConfig(TIM6,TIM_IT_Update,ENABLE);
+		
+		// 使能计数器
+    TIM_Cmd(TIM6, ENABLE);	
+		
+		TIM6_TIM_NVIC_Config();
+}
+

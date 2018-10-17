@@ -19,10 +19,6 @@ static void NVIC_Configuration_PA0(void)
 {
   NVIC_InitTypeDef NVIC_InitStructure;
   
-  /* Configure one bit for preemption priority */
-
-//  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-
   /* 配置中断源 */
   NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;  //外部中断0
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
@@ -49,7 +45,7 @@ void EXTI_PA0_Config(void)
 
 	/* EXTI line gpio config*/	
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;       
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;	 // 下拉输入
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;	          // 下拉输入
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	/* EXTI line mode config */

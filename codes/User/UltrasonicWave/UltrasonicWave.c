@@ -8,7 +8,7 @@ data 2018.6.30
 ////////调试开关//////////////
 #ifdef DEBUG_ON_OFF 
 #undef  DEBUG_ON_OFF
-#define DEBUG_ON_OFF 1
+#define DEBUG_ON_OFF 0
 #endif
 //////////////////////////////       
 
@@ -34,7 +34,7 @@ static void dealTIM_ICUserValueStructureData(TIM_ICUserValueTypeDef TIM_ICUserVa
 	UltrasonicWave_Distance[i] = time * 340 / 2  * 100 / TIM_PscCLK ;
 	// 打印高电平脉宽时间
 //	ftime = ((double) TIM_ICUserValueStructurex.Capture_CcrValue+1)/TIM_PscCLK;
-	p_debug( "%d :  distance   %d",i, UltrasonicWave_Distance[i]);
+//	p_debug( "%d :  distance   %d",i, UltrasonicWave_Distance[i]);
 //	printf( "\r\n：%d us\r\n",time );	
 }
 
@@ -116,7 +116,8 @@ int IsFinishMeasure()
             MEASURE_FINISH++;              //每完成测距则加1
 		}		
 	}
-	if(MEASURE_FINISH == ULTR_NUM )
+//	p_debug("mearsureflag: %d", MEASURE_FINISH);
+	if(MEASURE_FINISH >= ULTR_NUM )
 	{
 		MEASURE_FINISH = 0;
 		return 1;

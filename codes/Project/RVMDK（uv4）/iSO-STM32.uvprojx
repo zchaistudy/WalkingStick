@@ -364,7 +364,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\nmea_decode\include;..\..\User\gps;..\..\User\SysTick;..\..\User\gprs;..\..\User\angle;..\..\User\Wave;..\..\User\UltrasonicWave;..\..\User\key;..\..\User\GPRS;..\..\User\debug</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\nmea_decode\include;..\..\User\gps;..\..\User\SysTick;..\..\User\gprs;..\..\User\angle;..\..\User\Wave;..\..\User\UltrasonicWave;..\..\User\key;..\..\User\GPRS;..\..\User\debug;..\..\User\Shaking</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -723,14 +723,19 @@
               <FilePath>..\..\User\GPRS\gprs.c</FilePath>
             </File>
             <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\GPRS\timer.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_usart4.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\usart\bsp_usart4.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shaking</GroupName>
+          <Files>
+            <File>
+              <FileName>shake.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\Shaking\shake.c</FilePath>
             </File>
           </Files>
         </Group>

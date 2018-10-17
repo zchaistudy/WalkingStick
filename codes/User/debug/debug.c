@@ -5,7 +5,6 @@
 #include "debug.h"
 #include "bsp_usart.h"
 
-
 static void printch(const char ch)   //Êä³ö×Ö·û
 {  
     Usart3Send(ch);  
