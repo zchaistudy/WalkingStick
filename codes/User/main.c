@@ -60,10 +60,9 @@ int main(void)
 	TIM2_Breathing_Init();                       //定时器2初始化，使用PWM控制震动模块的震动频率
 //	TIM6_TIM_Mode_Config();											 //定时器6初始化，用于计时
 	my_printf("系统启动......");
-//	printf("系统启动......");
 	 while(1)           
 	{
-//		parseGpsBuffer();		                   //读取并发送位置信息						
+			parseGpsBuffer();		                   //读取gps信息并在控制台打印位置信息						
 			if(direction_flag)										 //已经将角度调整完毕
 			{
 					angle=getAngle();
@@ -74,9 +73,8 @@ int main(void)
 			}
 			if(HelpFlag)
 			{
-//				GPRS_Send_GPS(31.062248,121.217525);
-//				GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
-					GPRS_Send_help();					//使用GPRS发送求救信号  会有一定时间的延时，所以导致数据不会很快被接收到
+				GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
+//					GPRS_Send_help();					//使用GPRS发送求救信号  会有一定时间的延时，所以导致数据不会很快被接收到
 					HelpFlag=0;
 			}
 			if( IsFinishMeasure() )   //拐杖上模块数据采集完毕

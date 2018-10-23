@@ -109,14 +109,16 @@ void AdjustVibrationFrequencyWalking(char degree)
 	{
 		case Forth:
 			TIM2->CCR2 = 9999;
-			break;		
 		case Third:
-			TIM2->CCR2 = 6999;
-			break;
+			TIM2->CCR2 = 7500;
+			break;		
 		case Second:
-			TIM2->CCR2 = 3000;
+			TIM2->CCR2 = 5000;
 			break;
 		case First:
+			TIM2->CCR2 = 2500;
+			break;
+		case Zero:
 			TIM2->CCR2 = 0;
 			break;
 	}

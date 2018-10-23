@@ -310,7 +310,7 @@ void GPRS_Send_GPS(float lo, float la)
 	memset(error_result,'\0',20);
 	memset(sendData,'\0',30);
 
-		sprintf(sendData,"lo:%f,la:%f\r\n",lo, la);//需要发送的内容
+		sprintf(sendData,"help!lo:%f,la:%f\r\n",lo, la);//需要发送的内容
 		ret = send_data_to_server("\"39.108.110.121\",10001",sendData);          //发送数据到服务器					
 
 	

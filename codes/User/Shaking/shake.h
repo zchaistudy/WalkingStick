@@ -7,7 +7,7 @@
 #define Second '2'
 #define Third  '3'
 #define Forth  '4'
-
+#define Zero   '0'
 void TIM2_Breathing_Init(void);
 void AdjustVibrationFrequencyWalking(char degree);
 
