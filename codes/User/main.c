@@ -62,7 +62,7 @@ int main(void)
 	my_printf("系统启动......");
 	 while(1)           
 	{
-			parseGpsBuffer();		                   //读取gps信息并在控制台打印位置信息						
+//			parseGpsBuffer();		                   //读取gps信息并在控制台打印位置信息						
 			if(direction_flag)										 //已经将角度调整完毕
 			{
 					angle=getAngle();
@@ -73,6 +73,7 @@ int main(void)
 			}
 			if(HelpFlag)
 			{
+							my_printf("running\r\n");
 				GPRS_Send_GPS(SendGPS.lo, SendGPS.la);	//使用GPRS发送当前位置坐标
 //					GPRS_Send_help();					//使用GPRS发送求救信号  会有一定时间的延时，所以导致数据不会很快被接收到
 					HelpFlag=0;
@@ -82,7 +83,7 @@ int main(void)
 				SendGlasses(UltrasonicWave_Distance,ULTR_NUM);           //发送数据 	
 				MEASURE_FLAG = 0;			
 			}
-//			my_printf("running\r\n");
+//my_printf("running\r\n");
 	}
 }
 

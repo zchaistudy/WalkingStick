@@ -184,7 +184,7 @@ void USART1_IRQHandler(void)
 	lo=22.2, la=33.3;
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
-		my_printf("收到信息***************\r\n");
+//		my_printf("收到信息***************\r\n");
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
 		if(Res == '!')
 		{
@@ -197,7 +197,11 @@ void USART1_IRQHandler(void)
 			MEASURE_FLAG=1;
 		}
 		else
-			AdjustVibrationFrequencyWalking( Res );   
+		{
+			my_printf("Res = %c\r\n",Res);			
+			AdjustVibrationFrequencyWalking( Res );  			
+		}
+ 
 	}
 }
 

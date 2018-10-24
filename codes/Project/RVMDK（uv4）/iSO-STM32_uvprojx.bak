@@ -723,11 +723,6 @@
               <FilePath>..\..\User\GPRS\gprs.c</FilePath>
             </File>
             <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\GPRS\timer.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_usart4.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\usart\bsp_usart4.c</FilePath>

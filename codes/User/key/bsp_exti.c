@@ -45,14 +45,14 @@ void EXTI_PA0_Config(void)
 
 	/* EXTI line gpio config*/	
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;       
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;	          // 下拉输入
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;	          // 下拉输入
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	/* EXTI line mode config */
   GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource0); 
   EXTI_InitStructure.EXTI_Line = EXTI_Line0;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising; //上降沿中断
+  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling; //上降沿中断
   EXTI_InitStructure.EXTI_LineCmd = ENABLE;
   EXTI_Init(&EXTI_InitStructure); 
 }
