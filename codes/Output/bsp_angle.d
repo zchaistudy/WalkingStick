@@ -31,3 +31,5 @@
 ..\..\output\bsp_angle.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\bsp_angle.o: G:\software\keil5\ARM\ARMCC\bin\..\include\stdio.h
 ..\..\output\bsp_angle.o: G:\software\keil5\ARM\ARMCC\bin\..\include\math.h
+..\..\output\bsp_angle.o: ..\..\User\debug\debug.h
+..\..\output\bsp_angle.o: ..\..\User\usart\bsp_usart.h

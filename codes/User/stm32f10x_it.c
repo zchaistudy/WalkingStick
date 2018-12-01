@@ -184,7 +184,7 @@ void USART1_IRQHandler(void)
 	lo=22.2, la=33.3;
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
 	{
-//		my_printf("收到信息***************\r\n");
+		my_printf("***************\r\n");
 		Res =USART_ReceiveData(USART1);						//读取接收到的数据
 		if(Res == '!')
 		{
@@ -480,6 +480,12 @@ void TIM5_IRQHandler(void)
 
 #endif
 
+
+static void delay_t(u32 time)
+{
+  while(time--);
+}
+
 /**
   * @brief  外部中断0，用于检测按键
   * @param  None
@@ -489,8 +495,12 @@ void TIM5_IRQHandler(void)
 void EXTI0_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line0) != RESET) //确保是否产生了EXTI Line中断
-	{		
-		direction_flag=1;												//将按键标志位进行标记
+	{	
+			delay_t(100);
+		if( GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0) == 1) 
+		   {
+				 direction_flag=1;												//将按键标志位进行标记
+			 }
 		EXTI_ClearITPendingBit(EXTI_Line0);     //清除中断标志位
 	}  
 }

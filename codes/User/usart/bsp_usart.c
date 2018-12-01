@@ -146,10 +146,10 @@ void SendGlasses(int* p,int cnt)
 //		YY[i+1]='\0';											//USART_SendData发送单个数据，串口调试助手收到的是正常数据，而串口中断接收到的却顺序错乱
 //		printf("%s",YY);									//使用printf发数据，串口接收到的都是字符型   ch = USART_ReceiveData(USART1); 此时ch=49
 		printf("!");
-			for(i=0;i<5;i++)                   //直接使用for循环会出现位置错乱——逆序
+			for(i=0;i<5;i++)                  
 		{
 			aa=*p++;
-			printf("%d%d%d",aa/100,(aa%100)/10,aa%10);
+			printf("%d%d%d",aa/100,(aa%100)/10,aa%10);    //由于上诉的无奈，所以将一个三位数的数据，采用了一个字符一个字符发送的方式
 		}
 }
 

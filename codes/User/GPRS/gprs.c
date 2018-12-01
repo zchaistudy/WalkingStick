@@ -110,7 +110,7 @@ int send_data_to_server(char *server_IP_and_port,char *content)
 		}
 		
 		delay_ms(50);
-		UART1_SendString(Uart4_Buf);//MY 首次连接，显示服务器发来的连接成功消息
+//		UART1_SendString(Uart4_Buf);//MY 首次连接，显示服务器发来的连接成功消息
 		
 		
 		ret = UART4_Send_AT_Command("AT+CIPSEND",">",3,50);//开始发送数据

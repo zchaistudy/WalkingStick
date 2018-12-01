@@ -9,6 +9,7 @@
   */
   
 #include "bsp_angle_define.h"
+#include "debug.h"
 
 unsigned char TX_DATA[5]; 		  	//串口发送数组
 unsigned char BUF[8];             //接收数据缓存区
@@ -292,22 +293,30 @@ char getAngle()
 	M_y=(BUF[2] << 8) | BUF[3]; //合成16位数据
 	M_z=(BUF[4] << 8) | BUF[5]; //合成16位数据
 	angle= atan2(M_y,M_x) * (180 / 3.14159265) + 180; // angle in degrees
-//	printf("angle=%f\r\n",angle);
-		if(angle<30||angle>350)//南
+	my_printf("angle = %f\r\n",angle);
+		if(angle>=19&&angle<40)//南
 			num = '0';
-		if(angle>=30&&angle<=62)//西南
-			num = '1';
-		if(angle>62&&angle<95)//西
+		if(angle>=40&&angle<50)//西
 			num ='2';
-		if(angle>=95&&angle<140)//西北
-			num = '3';
-		if(angle>140&&angle<200)//北
+		if(angle>=50&angle<70)//北
 			num = '4';
-		if(angle>200&&angle<300)//东北
-			num = '5';
-		if(angle>300&angle<330) //东
+		if(angle>1&&angle<19) //东
 			num = '6';
-		if(angle>330&&angle<350)  //东南
-			num = '7';
+//		if(angle<30||angle>350)//南
+//			num = '0';
+//		if(angle>=30&&angle<=62)//西南
+//			num = '1';
+//		if(angle>62&&angle<95)//西
+//			num ='2';
+//		if(angle>=95&&angle<140)//西北
+//			num = '3';
+//		if(angle>140&&angle<200)//北
+//			num = '4';
+//		if(angle>200&&angle<300)//东北
+//			num = '5';
+//		if(angle>300&angle<330) //东
+//			num = '6';
+//		if(angle>330&&angle<350)  //东南
+//			num = '7';
 		return num;
 }
